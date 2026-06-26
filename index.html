@@ -298,7 +298,7 @@
         window.onload = generatePassword;
 
         function showTab(id) {
-            if (id === 'forum' && !isLogged) { alert('ACESSO NEGADO: Realize o Login!'); return; }
+            if ((id === 'forum' || id === 'download') && !isLogged) { alert('ACESSO NEGADO: Realize o Login VIP!'); return; }
             var tabs = document.getElementsByClassName('page-content');
             for (var i = 0; i < tabs.length; i++) { tabs[i].style.display = 'none'; }
             document.getElementById(id).style.display = 'block';
@@ -396,7 +396,9 @@
             <a onclick="showTab('vip')">Cadastro VIP</a>
             <a onclick="showTab('loja')">Loja Virtual</a>
             <a onclick="showTab('xcla')">Marcar X-Clã</a>
+            <a onclick="showTab('atualizacoes')">Atualizações</a>
             <a onclick="showTab('forum')">Fórum VIP</a>
+            <a onclick="showTab('download')" style="color:#25d366;">Download VIP</a>
         </nav>
         <button class="btn-music" onclick="toggleMusic()">▶ TOCAR HINO GTF1</button>
     </div>
@@ -454,21 +456,29 @@
                                 </div>
 
                                 <!-- Planos -->
-                                <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-bottom:12px;">
+                                 <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-bottom:12px;">
                                     <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:8px 14px; text-align:center;">
-                                        <div style="color:#0d47a1; font-size:10px; font-weight:bold;">🧪 TESTE</div>
-                                        <div style="color:#fff; font-size:11px;">Consultar</div>
+                                        <div style="color:#0d47a1; font-size:10px; font-weight:bold;">🧪 TESTE 12H</div>
+                                        <div style="color:#fff; font-size:16px; font-weight:900;">R$12</div>
+                                    </div>
+                                    <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:8px 14px; text-align:center;">
+                                        <div style="color:#0d47a1; font-size:10px; font-weight:bold;">📅 1 SEMANA</div>
+                                        <div style="color:#fff; font-size:16px; font-weight:900;">R$55</div>
+                                    </div>
+                                    <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:8px 14px; text-align:center;">
+                                        <div style="color:#0d47a1; font-size:10px; font-weight:bold;">📅 15 DIAS</div>
+                                        <div style="color:#fff; font-size:16px; font-weight:900;">R$105</div>
                                     </div>
                                     <div style="background:rgba(13,71,161,0.3); border:1px solid #25d366; border-radius:8px; padding:8px 14px; text-align:center;">
                                         <div style="color:#25d366; font-size:10px; font-weight:bold;">📅 MENSAL</div>
-                                        <div style="color:#fff; font-size:11px;">Consultar</div>
+                                        <div style="color:#fff; font-size:16px; font-weight:900;">R$125</div>
                                     </div>
                                     <div style="background:rgba(255,215,0,0.15); border:1px solid #ffd700; border-radius:8px; padding:8px 14px; text-align:center;">
                                         <div style="color:#ffd700; font-size:10px; font-weight:bold;">♾️ VITALÍCIO</div>
-                                        <div style="color:#fff; font-size:11px;">Consultar</div>
+                                        <div style="color:#fff; font-size:16px; font-weight:900;">R$450</div>
                                     </div>
                                 </div>
-                                <div style="color:#25d366; font-size:15px; font-weight:bold; margin-bottom:12px; text-align:center;">💬 Preço a combinar no WhatsApp</div>
+                                <div style="color:#25d366; font-size:15px; font-weight:bold; margin-bottom:12px; text-align:center;">💬 Nos procure no WhatsApp ou Discord</div>
                                 <a href="https://chat.whatsapp.com/0s5QrMWAJIB6lTzoDt8ilv" target="_blank"
                                     style="display:block; background:linear-gradient(135deg,#25d366,#1da851); color:#fff; text-decoration:none; padding:12px 20px; border-radius:8px; font-weight:900; font-size:14px; letter-spacing:2px; box-shadow:0 0 20px rgba(37,211,102,0.4); text-align:center;">
                                     📲 COMPRAR VIA WHATSAPP
@@ -559,25 +569,96 @@
                                 <div style="text-align:center; background:rgba(0,0,0,0.4); border-radius:10px; padding:15px; border:1px solid rgba(13,71,161,0.4);">
                                     <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-bottom:14px;">
                                         <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:8px 14px;">
-                                            <div style="color:#0d47a1; font-size:10px; font-weight:bold;">🧪 TESTE</div>
-                                            <div style="color:#fff; font-size:11px;">Consultar</div>
+                                            <div style="color:#0d47a1; font-size:10px; font-weight:bold;">🧪 TESTE 12H</div>
+                                            <div style="color:#fff; font-size:16px; font-weight:900;">R$12</div>
+                                        </div>
+                                        <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:8px 14px;">
+                                            <div style="color:#0d47a1; font-size:10px; font-weight:bold;">📅 1 SEMANA</div>
+                                            <div style="color:#fff; font-size:16px; font-weight:900;">R$55</div>
+                                        </div>
+                                        <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:8px 14px;">
+                                            <div style="color:#0d47a1; font-size:10px; font-weight:bold;">📅 15 DIAS</div>
+                                            <div style="color:#fff; font-size:16px; font-weight:900;">R$105</div>
                                         </div>
                                         <div style="background:rgba(13,71,161,0.3); border:1px solid #25d366; border-radius:8px; padding:8px 14px;">
                                             <div style="color:#25d366; font-size:10px; font-weight:bold;">📅 MENSAL</div>
-                                            <div style="color:#fff; font-size:11px;">Consultar</div>
+                                            <div style="color:#fff; font-size:16px; font-weight:900;">R$125</div>
                                         </div>
                                         <div style="background:rgba(255,215,0,0.15); border:1px solid #ffd700; border-radius:8px; padding:8px 14px;">
                                             <div style="color:#ffd700; font-size:10px; font-weight:bold;">♾️ VITALÍCIO</div>
-                                            <div style="color:#fff; font-size:11px;">Consultar</div>
+                                            <div style="color:#fff; font-size:16px; font-weight:900;">R$450</div>
                                         </div>
                                     </div>
-                                    <div style="color:#25d366; font-size:16px; font-weight:bold; margin-bottom:12px;">💬 Preço a combinar no WhatsApp</div>
+                                    <div style="color:#25d366; font-size:16px; font-weight:bold; margin-bottom:12px;">💬 Nos procure no WhatsApp ou Discord</div>
                                     <a href="https://chat.whatsapp.com/0s5QrMWAJIB6lTzoDt8ilv" target="_blank"
                                         style="display:block; background:linear-gradient(135deg,#25d366,#1da851); color:#fff; text-decoration:none; padding:12px 20px; border-radius:8px; font-weight:900; font-size:14px; letter-spacing:2px; box-shadow:0 0 20px rgba(37,211,102,0.4);">
                                         📲 COMPRAR VIA WHATSAPP
                                     </a>
                                     <div style="color:#555; font-size:10px; margin-top:8px;">🔒 Pagamento seguro &nbsp;|&nbsp; Suporte 24h</div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top:40px; border-top:1px solid #333; padding-top:30px;">
+                    <h2 style="color: #25d366; text-align: center; font-size: 32px; text-transform: uppercase; letter-spacing: 3px;">📥 COMO FUNCIONA O DOWNLOAD VIP</h2>
+                    <p style="color:#aaa; font-size:14px; text-align:center; margin-bottom:25px;">Veja como e facil ter acesso ao Aimbot GTF1</p>
+
+                    <div class="card" style="text-align:left;">
+                        <h3 style="color:#0d47a1; text-transform:uppercase;">1. ESCOLHA SEU PLANO</h3>
+                        <p style="color:#ccc; font-size:13px;">Selecione o plano ideal para voce:</p>
+                        <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin:15px 0;">
+                            <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:12px 18px; text-align:center; min-width:120px;">
+                                <div style="color:#0d47a1; font-size:10px; font-weight:bold;">🧪 TESTE 12H</div>
+                                <div style="color:#fff; font-size:18px; font-weight:900;">R$12</div>
+                            </div>
+                            <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:12px 18px; text-align:center; min-width:120px;">
+                                <div style="color:#0d47a1; font-size:10px; font-weight:bold;">📅 1 SEMANA</div>
+                                <div style="color:#fff; font-size:18px; font-weight:900;">R$55</div>
+                            </div>
+                            <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:12px 18px; text-align:center; min-width:120px;">
+                                <div style="color:#0d47a1; font-size:10px; font-weight:bold;">📅 15 DIAS</div>
+                                <div style="color:#fff; font-size:18px; font-weight:900;">R$105</div>
+                            </div>
+                            <div style="background:rgba(13,71,161,0.3); border:1px solid #25d366; border-radius:8px; padding:12px 18px; text-align:center; min-width:120px;">
+                                <div style="color:#25d366; font-size:10px; font-weight:bold;">📅 MENSAL</div>
+                                <div style="color:#fff; font-size:18px; font-weight:900;">R$125</div>
+                            </div>
+                            <div style="background:rgba(255,215,0,0.15); border:1px solid #ffd700; border-radius:8px; padding:12px 18px; text-align:center; min-width:120px;">
+                                <div style="color:#ffd700; font-size:10px; font-weight:bold;">♾️ VITALÍCIO</div>
+                                <div style="color:#fff; font-size:18px; font-weight:900;">R$450</div>
+                            </div>
+                        </div>
+
+                        <h3 style="color:#0d47a1; text-transform:uppercase; margin-top:25px;">2. FAÇA SEU CADASTRO</h3>
+                        <p style="color:#ccc; font-size:13px;">Preencha seus dados na aba <b style="color:#25d366;">Cadastro VIP</b> ou entre em contato conosco pelo WhatsApp.</p>
+                        <div style="display:flex; gap:12px; flex-wrap:wrap; margin:10px 0;">
+                            <a href="https://wa.me/5527998845090" target="_blank" style="background:#25d366; color:#fff; padding:12px 25px; border-radius:8px; text-decoration:none; font-weight:bold; display:inline-flex; align-items:center; gap:8px;">📲 FALAR NO WHATSAPP</a>
+                            <a href="https://discord.gg/Sm79zt6h5B" target="_blank" style="background:#7289da; color:#fff; padding:12px 25px; border-radius:8px; text-decoration:none; font-weight:bold; display:inline-flex; align-items:center; gap:8px;">💬 DISCORD</a>
+                        </div>
+
+                        <h3 style="color:#0d47a1; text-transform:uppercase; margin-top:25px;">3. PAGAMENTO E LIBERAÇÃO</h3>
+                        <div style="background:rgba(0,0,0,0.4); border-left:4px solid #25d366; padding:15px; margin:10px 0; border-radius:0 8px 8px 0;">
+                            <p style="color:#ccc; font-size:13px; margin:0;">
+                                <b style="color:#ffd700;">VITALÍCIO:</b> Apos o pagamento, voce recebe um email de nossa equipe com sua senha de acesso liberada <b style="color:#25d366;">IMEDIATAMENTE</b>.
+                            </p>
+                        </div>
+                        <div style="background:rgba(0,0,0,0.4); border-left:4px solid #0d47a1; padding:15px; margin:10px 0; border-radius:0 8px 8px 0;">
+                            <p style="color:#ccc; font-size:13px; margin:0;">
+                                <b style="color:#0d47a1;">DEMAIS PLANOS:</b> Apos o cadastro, enviaremos um email e entraremos em contato com voce. E so realizar o pagamento e sua senha sera liberada para acesso ao download.
+                            </p>
+                        </div>
+
+                        <h3 style="color:#0d47a1; text-transform:uppercase; margin-top:25px;">4. BAIXE E INSTALE</h3>
+                        <p style="color:#ccc; font-size:13px;">Apos liberado, faca o download do Aimbot GTF1 e siga os passos:</p>
+                        <div style="background:rgba(0,0,0,0.3); padding:15px 20px; border-radius:8px; margin:10px 0;">
+                            <div style="color:#ccc; font-size:13px; line-height:2.2;">
+                                <span style="color:#25d366;">1.</span> Faca o <b style="color:#fff;">DOWNLOAD</b> do programa GTF1AIMBOT-OFICIAL.exe<br>
+                                <span style="color:#25d366;">2.</span> <b style="color:#fff;">EXECUTE</b> o arquivo baixado clicando duas vezes (como Administrador)<br>
+                                <span style="color:#25d366;">3.</span> O programa e <b style="color:#fff;">EXTRAÍDO</b> automaticamente para <b style="color:#0d47a1;">C:\GTF1AIM\GTF1 ATUALIZADO\</b><br>
+                                <span style="color:#25d366;">4.</span> Um <b style="color:#fff;">ATALHO</b> e criado na sua Area de Trabalho<br>
+                                <span style="color:#25d366;">5.</span> Pronto! Basta abrir o <b style="color:#25d366;">gtf1.exe</b> e fazer login com seu <b style="color:#fff;">email</b> e <b style="color:#fff;">senha VIP</b>
                             </div>
                         </div>
                     </div>
@@ -592,8 +673,9 @@
                     <br><br>
                     Desde 2019, o GTF1 expandiu seu domínio para o Call of Duty, sob o comando rígido e profissional do <span class="highlight">CAPITÃO PÁTRIA</span>. Aqui, a lealdade é o nosso maior calibre. Somos amados por poucos, odiados por muitos, mas respeitados por todos.
                 </div>
-<img src="static/esquadrao.png" class="squad-img">
                 </div>
+
+                <img src="static/esquadrao.png" class="squad-img">
 
                 <div class="social-grid">
                     <a href="https://youtube.com/user/danieljonata1" class="btn-social yt" target="_blank">YOUTUBE</a>
@@ -688,19 +770,27 @@
                             <div style="text-align:center; background:rgba(0,0,0,0.3); border-radius:10px; padding:20px; border:1px solid rgba(13,71,161,0.4);">
                                 <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-bottom:14px;">
                                     <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:10px 16px;">
-                                        <div style="color:#0d47a1; font-size:11px; font-weight:bold;">🧪 TESTE</div>
-                                        <div style="color:#fff; font-size:12px;">Consultar</div>
+                                        <div style="color:#0d47a1; font-size:11px; font-weight:bold;">🧪 TESTE 12H</div>
+                                        <div style="color:#fff; font-size:16px; font-weight:900;">R$12</div>
+                                    </div>
+                                    <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:10px 16px;">
+                                        <div style="color:#0d47a1; font-size:11px; font-weight:bold;">📅 1 SEMANA</div>
+                                        <div style="color:#fff; font-size:16px; font-weight:900;">R$55</div>
+                                    </div>
+                                    <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:10px 16px;">
+                                        <div style="color:#0d47a1; font-size:11px; font-weight:bold;">📅 15 DIAS</div>
+                                        <div style="color:#fff; font-size:16px; font-weight:900;">R$105</div>
                                     </div>
                                     <div style="background:rgba(13,71,161,0.3); border:1px solid #25d366; border-radius:8px; padding:10px 16px;">
                                         <div style="color:#25d366; font-size:11px; font-weight:bold;">📅 MENSAL</div>
-                                        <div style="color:#fff; font-size:12px;">Consultar</div>
+                                        <div style="color:#fff; font-size:16px; font-weight:900;">R$125</div>
                                     </div>
                                     <div style="background:rgba(255,215,0,0.15); border:1px solid #ffd700; border-radius:8px; padding:10px 16px;">
                                         <div style="color:#ffd700; font-size:11px; font-weight:bold;">♾️ VITALÍCIO</div>
-                                        <div style="color:#fff; font-size:12px;">Consultar</div>
+                                        <div style="color:#fff; font-size:16px; font-weight:900;">R$450</div>
                                     </div>
                                 </div>
-                                <div style="color:#25d366; font-size:18px; font-weight:bold; margin-bottom:15px;">💬 Preço a combinar no WhatsApp</div>
+                                <div style="color:#25d366; font-size:18px; font-weight:bold; margin-bottom:15px;">💬 Nos procure no WhatsApp ou Discord</div>
                                 <a href="https://chat.whatsapp.com/0s5QrMWAJIB6lTzoDt8ilv" target="_blank"
                                     style="display:block; background:linear-gradient(135deg,#25d366,#1da851); color:#fff; text-decoration:none; padding:15px; border-radius:8px; font-weight:900; font-size:16px; letter-spacing:2px; box-shadow:0 0 20px rgba(37,211,102,0.4);">
                                     📲 COMPRAR VIA WHATSAPP
@@ -722,6 +812,128 @@
                 </div>
             </div>
         </div>
+        <div id="atualizacoes" class="page-content">
+            <div class="card">
+                <h2 style="color:#0d47a1; font-size:32px; letter-spacing:3px; text-transform:uppercase;">🚀 O QUE FOI ATUALIZADO</h2>
+                <p style="color:#aaa; font-size:14px; margin-bottom:25px;">GTF1AIM v5 — Novidades e melhorias do nosso software</p>
+
+                <div style="text-align:left;">
+                    <div style="background:rgba(13,71,161,0.1); border:1px solid #0d47a1; border-radius:10px; padding:20px; margin-bottom:20px;">
+                        <h3 style="color:#ff0000; margin:0 0 5px 0;">🧠 NOVA IA — YOLOv8 ONNX</h3>
+                        <p style="color:#ccc; font-size:13px; margin:0;">
+                            Motor de IA totalmente reformulado com suporte a modelos YOLOv8. Multi-backend: 
+                            <b style="color:#25d366;">CUDA</b> (NVIDIA), <b style="color:#25d366;">DirectML</b> (GPU Windows), 
+                            <b style="color:#25d366;">TensorRT</b> (NVIDIA otimizado), <b style="color:#25d366;">OpenVINO</b> (Intel) 
+                            e fallback para <b style="color:#fff;">CPU</b>. Detecção automática do melhor backend disponível.
+                        </p>
+                    </div>
+
+                    <div style="background:rgba(13,71,161,0.1); border:1px solid #0d47a1; border-radius:10px; padding:20px; margin-bottom:20px;">
+                        <h3 style="color:#ff0000; margin:0 0 5px 0;">🖱️ 7 MÉTODOS DE MOVIMENTO DO MOUSE</h3>
+                        <p style="color:#ccc; font-size:13px; margin:0;">
+                            Mouse Event, SendInput, LG HUB (Logitech), Razer Synapse, ddXoft (driver virtual), 
+                            ViGEm (controle virtual Xbox 360), REDRAGON. <b style="color:#25d366;">6 tipos de trajetória:</b> 
+                            Cubic Bezier, Exponencial, Linear, Adaptativa, Perlin Noise e 
+                            <b style="color:#ffd700;">Capitão Pátria Mira Laser</b> (curva agressiva exclusiva).
+                        </p>
+                    </div>
+
+                    <div style="background:rgba(13,71,161,0.1); border:1px solid #0d47a1; border-radius:10px; padding:20px; margin-bottom:20px;">
+                        <h3 style="color:#ff0000; margin:0 0 5px 0;">🎯 AIMFORV2 — NOVO SISTEMA DE MIRA</h3>
+                        <p style="color:#ccc; font-size:13px; margin:0;">
+                            Nova implantaçao do sistema de mira com <b style="color:#25d366;">Kalman Filter</b> para prediçao de alvos, 
+                            <b style="color:#25d366;">Shall0e's Prediction V2</b> (média de velocidade com multiplicador ajustável) 
+                            e <b style="color:#25d366;">wisethef0x's EMA Prediction</b> (média exponencial móvel). 
+                            <b style="color:#fff;">Sticky Aim</b> inteligente com rastreamento de velocidade, 
+                            sistema de pontuaçao de lock (ganho/decai mento) e tolerância de 12 frames 
+                            quando o alvo desaparece temporariamente. Mira muito mais precisa e natural.
+                        </p>
+                    </div>
+
+                    <div style="background:rgba(13,71,161,0.1); border:1px solid #0d47a1; border-radius:10px; padding:20px; margin-bottom:20px;">
+                        <h3 style="color:#ff0000; margin:0 0 5px 0;">📈 RAW ACCEL — CURVAS DE ACELERAÇÃO</h3>
+                        <p style="color:#ccc; font-size:13px; margin:0;">
+                            Motor completo de aceleração do mouse com <b style="color:#25d366;">7 tipos de curva:</b> 
+                            NoAccel, Classic, Natural, Power, Linear, Jump, Synchronous. 
+                            Configuraçao de sensibilidade, aceleração, offset, rotação e snap por eixo X/Y. 
+                            Suavizaçao de entrada e saída com meia-vida ajustável. 
+                            Normalizaçao de DPI e razão por eixo. Curvas carregadas de <b style="color:#25d366;">speed_profiles.json</b> 
+                            com <b style="color:#fff;">10 perfis</b> embutidos: Flat, Hyper Drive, Cruiser, Flick Beast, 
+                            Tracer, Special K, Push, Apex Curve, Ramp, Dynamic.
+                        </p>
+                    </div>
+
+                    <div style="background:rgba(13,71,161,0.1); border:1px solid #0d47a1; border-radius:10px; padding:20px; margin-bottom:20px;">
+                        <h3 style="color:#ff0000; margin:0 0 5px 0;">🎯 ANTI-RECOIL REFEITO</h3>
+                        <p style="color:#ccc; font-size:13px; margin:0;">
+                            Motor de anti-recoil completo com <b style="color:#25d366;">9 perfis de armas</b> pré-configurados 
+                            (PADRAO, RYDEN 45K, RMWOLF 45, VOYAK KT-3, MXR-17, CARBON 57, DVRAVEC 45, PC, IDOLO). 
+                            Ajuste em tempo real com setas do teclado, detecção de arma por OCR, 
+                            modo Turbo e Auto Ping.
+                        </p>
+                    </div>
+
+                    <div style="background:rgba(13,71,161,0.1); border:1px solid #0d47a1; border-radius:10px; padding:20px; margin-bottom:20px;">
+                        <h3 style="color:#ff0000; margin:0 0 5px 0;">⚡ SISTEMA DE MACROS</h3>
+                        <p style="color:#ccc; font-size:13px; margin:0;">
+                            <b style="color:#25d366;">Pulo Infinito</b> (Numpad 7), <b style="color:#25d366;">Dropshot</b> (Numpad 8), 
+                            <b style="color:#25d366;">Slide Infinito</b> (Numpad 0 / Minus). Todos configuráveis 
+                            com teclas e intervalos ajustáveis.
+                        </p>
+                    </div>
+
+                    <div style="background:rgba(13,71,161,0.1); border:1px solid #0d47a1; border-radius:10px; padding:20px; margin-bottom:20px;">
+                        <h3 style="color:#ff0000; margin:0 0 5px 0;">🔫 AUTO TRIGGER / TRIGGERBOT</h3>
+                        <p style="color:#ccc; font-size:13px; margin:0;">
+                            Disparo automático ao detectar inimigo na mira. Modos: 
+                            <b style="color:#25d366;">Tiro Rápido</b>, <b style="color:#25d366;">Rajada</b> (5 tiros), 
+                            <b style="color:#25d366;">Spray</b> (segura o clique). Atraso ajustável e verificação de cursor.
+                        </p>
+                    </div>
+
+                    <div style="background:rgba(13,71,161,0.1); border:1px solid #0d47a1; border-radius:10px; padding:20px; margin-bottom:20px;">
+                        <h3 style="color:#ff0000; margin:0 0 5px 0;">📺 ESP / OVERLAY</h3>
+                        <p style="color:#ccc; font-size:13px; margin:0;">
+                            Caixa delimitadora, confiança da IA, traçadores, cantos indicadores. 
+                            <b style="color:#25d366;">StreamGuard</b> — proteção contra captura de tela (streaming). 
+                            FOV em círculo ou retângulo com <b style="color:#25d366;">FOV Dinâmico</b> para miras.
+                        </p>
+                    </div>
+
+                    <div style="background:rgba(13,71,161,0.1); border:1px solid #0d47a1; border-radius:10px; padding:20px; margin-bottom:20px;">
+                        <h3 style="color:#ff0000; margin:0 0 5px 0;">🌍 8 IDIOMAS</h3>
+                        <p style="color:#ccc; font-size:13px; margin:0;">
+                            Português (BR), Inglês (US), Espanhol, Francês, Alemão, Russo, Chinês, Japonês. 
+                            Troca de idioma em tempo real sem reiniciar o programa.
+                        </p>
+                    </div>
+
+                    <div style="background:rgba(13,71,161,0.1); border:1px solid #0d47a1; border-radius:10px; padding:20px; margin-bottom:20px;">
+                        <h3 style="color:#ff0000; margin:0 0 5px 0;">🎮 SUPORTE A CONTROLE</h3>
+                        <p style="color:#ccc; font-size:13px; margin:0;">
+                            Controle virtual Xbox 360 (ViGEm) para aim assist. Botões do controle mapeáveis 
+                            para todas as ações. Suporte a placa de captura para console.
+                        </p>
+                    </div>
+
+                    <div style="background:rgba(13,71,161,0.1); border:1px solid #0d47a1; border-radius:10px; padding:20px; margin-bottom:10px;">
+                        <h3 style="color:#ff0000; margin:0 0 5px 0;">🖥️ MULTI-MONITOR</h3>
+                        <p style="color:#ccc; font-size:13px; margin:0;">
+                            Suporte completo a múltiplos monitores. Seletor de display para escolher 
+                            em qual tela capturar e mirar. Detecta automaticamente mudanças de resolução.
+                        </p>
+                    </div>
+
+                    <div style="background:rgba(0,0,0,0.3); border-left:4px solid #0d47a1; padding:15px; border-radius:0 8px 8px 0; margin-top:15px;">
+                        <p style="color:#aaa; font-size:12px; margin:0;">
+                            <b style="color:#0d47a1;">BUILD v5</b> — Baseado em .NET 8.0. 
+                            Desenvolvido por <b style="color:#fff;">GTF1</b>, <b style="color:#fff;">Coringa Br</b> e <b style="color:#fff;">Capitao Patria</b>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="forum" class="page-content">
             <div class="card">
                 <h2 style="color: #25d366;">[QG] TERMINAL DE COMANDO VIP</h2>
@@ -761,6 +973,44 @@
                     <textarea name="motivo" class="gtf-input" placeholder="MOTIVO PARA ENTRAR" style="height:80px;"></textarea>
                     <button type="submit" class="btn-join">SOLICITAR ACESSO</button>
                 </form>
+            </div>
+        </div>
+
+        <div id="download" class="page-content">
+            <div class="card">
+                <h2 style="color:#25d366;">📥 DOWNLOAD VIP - AIMBOT GTF1</h2>
+                <p style="color:#aaa; font-size:14px;">Bem-vindo, Soldado VIP! Sua senha foi liberada. Clique abaixo para baixar a versao mais recente do Aimbot GTF1.</p>
+
+                <div style="text-align:left; background:rgba(0,0,0,0.4); border-left:4px solid #0d47a1; padding:15px; margin-bottom:20px; border-radius:0 8px 8px 0;">
+                    <h4 style="color:#0d47a1; margin:0 0 8px 0;">🔓 ACESSO LIBERADO</h4>
+                    <p style="color:#ccc; font-size:13px; margin:0;">
+                        Apos realizar o pagamento do seu plano, voce recebeu sua <b style="color:#25d366;">senha VIP</b> por email. 
+                        Agora pode baixar o programa e fazer login com seu <b style="color:#fff;">email</b> e <b style="color:#fff;">senha</b>.
+                    </p>
+                </div>
+
+                <div style="background:rgba(0,0,0,0.5); padding:30px; border-radius:10px; border:1px solid #25d366;">
+                    <div style="font-size:14px; color:#aaa; margin-bottom:15px; text-align:left;">
+                        <span style="color:#25d366;">▸</span> GTF1AIMBOT-OFICIAL.exe<br>
+                        <span style="color:#25d366;">▸</span> Versao: 5.0<br>
+                        <span style="color:#25d366;">▸</span> Tamanho: ~533 MB
+                    </div>
+                    <a href="https://drive.google.com/file/d/1o_txQuea_6I_mXXjQV4GhnxEk6y1VKUo/view?usp=drive_link" target="_blank" style="background:linear-gradient(135deg,#25d366,#1da851); color:#fff; text-decoration:none; padding:18px 40px; border-radius:8px; font-weight:900; font-size:18px; letter-spacing:2px; display:inline-block; box-shadow:0 0 30px rgba(37,211,102,0.4);">
+                        📥 BAIXAR AIMBOT GTF1
+                    </a>
+                    <p style="color:#ffcc00; font-size:12px; margin-top:15px;">Arquivo hospedado no Google Drive</p>
+                </div>
+
+                <div style="margin-top:30px; border-top:1px solid #333; padding-top:20px;">
+                    <h3 style="color:#0d47a1;">📌 Como instalar e usar:</h3>
+                    <div style="text-align:left; color:#ccc; font-size:13px; line-height:2.2;">
+                        1. Faca o <b style="color:#25d366;">DOWNLOAD</b> do programa GTF1AIMBOT-OFICIAL.exe<br>
+                        2. <b style="color:#25d366;">EXECUTE</b> o arquivo baixado clicando duas vezes (como Administrador)<br>
+                        3. O programa e <b style="color:#fff;">EXTRAÍDO</b> automaticamente para <b style="color:#0d47a1;">C:\GTF1AIM\GTF1 ATUALIZADO\</b><br>
+                        4. Um <b style="color:#25d366;">ATALHO</b> e criado na sua Area de Trabalho<br>
+                        5. Pronto! Basta abrir o <b style="color:#25d366;">gtf1.exe</b> e fazer login com seu <b style="color:#fff;">email</b> e <b style="color:#fff;">senha VIP</b>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
