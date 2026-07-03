@@ -349,14 +349,14 @@
             var email = document.getElementById('forgot-email').value.trim();
             var status = document.getElementById('forgot-status');
             if (!email) { status.innerHTML = '<span style="color:#ff4444;">Digite seu email!</span>'; return; }
-            status.innerHTML = '<span style="color:#ff9800;">Enviando...</span>';
+            status.innerHTML = '<span style="color:#ff9800;">Enviando solicitacao...</span>';
             fetch('/esqueci-senha', {
                 method: 'POST',
                 headers: {'Content-Type':'application/json'},
                 body: JSON.stringify({email: email})
             }).then(function(r){ return r.json(); }).then(function(d){
                 if (d.status === 'ok') {
-                    status.innerHTML = '<span style="color:#4ade80;">Solicitacao enviada! Entraremos em contato em breve.</span>';
+                    status.innerHTML = '<span style="color:#4ade80;">Solicitacao enviada! Nossa equipe entrara em contato em breve.</span>';
                     document.getElementById('forgot-email').value = '';
                 } else {
                     status.innerHTML = '<span style="color:#ff4444;">Erro ao enviar. Tente novamente.</span>';
