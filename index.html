@@ -350,19 +350,21 @@
             var status = document.getElementById('forgot-status');
             if (!email) { status.innerHTML = '<span style="color:#ff4444;">Digite seu email!</span>'; return; }
             status.innerHTML = '<span style="color:#ff9800;">Enviando solicitacao...</span>';
-            fetch('/esqueci-senha', {
-                method: 'POST',
-                headers: {'Content-Type':'application/json'},
-                body: JSON.stringify({email: email})
-            }).then(function(r){ return r.json(); }).then(function(d){
-                if (d.status === 'ok') {
-                    status.innerHTML = '<span style="color:#4ade80;">Solicitacao enviada! Nossa equipe entrara em contato em breve.</span>';
-                    document.getElementById('forgot-email').value = '';
-                } else {
-                    status.innerHTML = '<span style="color:#ff4444;">Erro ao enviar. Tente novamente.</span>';
-                }
+            var data = new Date();
+            var id = data.getFullYear() + ('0'+(data.getMonth()+1)).slice(-2) + ('0'+data.getDate()).slice(-2) +
+                      ('0'+data.getHours()).slice(-2) + ('0'+data.getMinutes()).slice(-2) + ('0'+data.getSeconds()).slice(-2) +
+                      data.getMilliseconds();
+            var registro = {};
+            registro[id] = {
+                email: email,
+                data: data.toLocaleString('pt-BR'),
+                status: 'pendente'
+            };
+            fbPatch('solicitacoes-senha', registro).then(function(){
+                status.innerHTML = '<span style="color:#4ade80;">Solicitacao enviada! Nossa equipe entrara em contato em breve.</span>';
+                document.getElementById('forgot-email').value = '';
             })["catch"](function(){
-                status.innerHTML = '<span style="color:#ff4444;">Erro de conexao.</span>';
+                status.innerHTML = '<span style="color:#ff4444;">Erro ao enviar. Tente novamente.</span>';
             });
         }
 
