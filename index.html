@@ -306,7 +306,7 @@
         }
 
         function realizarLogin() {
-            var inputMail = document.querySelector('input[type="email"]').value.toLowerCase();
+            var inputMail = (document.getElementById('login-email') || document.querySelector('input[type="email"]')).value.toLowerCase();
             var inputPass = document.getElementById('login-pass').value;
 
             if ((inputMail === 'danieljonata@gmail.com' || inputMail === 'delightbr1g@gmail.com') && inputPass === 'Gtf1@gatonforce') {
@@ -334,6 +334,36 @@
         function toggleMusic() {
             var audio = document.getElementById("audio_cla");
             if (audio.paused) { audio.play(); } else { audio.pause(); }
+        }
+
+        function gtfForgotPass() {
+            document.getElementById('gtf-forgot-overlay').style.display = 'flex';
+        }
+
+        function gtfCloseForgot() {
+            document.getElementById('gtf-forgot-overlay').style.display = 'none';
+            document.getElementById('forgot-status').innerHTML = '';
+        }
+
+        function gtfEnviarSolicitacao() {
+            var email = document.getElementById('forgot-email').value.trim();
+            var status = document.getElementById('forgot-status');
+            if (!email) { status.innerHTML = '<span style="color:#ff4444;">Digite seu email!</span>'; return; }
+            status.innerHTML = '<span style="color:#ff9800;">Enviando...</span>';
+            fetch('/esqueci-senha', {
+                method: 'POST',
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify({email: email})
+            }).then(function(r){ return r.json(); }).then(function(d){
+                if (d.status === 'ok') {
+                    status.innerHTML = '<span style="color:#4ade80;">Solicitacao enviada! Entraremos em contato em breve.</span>';
+                    document.getElementById('forgot-email').value = '';
+                } else {
+                    status.innerHTML = '<span style="color:#ff4444;">Erro ao enviar. Tente novamente.</span>';
+                }
+            })["catch"](function(){
+                status.innerHTML = '<span style="color:#ff4444;">Erro de conexao.</span>';
+            });
         }
 
         function salvarDuvida() {
@@ -382,8 +412,9 @@
 
     <div class="fixed-header">
         <div class="auth-bar" id="auth-section">
-            <input type="email" placeholder="E-mail"><input type="password" id="login-pass" placeholder="Senha VIP">
+            <input type="email" id="login-email" placeholder="E-mail"><input type="password" id="login-pass" placeholder="Senha VIP">
             <button class="btn-auth" onclick="realizarLogin()">LOGIN</button>
+            <a href="#" onclick="gtfForgotPass()" style="color:#ff9800; font-size:12px; font-weight:bold; text-decoration:none;">Esqueci?</a>
         </div>
         <div class="row-logo">
             <span class="text-header">GATON</span>
@@ -672,12 +703,19 @@
                                 <span style="background:#25d366; color:#000; font-size:10px; font-weight:bold; padding:3px 10px; border-radius:4px;">ATUALIZACAO</span>
                                 <span style="color:#aaa; font-size:12px;">Para quem ja tem os requisitos instalados</span>
                             </div>
-                            <h4 style="color:#25d366; margin:0 0 5px 0;">🎯 PROGRAMA AIMBOT GTF1 (~533 MB)</h4>
+                            <h4 style="color:#25d366; margin:0 0 5px 0;">🎯 PROGRAMA AIMBOT GTF1 (~300 MB)</h4>
                             <p style="color:#ccc; font-size:13px; margin:0;">
-                                Apenas o executavel do Aimbot GTF1. Baixe na aba <b style="color:#25d366;">Download VIP</b>,
-                                execute como Administrador e o programa sera extraido para <b style="color:#0d47a1;">C:\GTF1AIM\GTF1 ATUALIZADO\</b>.
-                                Ideal para quem ja instalou os requisitos anteriormente e quer a versao mais recente.
+                                Apenas o executavel do Aimbot GTF1. Para quem ja instalou os requisitos anteriormente e quer apenas baixar a versao mais recente ou reinstalar o programa.
                             </p>
+                            <div style="margin-top:10px; background:rgba(0,0,0,0.3); border-radius:8px; padding:12px;">
+                                <div style="color:#aaa; font-size:12px; margin-bottom:6px;">▸ Arquivo: GTF1_AimBot_Instalador.exe</div>
+                                <div style="color:#aaa; font-size:12px; margin-bottom:6px;">▸ Tamanho: ~300 MB</div>
+                                <div style="color:#aaa; font-size:12px; margin-bottom:12px;">▸ Apenas o programa (sem requisitos)</div>
+                                <a href="https://drive.usercontent.google.com/download?id=1HuPUq6mFBxfAXlkEIx8p3jHgrHHWj43b&export=download&authuser=0" target="_blank"
+                                    style="display:inline-block; background:linear-gradient(135deg,#25d366,#1da851); color:#fff; text-decoration:none; padding:10px 25px; border-radius:8px; font-weight:900; font-size:13px; letter-spacing:1px; box-shadow:0 0 15px rgba(37,211,102,0.3);">
+                                    📥 BAIXAR GTF1_AimBot_Instalador.exe
+                                </a>
+                            </div>
                         </div>
 
                         <div style="margin-top:15px; background:rgba(255,215,0,0.08); border-left:4px solid #ffd700; padding:12px 15px; border-radius:0 8px 8px 0; font-size:12px; color:#aaa;">
@@ -1138,12 +1176,12 @@
                         e quer apenas baixar a versao mais recente ou reinstalar o programa.
                     </p>
                     <div style="font-size:13px; color:#aaa; margin-bottom:15px; text-align:left;">
-                        <span style="color:#25d366;">▸</span> Arquivo: <b style="color:#fff;">GTF1AIMBOT-OFICIAL.exe</b><br>
-                        <span style="color:#25d366;">▸</span> Tamanho: <b style="color:#fff;">~533 MB</b><br>
+                        <span style="color:#25d366;">▸</span> Arquivo: <b style="color:#fff;">GTF1_AimBot_Instalador.exe</b><br>
+                        <span style="color:#25d366;">▸</span> Tamanho: <b style="color:#fff;">~300 MB</b><br>
                         <span style="color:#25d366;">▸</span> Apenas o programa (sem requisitos)
                     </div>
-                    <a href="https://drive.google.com/file/d/1HuPUq6mFBxfAXlkEIx8p3jHgrHHWj43b/view?usp=sharing" target="_blank" style="background:linear-gradient(135deg,#25d366,#1da851); color:#fff; text-decoration:none; padding:14px 30px; border-radius:8px; font-weight:900; font-size:15px; letter-spacing:1px; display:inline-block; box-shadow:0 0 20px rgba(37,211,102,0.4);">
-                        📥 BAIXAR AIMBOT GTF1
+                    <a href="https://drive.usercontent.google.com/download?id=1HuPUq6mFBxfAXlkEIx8p3jHgrHHWj43b&export=download&authuser=0" target="_blank" style="background:linear-gradient(135deg,#25d366,#1da851); color:#fff; text-decoration:none; padding:14px 30px; border-radius:8px; font-weight:900; font-size:15px; letter-spacing:1px; display:inline-block; box-shadow:0 0 20px rgba(37,211,102,0.4);">
+                        📥 BAIXAR GTF1_AimBot_Instalador.exe
                     </a>
                 </div>
 
@@ -1157,15 +1195,26 @@
                         4. <b style="color:#ff0000;">NAO FECHE A JANELA</b> — aguarde a instalacao completa (pode levar varios minutos)<br>
                         5. Pronto! Abra o <b style="color:#25d366;">gtf1.exe</b> e faca login com seu <b style="color:#fff;">email</b> e <b style="color:#fff;">senha VIP</b><br><br>
                         <b style="color:#25d366;">🔄 JA TEM OS REQUISITOS? (So o Programa):</b><br>
-                        1. Baixe apenas o <b style="color:#fff;">PROGRAMA AIMBOT GTF1</b> (~533 MB)<br>
-                        2. <b style="color:#fff;">EXECUTE</b> como Administrador (clique direito > Executar como Administrador)<br>
-                        3. O programa e extraido para <b style="color:#0d47a1;">C:\GTF1AIM\GTF1 ATUALIZADO\</b><br>
-                        4. Pronto! Abra o <b style="color:#25d366;">gtf1.exe</b> e faca login<br><br>
-                        <b style="color:#ffd700;">⚠️ IMPORTANTE:</b> Ambos os arquivos sao auto-extratores (SFX). 
-                        Basta clicar duas vezes que eles extraem e/ou instalam tudo sozinhos.
+1. Baixe o <b style="color:#fff;">GTF1_AimBot_Instalador.exe</b> (~300 MB)<br>
+                         2. <b style="color:#fff;">EXECUTE</b> como Administrador (clique direito > Executar como Administrador)<br>
+                         3. Pronto! Abra o programa e faca login<br><br>
+                         <b style="color:#ffd700;">⚠️ IMPORTANTE:</b> O arquivo e auto-extrator (SFX). 
+                        Basta clicar duas vezes que ele extrai tudo sozinho.
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- MODAL ESQUECI A SENHA -->
+    <div id="gtf-forgot-overlay" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:99999;display:none;align-items:center;justify-content:center;">
+        <div style="background:#1e2035;border-radius:16px;width:360px;max-width:90vw;padding:28px;border:1px solid rgba(255,255,255,0.1);text-align:center;">
+            <button onclick="gtfCloseForgot()" style="float:right;background:none;border:none;color:#a0a8c0;font-size:20px;cursor:pointer;">✕</button>
+            <h3 style="color:#ff9800;margin:0 0 6px 0;">🔑 Esqueci Minha Senha</h3>
+            <p style="color:#a0a8c0;font-size:13px;margin-bottom:18px;">Digite seu email. Sua solicitacao sera enviada para nossa equipe.</p>
+            <input type="email" id="forgot-email" placeholder="Seu email" style="width:100%;background:#11121d;border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px;color:#fff;font-size:14px;box-sizing:border-box;margin-bottom:12px;">
+            <button onclick="gtfEnviarSolicitacao()" style="width:100%;background:#ff9800;color:#000;border:none;border-radius:8px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;">SOLICITAR NOVA SENHA</button>
+            <div id="forgot-status" style="margin-top:12px;font-size:13px;font-weight:bold;"></div>
         </div>
     </div>
 
