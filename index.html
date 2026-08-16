@@ -1,7 +1,7 @@
 <!-- ============================
      WIDGET DE CHAT GTF1
      Cole ANTES de </body> no index.html
-     Troque o número do WhatsApp em sendTicket()
+     Troque o n mero do WhatsApp em sendTicket()
      ============================ -->
 
 <style>
@@ -81,7 +81,7 @@
 
 <!-- Bolha de chat -->
 <div id="gtf-chat-bubble">
-  <div class="gtf-online">Nossa equipe está online.</div>
+  <div class="gtf-online">Nossa equipe est  online.</div>
   <h4>Precisa de ajuda?</h4>
   <p>Abra um ticket e responderemos em breve!</p>
   <button class="gtf-btn" onclick="gtfOpenModal()">
@@ -92,7 +92,7 @@
   </button>
 </div>
 
-<!-- Botão flutuante -->
+<!-- Bot o flutuante -->
 <button id="gtf-toggle" onclick="gtfToggle()" title="Suporte">
   <svg viewBox="0 0 24 24">
     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
@@ -102,36 +102,36 @@
 <!-- Modal de ticket -->
 <div id="gtf-modal-overlay">
   <div id="gtf-modal-box">
-    <button class="gtf-close" onclick="gtfCloseModal()">✕</button>
-    <h3>📋 Abrir Ticket</h3>
-    <p>Descreva sua dúvida ou problema:</p>
+    <button class="gtf-close" onclick="gtfCloseModal()">?</button>
+    <h3>?? Abrir Ticket</h3>
+    <p>Descreva sua d vida ou problema:</p>
     <div id="gtf-form">
       <select id="gtf-cat">
         <option value="">Selecione a categoria...</option>
         <option>Compra de Software / Aimbot</option>
-        <option>Suporte Técnico</option>
-        <option>Dúvidas sobre o Clã GTF1</option>
+        <option>Suporte T cnico</option>
+        <option>D vidas sobre o Cl  GTF1</option>
         <option>VIP / Cadastro</option>
         <option>Outro</option>
       </select>
       <textarea id="gtf-msg" placeholder="Escreva sua mensagem..."></textarea>
-      <button id="gtf-send" onclick="gtfSendTicket()">📲 Enviar via WhatsApp</button>
+      <button id="gtf-send" onclick="gtfSendTicket()">?? Enviar via WhatsApp</button>
     </div>
     <div id="gtf-success">
-      <p>✅ Redirecionando para o WhatsApp...</p>
+      <p>? Redirecionando para o WhatsApp...</p>
     </div>
   </div>
 </div>
 
 <script>
 (function() {
-  // ⚠️ TROQUE pelo número do WhatsApp (só números, com DDI)
+  // ?? TROQUE pelo n mero do WhatsApp (s  n meros, com DDI)
   var WHATSAPP_NUMBER = '5527998845090'; // Ex: 5527998845090
 
   var bubble = document.getElementById('gtf-chat-bubble');
   var visible = false;
 
-  // Mostra bolha automaticamente após 2 segundos
+  // Mostra bolha automaticamente ap s 2 segundos
   setTimeout(function() {
     bubble.classList.add('visible');
     visible = true;
@@ -234,7 +234,7 @@
         .social-grid { margin-top: 30px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
         .btn-social { display: flex; align-items: center; justify-content: center; padding: 12px 25px; border-radius: 8px; color: white; text-decoration: none; font-size: 14px; font-weight: bold; text-transform: uppercase; transition: 0.3s; min-width: 160px; }
         
-        .yt { background: #ff0000; } .tk { background: linear-gradient(135deg, #00f2ea, #ff0050); border: 2px solid #ff0050; padding: 15px 30px; font-size: 16px; min-width: 200px; box-shadow: 0 0 20px rgba(255,0,80,0.5); animation: tkPulse 2s infinite; } .tk::after { content: "★ PRINCIPAL ★"; display: block; font-size: 9px; color: #ffd700; letter-spacing: 1px; margin-top: 2px; } .ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); } .fb { background: #3b5998; } .dc { background: #7289da; } .wa { background: #25d366; }
+        .yt { background: #ff0000; } .tk { background: linear-gradient(135deg, #00f2ea, #ff0050); border: 2px solid #ff0050; padding: 15px 30px; font-size: 16px; min-width: 200px; box-shadow: 0 0 20px rgba(255,0,80,0.5); animation: tkPulse 2s infinite; } .tk::after { content: "? PRINCIPAL ?"; display: block; font-size: 9px; color: #ffd700; letter-spacing: 1px; margin-top: 2px; } .ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); } .fb { background: #3b5998; } .dc { background: #7289da; } .wa { background: #25d366; }
         
         .rules-grid { text-align: left; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
         .rule-card { background: rgba(255, 255, 255, 0.05); padding: 25px; border-left: 6px solid #0d47a1; border-radius: 8px; }
@@ -268,7 +268,7 @@
         .feat-item { background: rgba(0,0,0,0.6); padding: 15px; border-left: 4px solid #ff0000; border-radius: 5px; font-size: 15px; }
         .feat-item b { color: #ff0000; text-transform: uppercase; }
 
-        /* GALERIA CAPITÃO PÁTRIA */
+        /* GALERIA CAPIT O P TRIA */
         .cap-gallery { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin:30px 0; }
         .cap-gallery img { width:180px; height:180px; object-fit:cover; border-radius:10px; border:2px solid #0d47a1; box-shadow:0 0 15px rgba(13,71,161,0.7); transition:0.3s; }
         .cap-gallery img:hover { transform:scale(1.08); box-shadow:0 0 25px rgba(255,0,0,0.6); border-color:#ff0000; }
@@ -314,7 +314,7 @@
                 isLogged = true;
                 isMaster = true;
                 document.getElementById('auth-section').innerHTML = '<b style="color:#ff0000;">MASTER ADM</b>';
-                alert('Bem-vindo, Capitão Pátria!');
+                alert('Bem-vindo, Capit o P tria!');
                 showTab('forum');
                 loadMessages();
                 return;
@@ -328,7 +328,7 @@
                 showTab('forum');
                 loadMessages();
             } else { 
-                alert('Senha Inválida!'); 
+                alert('Senha Inv lida!'); 
             }
         }
 
@@ -383,7 +383,7 @@
         }
 
         function apagarMural() {
-            if(confirm("Capitão, deseja apagar TODAS as mensagens do mural?")){
+            if(confirm("Capit o, deseja apagar TODAS as mensagens do mural?")){
                 localStorage.removeItem('gtf1_msgs');
                 loadMessages();
             }
@@ -394,7 +394,7 @@
             if(!mural) return;
             var msgs = JSON.parse(localStorage.getItem('gtf1_msgs') || '[]');
             var btnMaster = isMaster ? '<button onclick="apagarMural()" style="background:red; color:white; border:none; padding:5px; border-radius:5px; cursor:pointer; margin-bottom:10px;">LIMPAR MURAL (MASTER ADM)</button><br>' : '';
-            mural.innerHTML = btnMaster + '<b>MURAL DE DÚVIDAS VIP:</b><br>';
+            mural.innerHTML = btnMaster + '<b>MURAL DE D VIDAS VIP:</b><br>';
             msgs.reverse().forEach(function(m) {
                 mural.innerHTML += '<div class="msg-post"><b>' + m.nome + ':</b> ' + m.texto + '</div>';
             });
@@ -429,12 +429,12 @@
             <a onclick="showTab('regras')">Regras</a>
             <a onclick="showTab('vip')">Cadastro VIP</a>
             <a onclick="showTab('loja')">Loja Virtual</a>
-            <a onclick="showTab('xcla')">Marcar X-Clã</a>
-            <a onclick="showTab('atualizacoes')">Atualizações</a>
-            <a onclick="showTab('forum')">Fórum VIP</a>
+            <a onclick="showTab('xcla')">Marcar X-Cl </a>
+            <a onclick="showTab('atualizacoes')">Atualiza  es</a>
+            <a onclick="showTab('forum')">F rum VIP</a>
             <a onclick="showTab('download')" style="color:#25d366;">Download VIP</a>
         </nav>
-        <button class="btn-music" onclick="toggleMusic()">▶ TOCAR HINO GTF1</button>
+        <button class="btn-music" onclick="toggleMusic()">? TOCAR HINO GTF1</button>
     </div>
 
     <div class="content-area">
@@ -442,10 +442,10 @@
             <div class="card">
                 <!-- BANNER AIMBOT GTF1 -->
                 <div style="margin-top:0; padding-top:0;">
-                    <h3 style="color:#0d47a1; text-transform:uppercase; margin-bottom:20px; letter-spacing:3px;">🎯 NOSSO SOFTWARE EXCLUSIVO</h3>
+                    <h3 style="color:#0d47a1; text-transform:uppercase; margin-bottom:20px; letter-spacing:3px;">?? NOSSO SOFTWARE EXCLUSIVO</h3>
                     <div style="background:linear-gradient(135deg,#0a0a1a 0%,#0d1b3e 50%,#0a0a1a 100%); border:2px solid #0d47a1; border-radius:15px; overflow:hidden; box-shadow:0 0 40px rgba(13,71,161,0.6); max-width:900px; margin:auto;">
                         <div style="background:linear-gradient(90deg,#0d47a1,#1565c0); padding:10px; text-align:center;">
-                            <span style="color:#fff; font-weight:bold; font-size:14px; letter-spacing:4px;">AIMBOT GTF1 — SOFTWARE OFICIAL DO CLÃ</span>
+                            <span style="color:#fff; font-weight:bold; font-size:14px; letter-spacing:4px;">AIMBOT GTF1   SOFTWARE OFICIAL DO CL </span>
                         </div>
 
                         <!-- Screenshot + Info -->
@@ -458,99 +458,99 @@
                                 <h2 style="color:#fff; font-family:'Arial Black'; font-size:28px; margin:0 0 4px 0;">AIMBOT GTF1</h2>
                                 <div style="color:#aaa; font-size:12px; margin-bottom:15px;">by GATON FORCE &nbsp;|&nbsp; v.6 &nbsp;|&nbsp; gtf1.com.br</div>
 
-                                <!-- Descrição -->
+                                <!-- Descri  o -->
                                 <p style="color:#ccc; font-size:13px; line-height:1.7; margin-bottom:15px;">
-                                    O <strong style="color:#fff;">AIMBOT GTF1</strong> é o software de assistência de mira desenvolvido exclusivamente pelo Clã GATON FORCE. 
-                                    Com tecnologia de <strong style="color:#0d47a1;">Inteligência Artificial</strong>, detecta inimigos em tempo real, 
-                                    ajusta a mira com precisão milimétrica e simula movimento humano com curva <strong style="color:#fff;">Cubic Bezier</strong> — 
-                                    praticamente indetectável.
+                                    O <strong style="color:#fff;">AIMBOT GTF1</strong>   o software de assist ncia de mira desenvolvido exclusivamente pelo Cl  GATON FORCE. 
+                                    Com tecnologia de <strong style="color:#0d47a1;">Intelig ncia Artificial</strong>, detecta inimigos em tempo real, 
+                                    ajusta a mira com precis o milim trica e simula movimento humano com curva <strong style="color:#fff;">Cubic Bezier</strong>   
+                                    praticamente indetect vel.
                                 </p>
 
                                 <div style="display:grid; gap:6px; margin-bottom:18px;">
-                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Assistência de Mira com IA em tempo real</div>
-                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Anti-Recoil automático para qualquer arma</div>
-                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Rastreamento constante de alvos</div>
-                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Mira Fixada (Bone Lock) na cabeça</div>
-                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Movimento natural: Cubic Bezier</div>
-                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Detecção: Closest to Center Screen</div>
-                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Ajuste Pixel a Pixel do ponto de mira (X/Y)</div>
-                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Interface completa: AIM | MODEL | CONFIG</div>
-                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Suporte técnico direto com o Clã</div>
+                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Assist ncia de Mira com IA em tempo real</div>
+                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Anti-Recoil autom tico para qualquer arma</div>
+                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Rastreamento constante de alvos</div>
+                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Mira Fixada (Bone Lock) na cabe a</div>
+                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Movimento natural: Cubic Bezier</div>
+                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Detec  o: Closest to Center Screen</div>
+                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Ajuste Pixel a Pixel do ponto de mira (X/Y)</div>
+                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Interface completa: AIM | MODEL | CONFIG</div>
+                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Suporte t cnico direto com o Cl </div>
                                 </div>
 
                                 <!-- Compatibilidade -->
                                 <div style="background:rgba(13,71,161,0.15); border-left:3px solid #0d47a1; padding:10px 15px; border-radius:0 6px 6px 0; margin-bottom:15px; font-size:12px; color:#aaa;">
-                                    🎮 Compatível: <strong style="color:#fff;">COD | BF | CS2 | Valorant | PUBG | Apex</strong>
+                                    ?? Compat vel: <strong style="color:#fff;">COD | BF | CS2 | Valorant | PUBG | Apex</strong>
                                 </div>
 
                                 <!-- Requisitos -->
                                 <div style="background:rgba(255,0,0,0.08); border-left:3px solid #ff0000; padding:10px 15px; border-radius:0 6px 6px 0; margin-bottom:15px; font-size:12px; color:#aaa;">
-                                    <strong style="color:#ff0000;">🔧 REQUISITOS MÍNIMOS:</strong><br>
-                                    <span style="color:#ccc;">▸ Ryzen 5 5600 + RTX 3060 Ti ou NVIDIA superior</span><br>
-                                    <span style="color:#ccc;">▸ i5 12400F + RTX 3060 Ti ou NVIDIA superior</span>
+                                    <strong style="color:#ff0000;">?? REQUISITOS M NIMOS:</strong><br>
+                                    <span style="color:#ccc;">? Ryzen 5 5600 + RTX 3060 Ti ou NVIDIA superior</span><br>
+                                    <span style="color:#ccc;">? i5 12400F + RTX 3060 Ti ou NVIDIA superior</span>
                                 </div>
 
                                 <!-- Planos -->
                                  <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-bottom:12px;">
                                     <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:8px 14px; text-align:center;">
-                                        <div style="color:#0d47a1; font-size:10px; font-weight:bold;">🧪 TESTE 12H</div>
+                                        <div style="color:#0d47a1; font-size:10px; font-weight:bold;">?? TESTE 12H</div>
                                         <div style="color:#fff; font-size:16px; font-weight:900;">R$12</div>
                                     </div>
                                     <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:8px 14px; text-align:center;">
-                                        <div style="color:#0d47a1; font-size:10px; font-weight:bold;">📅 1 SEMANA</div>
+                                        <div style="color:#0d47a1; font-size:10px; font-weight:bold;">?? 1 SEMANA</div>
                                         <div style="color:#fff; font-size:16px; font-weight:900;">R$55</div>
                                     </div>
                                     <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:8px 14px; text-align:center;">
-                                        <div style="color:#0d47a1; font-size:10px; font-weight:bold;">📅 15 DIAS</div>
+                                        <div style="color:#0d47a1; font-size:10px; font-weight:bold;">?? 15 DIAS</div>
                                         <div style="color:#fff; font-size:16px; font-weight:900;">R$80</div>
                                     </div>
                                     <div style="background:rgba(13,71,161,0.3); border:1px solid #25d366; border-radius:8px; padding:8px 14px; text-align:center;">
-                                        <div style="color:#25d366; font-size:10px; font-weight:bold;">📅 MENSAL</div>
+                                        <div style="color:#25d366; font-size:10px; font-weight:bold;">?? MENSAL</div>
                                         <div style="color:#fff; font-size:16px; font-weight:900;">R$120</div>
                                     </div>
                                     <div style="background:rgba(255,215,0,0.15); border:1px solid #ffd700; border-radius:8px; padding:8px 14px; text-align:center;">
-                                        <div style="color:#ffd700; font-size:10px; font-weight:bold;">♾️ VITALÍCIO</div>
+                                        <div style="color:#ffd700; font-size:10px; font-weight:bold;">?? VITAL CIO</div>
                                         <div style="color:#fff; font-size:16px; font-weight:900;">R$450</div>
                                     </div>
                                 </div>
-                                <div style="color:#25d366; font-size:15px; font-weight:bold; margin-bottom:12px; text-align:center;">💬 Nos procure no WhatsApp ou Discord</div>
+                                <div style="color:#25d366; font-size:15px; font-weight:bold; margin-bottom:12px; text-align:center;">?? Nos procure no WhatsApp ou Discord</div>
                                 <a href="https://chat.whatsapp.com/0s5QrMWAJIB6lTzoDt8ilv" target="_blank"
                                     style="display:block; background:linear-gradient(135deg,#25d366,#1da851); color:#fff; text-decoration:none; padding:12px 20px; border-radius:8px; font-weight:900; font-size:14px; letter-spacing:2px; box-shadow:0 0 20px rgba(37,211,102,0.4); text-align:center;">
-                                    📲 COMPRAR VIA WHATSAPP
+                                    ?? COMPRAR VIA WHATSAPP
                                 </a>
-                                <div style="color:#555; font-size:10px; margin-top:8px; text-align:center;">🔒 Pagamento seguro &nbsp;|&nbsp; Suporte 24h</div>
+                                <div style="color:#555; font-size:10px; margin-top:8px; text-align:center;">?? Pagamento seguro &nbsp;|&nbsp; Suporte 24h</div>
                             </div>
                         </div>
 
-                        <!-- VÍDEO DEMONSTRAÇÃO -->
+                        <!-- V DEO DEMONSTRA  O -->
                         <div style="border-top:1px solid rgba(13,71,161,0.4); padding:25px; text-align:center;">
-                            <h3 style="color:#0d47a1; letter-spacing:3px; text-transform:uppercase; margin-bottom:5px;">📹 DEMONSTRAÇÃO AO VIVO</h3>
-                            <p style="color:#aaa; font-size:13px; margin-bottom:20px;">Veja o AIMBOT GTF1 em ação antes de comprar</p>
+                            <h3 style="color:#0d47a1; letter-spacing:3px; text-transform:uppercase; margin-bottom:5px;">?? DEMONSTRA  O AO VIVO</h3>
+                            <p style="color:#aaa; font-size:13px; margin-bottom:20px;">Veja o AIMBOT GTF1 em a  o antes de comprar</p>
                             <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; align-items:center;">
                                 <!-- TikTok embed -->
                                 <div style="background:#0a0a1a; border:2px solid #0d47a1; border-radius:12px; padding:20px; max-width:340px;">
-                                    <div style="font-size:13px; color:#aaa; margin-bottom:15px;">🎵 TikTok — @gtf1.com.br</div>
+                                    <div style="font-size:13px; color:#aaa; margin-bottom:15px;">?? TikTok   @gtf1.com.br</div>
                                     <a href="https://www.tiktok.com/@gtf1.com.br/video/7635435598152617217" target="_blank"
                                         style="display:block; background:linear-gradient(135deg,#010101,#1a1a2e); border:2px solid #0d47a1; border-radius:10px; padding:30px 20px; text-decoration:none; transition:0.3s;">
-                                        <div style="font-size:48px; margin-bottom:10px;">▶</div>
-                                        <div style="color:#fff; font-weight:bold; font-size:15px; margin-bottom:5px;">AIMBOT GTF1 em Ação</div>
+                                        <div style="font-size:48px; margin-bottom:10px;">?</div>
+                                        <div style="color:#fff; font-weight:bold; font-size:15px; margin-bottom:5px;">AIMBOT GTF1 em A  o</div>
                                         <div style="color:#0d47a1; font-size:12px;">Clique para assistir no TikTok</div>
                                         <div style="margin-top:12px; background:#ff0050; color:#fff; padding:8px 20px; border-radius:20px; font-size:12px; font-weight:bold; display:inline-block;">
-                                            🎵 ASSISTIR NO TIKTOK
+                                            ?? ASSISTIR NO TIKTOK
                                         </div>
                                     </a>
                                 </div>
 
                                 <!-- YouTube -->
                                 <div style="background:#0a0a1a; border:2px solid #ff0000; border-radius:12px; padding:20px; max-width:340px;">
-                                    <div style="font-size:13px; color:#aaa; margin-bottom:15px;">▶ YouTube — GTF1 Oficial</div>
+                                    <div style="font-size:13px; color:#aaa; margin-bottom:15px;">? YouTube   GTF1 Oficial</div>
                                     <a href="https://www.youtube.com/watch?v=gH4sT_4b3Mw" target="_blank"
                                         style="display:block; background:linear-gradient(135deg,#1a0000,#2d0000); border:2px solid #ff0000; border-radius:10px; padding:30px 20px; text-decoration:none; transition:0.3s;">
-                                        <div style="font-size:48px; margin-bottom:10px;">▶</div>
-                                        <div style="color:#fff; font-weight:bold; font-size:15px; margin-bottom:5px;">AIMBOT GTF1 — Gameplay</div>
+                                        <div style="font-size:48px; margin-bottom:10px;">?</div>
+                                        <div style="color:#fff; font-weight:bold; font-size:15px; margin-bottom:5px;">AIMBOT GTF1   Gameplay</div>
                                         <div style="color:#ff0000; font-size:12px;">Clique para assistir no YouTube</div>
                                         <div style="margin-top:12px; background:#ff0000; color:#fff; padding:8px 20px; border-radius:20px; font-size:12px; font-weight:bold; display:inline-block;">
-                                            ▶ ASSISTIR NO YOUTUBE
+                                            ? ASSISTIR NO YOUTUBE
                                         </div>
                                     </a>
                                 </div>
@@ -559,7 +559,7 @@
                                 <div style="display:grid; gap:12px; text-align:center; min-width:200px;">
                                     <div style="background:rgba(13,71,161,0.2); border:1px solid #0d47a1; border-radius:10px; padding:15px 25px;">
                                         <div style="color:#0d47a1; font-size:28px; font-weight:900; font-family:'Arial Black';">99%</div>
-                                        <div style="color:#aaa; font-size:12px;">Precisão de Detecção</div>
+                                        <div style="color:#aaa; font-size:12px;">Precis o de Detec  o</div>
                                     </div>
                                     <div style="background:rgba(37,211,102,0.1); border:1px solid #25d366; border-radius:10px; padding:15px 25px;">
                                         <div style="color:#25d366; font-size:28px; font-weight:900; font-family:'Arial Black';">0ms</div>
@@ -576,10 +576,10 @@
                 </div>
 
 <div style="margin-top:40px; border-top:1px solid #333; padding-top:30px;">
-                    <h3 style="color:#0d47a1; text-transform:uppercase; margin-bottom:20px; letter-spacing:3px;">🎯 NOSSO SOFTWARE EXCLUSIVO</h3>
+                    <h3 style="color:#0d47a1; text-transform:uppercase; margin-bottom:20px; letter-spacing:3px;">?? NOSSO SOFTWARE EXCLUSIVO</h3>
                     <div style="background:linear-gradient(135deg,#0a0a1a 0%,#0d1b3e 50%,#0a0a1a 100%); border:2px solid #0d47a1; border-radius:15px; overflow:hidden; box-shadow:0 0 40px rgba(13,71,161,0.6); max-width:900px; margin:auto;">
                         <div style="background:linear-gradient(90deg,#ff0000,#cc0000); padding:8px; text-align:center;">
-                            <span style="color:#fff; font-weight:bold; font-size:13px; letter-spacing:4px;">AIMBOT GTF1 — SOFTWARE OFICIAL DO CLÃ</span>
+                            <span style="color:#fff; font-weight:bold; font-size:13px; letter-spacing:4px;">AIMBOT GTF1   SOFTWARE OFICIAL DO CL </span>
                         </div>
                         <div style="display:flex; flex-wrap:wrap; align-items:center; gap:20px; padding:25px;">
                             <div style="flex:1; min-width:260px;">
@@ -590,47 +590,47 @@
                                 <h2 style="color:#fff; font-family:'Arial Black'; font-size:28px; margin:0 0 4px 0;">AIMBOT GTF1</h2>
                                 <div style="color:#aaa; font-size:12px; margin-bottom:15px;">by GATON FORCE &nbsp;|&nbsp; v.6 &nbsp;|&nbsp; gtf1.com.br</div>
                                 <div style="display:grid; gap:6px; margin-bottom:18px;">
-                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Assistência de Mira com IA</div>
-                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Anti-Recoil Automático</div>
-                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Rastreamento Constante</div>
-                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Curva Cubic Bezier</div>
-                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Detecção: Closest to Center Screen</div>
-                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Ajuste Pixel a Pixel do ponto de mira</div>
+                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Assist ncia de Mira com IA</div>
+                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Anti-Recoil Autom tico</div>
+                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Rastreamento Constante</div>
+                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Curva Cubic Bezier</div>
+                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Detec  o: Closest to Center Screen</div>
+                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Ajuste Pixel a Pixel do ponto de mira</div>
                                 </div>
                                 <div style="background:rgba(255,0,0,0.08); border-left:3px solid #ff0000; padding:8px 12px; border-radius:0 6px 6px 0; margin-bottom:12px; font-size:11px; color:#aaa;">
-                                    <strong style="color:#ff0000;">🔧 REQUISITOS MÍNIMOS:</strong><br>
-                                    <span style="color:#ccc;">▸ Ryzen 5 5600 + RTX 3060 Ti ou NVIDIA superior</span><br>
-                                    <span style="color:#ccc;">▸ i5 12400F + RTX 3060 Ti ou NVIDIA superior</span>
+                                    <strong style="color:#ff0000;">?? REQUISITOS M NIMOS:</strong><br>
+                                    <span style="color:#ccc;">? Ryzen 5 5600 + RTX 3060 Ti ou NVIDIA superior</span><br>
+                                    <span style="color:#ccc;">? i5 12400F + RTX 3060 Ti ou NVIDIA superior</span>
                                 </div>
                                 <div style="text-align:center; background:rgba(0,0,0,0.4); border-radius:10px; padding:15px; border:1px solid rgba(13,71,161,0.4);">
                                     <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-bottom:14px;">
                                         <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:8px 14px;">
-                                            <div style="color:#0d47a1; font-size:10px; font-weight:bold;">🧪 TESTE 12H</div>
+                                            <div style="color:#0d47a1; font-size:10px; font-weight:bold;">?? TESTE 12H</div>
                                             <div style="color:#fff; font-size:16px; font-weight:900;">R$12</div>
                                         </div>
                                         <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:8px 14px;">
-                                            <div style="color:#0d47a1; font-size:10px; font-weight:bold;">📅 1 SEMANA</div>
+                                            <div style="color:#0d47a1; font-size:10px; font-weight:bold;">?? 1 SEMANA</div>
                                             <div style="color:#fff; font-size:16px; font-weight:900;">R$55</div>
                                         </div>
                                         <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:8px 14px;">
-                                            <div style="color:#0d47a1; font-size:10px; font-weight:bold;">📅 15 DIAS</div>
+                                            <div style="color:#0d47a1; font-size:10px; font-weight:bold;">?? 15 DIAS</div>
                                             <div style="color:#fff; font-size:16px; font-weight:900;">R$80</div>
                                         </div>
                                         <div style="background:rgba(13,71,161,0.3); border:1px solid #25d366; border-radius:8px; padding:8px 14px;">
-                                            <div style="color:#25d366; font-size:10px; font-weight:bold;">📅 MENSAL</div>
+                                            <div style="color:#25d366; font-size:10px; font-weight:bold;">?? MENSAL</div>
                                             <div style="color:#fff; font-size:16px; font-weight:900;">R$120</div>
                                         </div>
                                         <div style="background:rgba(255,215,0,0.15); border:1px solid #ffd700; border-radius:8px; padding:8px 14px;">
-                                            <div style="color:#ffd700; font-size:10px; font-weight:bold;">♾️ VITALÍCIO</div>
+                                            <div style="color:#ffd700; font-size:10px; font-weight:bold;">?? VITAL CIO</div>
                                             <div style="color:#fff; font-size:16px; font-weight:900;">R$450</div>
                                         </div>
                                     </div>
-                                    <div style="color:#25d366; font-size:16px; font-weight:bold; margin-bottom:12px;">💬 Nos procure no WhatsApp ou Discord</div>
+                                    <div style="color:#25d366; font-size:16px; font-weight:bold; margin-bottom:12px;">?? Nos procure no WhatsApp ou Discord</div>
                                     <a href="https://chat.whatsapp.com/0s5QrMWAJIB6lTzoDt8ilv" target="_blank"
                                         style="display:block; background:linear-gradient(135deg,#25d366,#1da851); color:#fff; text-decoration:none; padding:12px 20px; border-radius:8px; font-weight:900; font-size:14px; letter-spacing:2px; box-shadow:0 0 20px rgba(37,211,102,0.4);">
-                                        📲 COMPRAR VIA WHATSAPP
+                                        ?? COMPRAR VIA WHATSAPP
                                     </a>
-                                    <div style="color:#555; font-size:10px; margin-top:8px;">🔒 Pagamento seguro &nbsp;|&nbsp; Suporte 24h</div>
+                                    <div style="color:#555; font-size:10px; margin-top:8px;">?? Pagamento seguro &nbsp;|&nbsp; Suporte 24h</div>
                                 </div>
                             </div>
                         </div>
@@ -638,30 +638,30 @@
                 </div>
 
                 <div style="margin-top:40px; border-top:1px solid #333; padding-top:30px;">
-                    <h2 style="color: #25d366; text-align: center; font-size: 32px; text-transform: uppercase; letter-spacing: 3px;">📥 COMO FUNCIONA O DOWNLOAD VIP</h2>
+                    <h2 style="color: #25d366; text-align: center; font-size: 32px; text-transform: uppercase; letter-spacing: 3px;">?? COMO FUNCIONA O DOWNLOAD VIP</h2>
                     <p style="color:#aaa; font-size:14px; text-align:center; margin-bottom:25px;">Veja como e facil ter acesso ao Aimbot GTF1</p>
 
                     <div class="card" style="text-align:left;">
                         <h3 style="color:#0d47a1; text-transform:uppercase; margin-bottom:15px;">1. ESCOLHA SEU PLANO</h3>
                         <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin:15px 0;">
                             <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:12px 18px; text-align:center; min-width:120px;">
-                                <div style="color:#0d47a1; font-size:10px; font-weight:bold;">🧪 TESTE 12H</div>
+                                <div style="color:#0d47a1; font-size:10px; font-weight:bold;">?? TESTE 12H</div>
                                 <div style="color:#fff; font-size:18px; font-weight:900;">R$12</div>
                             </div>
                             <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:12px 18px; text-align:center; min-width:120px;">
-                                <div style="color:#0d47a1; font-size:10px; font-weight:bold;">📅 1 SEMANA</div>
+                                <div style="color:#0d47a1; font-size:10px; font-weight:bold;">?? 1 SEMANA</div>
                                 <div style="color:#fff; font-size:18px; font-weight:900;">R$55</div>
                             </div>
                             <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:12px 18px; text-align:center; min-width:120px;">
-                                <div style="color:#0d47a1; font-size:10px; font-weight:bold;">📅 15 DIAS</div>
+                                <div style="color:#0d47a1; font-size:10px; font-weight:bold;">?? 15 DIAS</div>
                                 <div style="color:#fff; font-size:18px; font-weight:900;">R$80</div>
                             </div>
                             <div style="background:rgba(13,71,161,0.3); border:1px solid #25d366; border-radius:8px; padding:12px 18px; text-align:center; min-width:120px;">
-                                <div style="color:#25d366; font-size:10px; font-weight:bold;">📅 MENSAL</div>
+                                <div style="color:#25d366; font-size:10px; font-weight:bold;">?? MENSAL</div>
                                 <div style="color:#fff; font-size:18px; font-weight:900;">R$120</div>
                             </div>
                             <div style="background:rgba(255,215,0,0.15); border:1px solid #ffd700; border-radius:8px; padding:12px 18px; text-align:center; min-width:120px;">
-                                <div style="color:#ffd700; font-size:10px; font-weight:bold;">♾️ VITALÍCIO</div>
+                                <div style="color:#ffd700; font-size:10px; font-weight:bold;">?? VITAL CIO</div>
                                 <div style="color:#fff; font-size:18px; font-weight:900;">R$450</div>
                             </div>
                         </div>
@@ -669,8 +669,8 @@
                         <h3 style="color:#0d47a1; text-transform:uppercase; margin-top:25px;">2. FACA SEU CADASTRO</h3>
                         <p style="color:#ccc; font-size:13px;">Preencha seus dados na aba <b style="color:#25d366;">Cadastro VIP</b> ou entre em contato conosco pelo WhatsApp ou Discord.</p>
                         <div style="display:flex; gap:12px; flex-wrap:wrap; margin:10px 0;">
-                            <a href="https://wa.me/5527998845090" target="_blank" style="background:#25d366; color:#fff; padding:12px 25px; border-radius:8px; text-decoration:none; font-weight:bold; display:inline-flex; align-items:center; gap:8px;">📲 FALAR NO WHATSAPP</a>
-                            <a href="https://discord.gg/h85n2Fy2FK" target="_blank" style="background:#7289da; color:#fff; padding:12px 25px; border-radius:8px; text-decoration:none; font-weight:bold; display:inline-flex; align-items:center; gap:8px;">💬 DISCORD</a>
+                            <a href="https://wa.me/5527998845090" target="_blank" style="background:#25d366; color:#fff; padding:12px 25px; border-radius:8px; text-decoration:none; font-weight:bold; display:inline-flex; align-items:center; gap:8px;">?? FALAR NO WHATSAPP</a>
+                            <a href="https://discord.gg/h85n2Fy2FK" target="_blank" style="background:#7289da; color:#fff; padding:12px 25px; border-radius:8px; text-decoration:none; font-weight:bold; display:inline-flex; align-items:center; gap:8px;">?? DISCORD</a>
                         </div>
 
                         <h3 style="color:#0d47a1; text-transform:uppercase; margin-top:25px;">3. PAGAMENTO E LIBERACAO</h3>
@@ -694,10 +694,10 @@
                                 <span style="background:#ff0000; color:#fff; font-size:10px; font-weight:bold; padding:3px 10px; border-radius:4px;">OBRIGATORIO</span>
                                 <span style="color:#aaa; font-size:12px;">Para quem esta instalando pela primeira vez</span>
                             </div>
-                            <h4 style="color:#ff0000; margin:0 0 5px 0;">📦 REQUISITOS DE INSTALACAO (~3.9 GB)</h4>
+                            <h4 style="color:#ff0000; margin:0 0 5px 0;">?? REQUISITOS DE INSTALACAO (~3.9 GB)</h4>
                             <p style="color:#ccc; font-size:13px; margin:0;">
                                 Baixe o pacote completo com <b style="color:#fff;">VC++ Redist, .NET 8.0, CUDA 12.6, ViGEm e Logitech G Hub</b>.
-                                Execute como Administrador e <b style="color:#ff0000;">nao feche a janela</b> — ele instala tudo
+                                Execute como Administrador e <b style="color:#ff0000;">nao feche a janela</b>   ele instala tudo
                                 automaticamente (requisitos + programa). So precisa baixar uma vez.
                             </p>
                         </div>
@@ -708,22 +708,22 @@
                                 <span style="background:#25d366; color:#000; font-size:10px; font-weight:bold; padding:3px 10px; border-radius:4px;">ATUALIZACAO</span>
                                 <span style="color:#aaa; font-size:12px;">Para quem ja tem os requisitos instalados</span>
                             </div>
-                            <h4 style="color:#25d366; margin:0 0 5px 0;">🎯 PROGRAMA AIMBOT GTF1 (~645 MB)</h4>
+                            <h4 style="color:#25d366; margin:0 0 5px 0;">?? PROGRAMA AIMBOT GTF1 (~662 MB)</h4>
                             <p style="color:#ccc; font-size:13px; margin:0;">
                                 Apenas o executavel do Aimbot GTF1. Para quem ja instalou os requisitos anteriormente e quer apenas baixar a versao mais recente ou reinstalar o programa.
                             </p>
                                 <div style="margin-top:10px; background:rgba(0,0,0,0.3); border-radius:8px; padding:12px;">
-                                    <div style="color:#aaa; font-size:12px; margin-bottom:6px;">▸ Arquivo: GTF1_AimBot_Instalador.exe</div>
-                                    <div style="color:#aaa; font-size:12px; margin-bottom:6px;">▸ Tamanho: ~645 MB</div>
-                                    <div style="color:#aaa; font-size:12px; margin-bottom:12px;">▸ Apenas o programa (sem requisitos)</div>
+                                    <div style="color:#aaa; font-size:12px; margin-bottom:6px;">? Arquivo: GTF1_AimBot_Instalador.exe</div>
+                                    <div style="color:#aaa; font-size:12px; margin-bottom:6px;">? Tamanho: ~662 MB</div>
+                                    <div style="color:#aaa; font-size:12px; margin-bottom:12px;">? Apenas o programa (sem requisitos)</div>
                                     <div style="background:rgba(255,215,0,0.1); border:1px dashed #ffd700; border-radius:8px; padding:10px 15px; text-align:center; color:#ffd700; font-weight:bold; font-size:13px;">
-                                        🔒 ACESSO EXCLUSIVO: Va ate a aba <b style="color:#fff;">Download VIP</b> para baixar
+                                        ?? ACESSO EXCLUSIVO: Va ate a aba <b style="color:#fff;">Download VIP</b> para baixar
                                     </div>
                                 </div>
                         </div>
 
                         <div style="margin-top:15px; background:rgba(255,215,0,0.08); border-left:4px solid #ffd700; padding:12px 15px; border-radius:0 8px 8px 0; font-size:12px; color:#aaa;">
-                            <b style="color:#ffd700;">⚠ LEMBRETE:</b> Ambos os arquivos sao auto-extratores (SFX) — 
+                            <b style="color:#ffd700;">? LEMBRETE:</b> Ambos os arquivos sao auto-extratores (SFX)   
                             basta clicar duas vezes que eles fazem tudo sozinhos. Nao precisa de conhecimentos tecnicos.
                         </div>
                     </div>
@@ -731,15 +731,15 @@
 
                 <div style="margin-top:40px; border-top:1px solid #333; padding-top:30px;">
                                         <div style="border-left:5px solid #0d47a1; padding-left:20px; margin-bottom:25px;">
-                        <h2 style="color:#0d47a1; font-size:42px; margin:0; font-family:'Arial Black'; text-transform:uppercase; letter-spacing:2px;">A História do GTF1</h2>
-                        <p style="color:#aac4e0; font-size:16px; margin:8px 0 0 0; font-weight:bold;">Onde tudo começou! Clã desde 2017! Entenda a história!</p>
+                        <h2 style="color:#0d47a1; font-size:42px; margin:0; font-family:'Arial Black'; text-transform:uppercase; letter-spacing:2px;">A Hist ria do GTF1</h2>
+                        <p style="color:#aac4e0; font-size:16px; margin:8px 0 0 0; font-weight:bold;">Onde tudo come ou! Cl  desde 2017! Entenda a hist ria!</p>
                     </div>
                 <div class="history-text">
-                    O clã <span class="highlight">GATON FORCE [GTF1]</span> não é apenas um grupo de jogadores, é uma irmandade forjada no aço desde 2017. Tudo começou no campo de batalha de Battlefield 1, fundado pela visão estratégica de <span class="highlight">MATA RATOS</span> e pela liderança inquestionável de <span class="highlight">Rodrigo Marinho</span>. 
+                    O cl  <span class="highlight">GATON FORCE [GTF1]</span> n o   apenas um grupo de jogadores,   uma irmandade forjada no a o desde 2017. Tudo come ou no campo de batalha de Battlefield 1, fundado pela vis o estrat gica de <span class="highlight">MATA RATOS</span> e pela lideran a inquestion vel de <span class="highlight">Rodrigo Marinho</span>. 
                     <br><br>
-                    Em pouco tempo, o clã alcançou o feito histórico de ser o <span class="highlight">Número #1 na Liga Beta do BF1</span> mundialmente. Nossa tradição carrega o peso dos soldados das grandes guerras que usavam o símbolo do esquadrão de gatos em suas fardas como prova de agilidade e precisão letal. 
+                    Em pouco tempo, o cl  alcan ou o feito hist rico de ser o <span class="highlight">N mero #1 na Liga Beta do BF1</span> mundialmente. Nossa tradi  o carrega o peso dos soldados das grandes guerras que usavam o s mbolo do esquadr o de gatos em suas fardas como prova de agilidade e precis o letal. 
                     <br><br>
-                    Desde 2019, o GTF1 expandiu seu domínio para o Call of Duty, sob o comando rígido e profissional do <span class="highlight">CAPITÃO PÁTRIA</span>. Aqui, a lealdade é o nosso maior calibre. Somos amados por poucos, odiados por muitos, mas respeitados por todos.
+                    Desde 2019, o GTF1 expandiu seu dom nio para o Call of Duty, sob o comando r gido e profissional do <span class="highlight">CAPIT O P TRIA</span>. Aqui, a lealdade   o nosso maior calibre. Somos amados por poucos, odiados por muitos, mas respeitados por todos.
                 </div>
                 </div>
 
@@ -748,11 +748,11 @@
                 <!-- DESTAQUE TIKTOK - REDE SOCIAL PRINCIPAL -->
                 <div style="background:linear-gradient(135deg,#010101 0%,#1a1a2e 100%); border:2px solid #ff0050; border-radius:16px; padding:20px 30px; margin:30px auto 10px auto; max-width:700px; text-align:center; box-shadow:0 0 30px rgba(255,0,80,0.3);">
                     <div style="display:flex; align-items:center; gap:16px; justify-content:center; flex-wrap:wrap;">
-                        <span style="font-size:42px;">🎵</span>
+                        <span style="font-size:42px;">??</span>
                         <div style="text-align:left;">
                             <div style="color:#ff0050; font-size:10px; font-weight:bold; letter-spacing:4px; text-transform:uppercase;">REDE SOCIAL PRINCIPAL</div>
                             <div style="font-size:28px; font-weight:900; color:#fff; font-family:'Arial Black'; line-height:1.2; background:linear-gradient(90deg,#00f2ea,#ff0050); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">TIKTOK</div>
-                            <div style="color:#ccc; font-size:12px; margin-top:4px;">Nosso foco principal no momento. <span style="color:#ff0050; font-weight:bold;">Todo conteúdo novo saindo por lá!</span></div>
+                            <div style="color:#ccc; font-size:12px; margin-top:4px;">Nosso foco principal no momento. <span style="color:#ff0050; font-weight:bold;">Todo conte do novo saindo por l !</span></div>
                         </div>
                     </div>
                 </div>
@@ -782,11 +782,11 @@
             <div class="card">
                 <h2 style="color: #ff0000; font-size: 32px; text-transform: uppercase;">Estatuto de Conduta Profissional</h2>
                 <div class="rules-grid">
-                    <div class="rule-card"><h3>1. Racismo Zero</h3>O clã proíbe qualquer ato de discriminação. Banimento imediato.</div>
-                    <div class="rule-card"><h3>2. Sem Homofobia</h3>Respeito máximo a todas as orientações. O preconceito não tem lugar no front.</div>
-                    <div class="rule-card"><h3>3. Lealdade à Tag</h3>O uso da tag [GTF1] é obrigatório em treinos e campeonatos oficiais.</div>
-                    <div class="rule-card"><h3>4. Apoio às Redes</h3>Todo membro deve interagir, curtir e comentar nos canais oficiais.</div>
-                    <div class="rule-card"><h3>5. Hierarquia</h3>As ordens do Comando são soberanas durante as operações.</div>
+                    <div class="rule-card"><h3>1. Racismo Zero</h3>O cl  pro be qualquer ato de discrimina  o. Banimento imediato.</div>
+                    <div class="rule-card"><h3>2. Sem Homofobia</h3>Respeito m ximo a todas as orienta  es. O preconceito n o tem lugar no front.</div>
+                    <div class="rule-card"><h3>3. Lealdade   Tag</h3>O uso da tag [GTF1]   obrigat rio em treinos e campeonatos oficiais.</div>
+                    <div class="rule-card"><h3>4. Apoio  s Redes</h3>Todo membro deve interagir, curtir e comentar nos canais oficiais.</div>
+                    <div class="rule-card"><h3>5. Hierarquia</h3>As ordens do Comando s o soberanas durante as opera  es.</div>
                     <div class="rule-card"><h3>6. Honestidade</h3>A habilidade deve ser real e transparente. Honre a tag que carrega.</div>
                 </div>
             </div>
@@ -794,17 +794,17 @@
 
                 <div id="loja" class="page-content">
             <div class="card">
-                <h2 style="color:#0d47a1; font-size:28px; letter-spacing:3px;">🛒 LOJA VIRTUAL GTF1</h2>
-                <p style="color:#aaa; font-size:14px; margin-bottom:25px;">Produtos exclusivos do Clã GATON FORCE</p>
+                <h2 style="color:#0d47a1; font-size:28px; letter-spacing:3px;">?? LOJA VIRTUAL GTF1</h2>
+                <p style="color:#aaa; font-size:14px; margin-bottom:25px;">Produtos exclusivos do Cl  GATON FORCE</p>
 
                 <div style="background:linear-gradient(135deg,#0a0a1a,#0d1b3e,#0a0a1a); border:2px solid #0d47a1; border-radius:15px; overflow:hidden; margin-bottom:25px; box-shadow:0 0 40px rgba(13,71,161,0.5);">
                     <div style="background:linear-gradient(90deg,#ff0000,#cc0000); padding:8px 20px; text-align:center;">
-                        <span style="color:#fff; font-weight:bold; font-size:13px; letter-spacing:3px;">PRODUTO DESTAQUE — AIMBOT GTF1</span>
+                        <span style="color:#fff; font-weight:bold; font-size:13px; letter-spacing:3px;">PRODUTO DESTAQUE   AIMBOT GTF1</span>
                     </div>
                     <div style="display:flex; flex-wrap:wrap; align-items:center; gap:30px; padding:35px;">
                         <div style="flex:1; min-width:280px; text-align:center;">
                             <div style="width:220px; height:220px; background:linear-gradient(135deg,#0d47a1,#1a237e); border-radius:20px; margin:auto; display:flex; align-items:center; justify-content:center; border:2px solid #25d366; box-shadow:0 0 30px rgba(13,71,161,0.6);">
-                                <span style="font-size:80px;">🎯</span>
+                                <span style="font-size:80px;">??</span>
                             </div>
                         </div>
                         <div style="flex:1; min-width:260px; text-align:left;">
@@ -812,34 +812,34 @@
                             <h2 style="color:#fff; font-size:32px; font-family:'Arial Black'; margin:0 0 5px 0;">AIMBOT GTF1</h2>
                             <div style="color:#aaa; font-size:13px; margin-bottom:15px;">by <b style="color:#0d47a1;">GATON FORCE</b> &nbsp;|&nbsp; v.6 &nbsp;|&nbsp; gtf1.com.br</div>
                             <div style="display:grid; gap:6px; margin-bottom:15px;">
-                                <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Assistência de Mira com IA</div>
-                                <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Anti-Recoil Automático</div>
-                                <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Rastreamento Constante de Alvos</div>
-                                <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Mira Fixada (Bone Lock)</div>
-                                <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Movimento: Mouse Event + Cubic Bezier</div>
-                                <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Detecção: Closest to Center Screen</div>
-                                <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Ajuste Pixel a Pixel do ponto de mira (X/Y)</div>
-                                <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> COD | BF | CS2 | Valorant | PUBG | Apex</div>
+                                <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Assist ncia de Mira com IA</div>
+                                <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Anti-Recoil Autom tico</div>
+                                <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Rastreamento Constante de Alvos</div>
+                                <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Mira Fixada (Bone Lock)</div>
+                                <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Movimento: Mouse Event + Cubic Bezier</div>
+                                <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Detec  o: Closest to Center Screen</div>
+                                <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> Ajuste Pixel a Pixel do ponto de mira (X/Y)</div>
+                                <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">?</span> COD | BF | CS2 | Valorant | PUBG | Apex</div>
                             </div>
                                                         <div style="display:flex; gap:8px; justify-content:flex-start; flex-wrap:wrap; margin:15px 0;">
                                 <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:8px 14px; text-align:center;">
-                                    <div style="color:#0d47a1; font-size:10px; font-weight:bold;">🧪 TESTE 12H</div>
+                                    <div style="color:#0d47a1; font-size:10px; font-weight:bold;">?? TESTE 12H</div>
                                     <div style="color:#fff; font-size:16px; font-weight:900;">R$12</div>
                                 </div>
                                 <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:8px 14px; text-align:center;">
-                                    <div style="color:#0d47a1; font-size:10px; font-weight:bold;">📅 1 SEMANA</div>
+                                    <div style="color:#0d47a1; font-size:10px; font-weight:bold;">?? 1 SEMANA</div>
                                     <div style="color:#fff; font-size:16px; font-weight:900;">R$55</div>
                                 </div>
                                 <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:8px 14px; text-align:center;">
-                                    <div style="color:#0d47a1; font-size:10px; font-weight:bold;">📅 15 DIAS</div>
+                                    <div style="color:#0d47a1; font-size:10px; font-weight:bold;">?? 15 DIAS</div>
                                     <div style="color:#fff; font-size:16px; font-weight:900;">R$80</div>
                                 </div>
                                 <div style="background:rgba(13,71,161,0.3); border:1px solid #25d366; border-radius:8px; padding:8px 14px; text-align:center;">
-                                    <div style="color:#25d366; font-size:10px; font-weight:bold;">📅 MENSAL</div>
+                                    <div style="color:#25d366; font-size:10px; font-weight:bold;">?? MENSAL</div>
                                     <div style="color:#fff; font-size:16px; font-weight:900;">R$120</div>
                                 </div>
                                 <div style="background:rgba(255,215,0,0.15); border:1px solid #ffd700; border-radius:8px; padding:8px 14px; text-align:center;">
-                                    <div style="color:#ffd700; font-size:10px; font-weight:bold;">♾️ VITALÍCIO</div>
+                                    <div style="color:#ffd700; font-size:10px; font-weight:bold;">?? VITAL CIO</div>
                                     <div style="color:#fff; font-size:16px; font-weight:900;">R$450</div>
                                 </div>
                             </div>
@@ -852,8 +852,8 @@
 
                 <!-- COMO COMPRAR -->
                 <div style="border-top:2px solid #0d47a1; padding-top:25px;">
-                    <h2 style="color:#25d366; text-align:center; font-size:26px; letter-spacing:2px; margin-bottom:5px;">📋 COMO COMPRAR</h2>
-                    <p style="color:#aaa; font-size:13px; text-align:center; margin-bottom:20px;">Processo simples e rápido — sua senha liberada em até 24h</p>
+                    <h2 style="color:#25d366; text-align:center; font-size:26px; letter-spacing:2px; margin-bottom:5px;">?? COMO COMPRAR</h2>
+                    <p style="color:#aaa; font-size:13px; text-align:center; margin-bottom:20px;">Processo simples e r pido   sua senha liberada em at  24h</p>
 
                     <div style="display:grid; gap:15px; max-width:800px; margin:auto;">
                         <div style="background:rgba(13,71,161,0.1); border:1px solid #0d47a1; border-radius:10px; padding:18px 22px; text-align:left; display:flex; align-items:flex-start; gap:15px;">
@@ -874,11 +874,11 @@
                                 <h4 style="color:#fff; margin:0 0 4px 0; font-size:15px;">Entre em contato</h4>
                                 <p style="color:#ccc; font-size:13px; margin:0;">
                                     Fale conosco pelo <b style="color:#25d366;">WhatsApp</b> ou <b style="color:#7289da;">Discord</b> 
-                                    informando o plano desejado. Nossa equipe te atenderá rapidamente.
+                                    informando o plano desejado. Nossa equipe te atender  rapidamente.
                                 </p>
                                 <div style="display:flex; gap:10px; margin-top:10px;">
-                                    <a href="https://wa.me/5527998845090" target="_blank" style="background:#25d366; color:#fff; padding:8px 18px; border-radius:6px; text-decoration:none; font-weight:bold; font-size:12px;">📲 WHATSAPP</a>
-                                    <a href="https://discord.gg/h85n2Fy2FK" target="_blank" style="background:#7289da; color:#fff; padding:8px 18px; border-radius:6px; text-decoration:none; font-weight:bold; font-size:12px;">💬 DISCORD</a>
+                                    <a href="https://wa.me/5527998845090" target="_blank" style="background:#25d366; color:#fff; padding:8px 18px; border-radius:6px; text-decoration:none; font-weight:bold; font-size:12px;">?? WHATSAPP</a>
+                                    <a href="https://discord.gg/h85n2Fy2FK" target="_blank" style="background:#7289da; color:#fff; padding:8px 18px; border-radius:6px; text-decoration:none; font-weight:bold; font-size:12px;">?? DISCORD</a>
                                 </div>
                             </div>
                         </div>
@@ -909,11 +909,11 @@
 
                     <div style="margin-top:20px; background:rgba(255,215,0,0.08); border:1px solid #ffd700; border-radius:10px; padding:15px 20px; text-align:center;">
                         <p style="color:#ffd700; font-size:14px; margin:0;">
-                            💬 <b>Duvidas?</b> Nos chame no WhatsApp ou Discord — estamos prontos para te atender!
+                            ?? <b>Duvidas?</b> Nos chame no WhatsApp ou Discord   estamos prontos para te atender!
                         </p>
                         <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:12px;">
-                            <a href="https://wa.me/5527998845090" target="_blank" style="background:linear-gradient(135deg,#25d366,#1da851); color:#fff; padding:12px 28px; border-radius:8px; text-decoration:none; font-weight:900; font-size:14px;">📲 FALAR NO WHATSAPP</a>
-                            <a href="https://discord.gg/h85n2Fy2FK" target="_blank" style="background:#7289da; color:#fff; padding:12px 28px; border-radius:8px; text-decoration:none; font-weight:900; font-size:14px;">💬 ENTRAR NO DISCORD</a>
+                            <a href="https://wa.me/5527998845090" target="_blank" style="background:linear-gradient(135deg,#25d366,#1da851); color:#fff; padding:12px 28px; border-radius:8px; text-decoration:none; font-weight:900; font-size:14px;">?? FALAR NO WHATSAPP</a>
+                            <a href="https://discord.gg/h85n2Fy2FK" target="_blank" style="background:#7289da; color:#fff; padding:12px 28px; border-radius:8px; text-decoration:none; font-weight:900; font-size:14px;">?? ENTRAR NO DISCORD</a>
                         </div>
                     </div>
                 </div>
@@ -921,140 +921,140 @@
         </div>
         <div id="atualizacoes" class="page-content">
             <div class="card">
-                <h2 style="color:#0d47a1; font-size:32px; letter-spacing:3px; text-transform:uppercase;">🚀 O QUE FOI ATUALIZADO</h2>
-                <p style="color:#aaa; font-size:14px; margin-bottom:25px;">GTF1 v.6 — Novidades e melhorias do nosso software</p>
+                <h2 style="color:#0d47a1; font-size:32px; letter-spacing:3px; text-transform:uppercase;">?? O QUE FOI ATUALIZADO</h2>
+                <p style="color:#aaa; font-size:14px; margin-bottom:25px;">GTF1 v.6   Novidades e melhorias do nosso software</p>
 
                 <div style="text-align:left;">
                     <div style="background:rgba(37,211,102,0.08); border:1px solid #25d366; border-radius:10px; padding:20px; margin-bottom:20px;">
                         <div style="display:flex; align-items:center; gap:8px; margin-bottom:5px;">
                             <span style="background:#25d366; color:#000; font-size:10px; font-weight:bold; padding:3px 8px; border-radius:4px;">v.6</span>
-                            <h3 style="color:#25d366; margin:0;">🎯 NOVO MACRO AUTO ADS</h3>
+                            <h3 style="color:#25d366; margin:0;">?? NOVO MACRO AUTO ADS</h3>
                         </div>
                         <p style="color:#aaa; font-size:11px; margin:0 0 8px 0;">Atualizacao 13/08/2026</p>
                         <p style="color:#ccc; font-size:13px; margin:0; line-height:1.8;">
-                            <b style="color:#25d366;">▸ Auto ADS (Mira Automática):</b> Novo macro na aba Macro do programa. 
+                            <b style="color:#25d366;">? Auto ADS (Mira Autom tica):</b> Novo macro na aba Macro do programa. 
                             Agora, ao segurar a tecla de tiro, o aimbot mira automaticamente. 
-                            Tecla de tiro e tecla de mira são totalmente configuráveis (padrão: tiro no Botão Esquerdo e mira no SPACE).<br>
-                            <b style="color:#25d366;">▸ Controle Total:</b> Você escolhe qual tecla dispara e qual tecla mira, 
+                            Tecla de tiro e tecla de mira s o totalmente configur veis (padr o: tiro no Bot o Esquerdo e mira no SPACE).<br>
+                            <b style="color:#25d366;">? Controle Total:</b> Voc  escolhe qual tecla dispara e qual tecla mira, 
                             adaptando ao seu jeito de jogar.
                         </p>
                     </div>
 
                     <div style="background:rgba(13,71,161,0.1); border:1px solid #0d47a1; border-radius:10px; padding:20px; margin-bottom:20px;">
-                        <h3 style="color:#25d366; margin:0 0 5px 0;">🔄 ATUALIZAÇÃO v.6 — MUDANÇAS PRINCIPAIS</h3>
+                        <h3 style="color:#25d366; margin:0 0 5px 0;">?? ATUALIZA  O v.6   MUDAN AS PRINCIPAIS</h3>
                         <p style="color:#ccc; font-size:13px; margin:0;">
-                            A versão v.6 representa uma reformulação estratégica do Aimbot GTF1. 
+                            A vers o v.6 representa uma reformula  o estrat gica do Aimbot GTF1. 
                             FOCO EM PERFORMANCE, SIMPLICIDADE E AGRESSIVIDADE. 
-                            Removemos recursos que atrapalhavam o uso e adicionamos otimizações que tornam 
-                            o aimbot <b style="color:#ff0000;">mais apelão</b> e mais fácil de configurar.
+                            Removemos recursos que atrapalhavam o uso e adicionamos otimiza  es que tornam 
+                            o aimbot <b style="color:#ff0000;">mais apel o</b> e mais f cil de configurar.
                         </p>
                     </div>
 
                     <div style="background:rgba(255,0,0,0.08); border:1px solid #ff0000; border-radius:10px; padding:20px; margin-bottom:20px;">
-                        <h3 style="color:#ff0000; margin:0 0 5px 0;">🗑️ O QUE FOI REMOVIDO E POR QUÊ</h3>
+                        <h3 style="color:#ff0000; margin:0 0 5px 0;">??? O QUE FOI REMOVIDO E POR QU </h3>
                         <p style="color:#ccc; font-size:13px; margin:0; line-height:1.8;">
-                            <b style="color:#ff0000;">▸ CUDA / TensorRT / OpenVINO:</b> Mantido apenas DirectML + CPU. 
-                            90% dos usuários já usavam DirectML. Elimina erros de compatibilidade com drivers NVIDIA/Intel.<br>
-                            <b style="color:#ff0000;">▸ OCR (Reconhecimento de Texto):</b> Consumia ~200MB de RAM e causava crashes. 
+                            <b style="color:#ff0000;">? CUDA / TensorRT / OpenVINO:</b> Mantido apenas DirectML + CPU. 
+                            90% dos usu rios j  usavam DirectML. Elimina erros de compatibilidade com drivers NVIDIA/Intel.<br>
+                            <b style="color:#ff0000;">? OCR (Reconhecimento de Texto):</b> Consumia ~200MB de RAM e causava crashes. 
                             Funcionalidade de nicho removida para deixar o programa mais leve.<br>
-                            <b style="color:#ff0000;">▸ Image Sharpening:</b> Filtro de nitidez removido. Modelos ONNX modernos 
-                            não precisam de pré-processamento, economizando CPU no loop de captura.<br>
-                            <b style="color:#ff0000;">▸ 11 Perfis de Velocidade:</b> Confundiam usuários iniciantes. 
-                            Substituídos por <b style="color:#25d366;">forceMult automático baseado em distância</b> (mais intuitivo).<br>
-                            <b style="color:#ff0000;">▸ Aim Strength / Tracking Smoothness:</b> Sliders redundantes removidos. 
-                            O novo sistema de força por distância gerencia tudo automaticamente.<br>
-                            <b style="color:#ff0000;">▸ Redimensionamento Dinâmico:</b> Causava flicker na detecção. 
+                            <b style="color:#ff0000;">? Image Sharpening:</b> Filtro de nitidez removido. Modelos ONNX modernos 
+                            n o precisam de pr -processamento, economizando CPU no loop de captura.<br>
+                            <b style="color:#ff0000;">? 11 Perfis de Velocidade:</b> Confundiam usu rios iniciantes. 
+                            Substitu dos por <b style="color:#25d366;">forceMult autom tico baseado em dist ncia</b> (mais intuitivo).<br>
+                            <b style="color:#ff0000;">? Aim Strength / Tracking Smoothness:</b> Sliders redundantes removidos. 
+                            O novo sistema de for a por dist ncia gerencia tudo automaticamente.<br>
+                            <b style="color:#ff0000;">? Redimensionamento Din mico:</b> Causava flicker na detec  o. 
                             Tamanho fixo = mais estabilidade.
                         </p>
                     </div>
 
                     <div style="background:rgba(37,211,102,0.08); border:1px solid #25d366; border-radius:10px; padding:20px; margin-bottom:20px;">
-                        <h3 style="color:#25d366; margin:0 0 5px 0;">✅ O QUE FOI ADICIONADO</h3>
+                        <h3 style="color:#25d366; margin:0 0 5px 0;">? O QUE FOI ADICIONADO</h3>
                         <p style="color:#ccc; font-size:13px; margin:0; line-height:1.8;">
-                            <b style="color:#25d366;">▸ Cache de Frames DirectX (15ms):</b> Sistema inteligente que reduz em ~30% 
-                            o uso de GPU na captura de tela. Frames são cacheados por 15ms, evitando capturas redundantes.<br>
-                            <b style="color:#25d366;">▸ UI de Predições Completa:</b> Nova seção dedicada na aba AIM com 
+                            <b style="color:#25d366;">? Cache de Frames DirectX (15ms):</b> Sistema inteligente que reduz em ~30% 
+                            o uso de GPU na captura de tela. Frames s o cacheados por 15ms, evitando capturas redundantes.<br>
+                            <b style="color:#25d366;">? UI de Predi  es Completa:</b> Nova se  o dedicada na aba AIM com 
                             <b>Kalman Filter</b>, <b>Shall0e's Prediction</b> e <b>wisethef0x EMA</b>. 
-                            Sliders dinâmicos que aparecem/desaparecem conforme o método selecionado.<br>
-                            <b style="color:#25d366;">▸ Spray Mode:</b> Para armas automáticas — mantém o botão pressionado ao detectar 
-                            inimigo, em vez de cliques únicos. Essencial para rifles e SMGs.<br>
-                            <b style="color:#25d366;">▸ Cursor Check:</b> Só atira se o cursor estiver SOBRE o alvo detectado. 
-                            Evita desperdício de munição no triggerbot.<br>
-                            <b style="color:#25d366;">▸ forceMult Agressivo por Distância:</b> Mira mais forte em alvos distantes 
-                            (1.8x a +200px, 1.4x a +100px, 1.1x perto). Totalmente automático.<br>
-                            <b style="color:#25d366;">▸ Suporte a Resoluções 2K e 4K:</b> Agora o Aimbot GTF1 roda com a mesma 
-                            precisão em monitores <b>2K (2560×1440)</b> e <b>4K (3840×2160)</b>. A área de detecção se adapta 
-                            automaticamente à resolução da tela, mantendo o mesmo alcance e desempenho do 1080p — 
+                            Sliders din micos que aparecem/desaparecem conforme o m todo selecionado.<br>
+                            <b style="color:#25d366;">? Spray Mode:</b> Para armas autom ticas   mant m o bot o pressionado ao detectar 
+                            inimigo, em vez de cliques  nicos. Essencial para rifles e SMGs.<br>
+                            <b style="color:#25d366;">? Cursor Check:</b> S  atira se o cursor estiver SOBRE o alvo detectado. 
+                            Evita desperd cio de muni  o no triggerbot.<br>
+                            <b style="color:#25d366;">? forceMult Agressivo por Dist ncia:</b> Mira mais forte em alvos distantes 
+                            (1.8x a +200px, 1.4x a +100px, 1.1x perto). Totalmente autom tico.<br>
+                            <b style="color:#25d366;">? Suporte a Resolu  es 2K e 4K:</b> Agora o Aimbot GTF1 roda com a mesma 
+                            precis o em monitores <b>2K (2560 1440)</b> e <b>4K (3840 2160)</b>. A  rea de detec  o se adapta 
+                            automaticamente   resolu  o da tela, mantendo o mesmo alcance e desempenho do 1080p   
                             sem precisar configurar nada.<br>
-                            <b style="color:#25d366;">▸ Voz do Coringa Br:</b> Nova narração! Depois da fala do Capitão Pátria, o Coringa Br entra com a frase dele. Mais imersão e zoeira!<br>
-                            <b style="color:#25d366;">▸ Mira corrigida (anti-bug do chão):</b> Consertamos o bug em que a mira às vezes puxava para a arma no chão. Agora a detecção trava na cor do inimigo e ignora objetos que não são alvos.<br>
-                            <b style="color:#25d366;">▸ Suporte a Controle PS5:</b> Agora o Aimbot GTF1 funciona com o controle PS5 (DualSense), além do Xbox. Conecte e jogue!
+                            <b style="color:#25d366;">? Voz do Coringa Br:</b> Nova narra  o! Depois da fala do Capit o P tria, o Coringa Br entra com a frase dele. Mais imers o e zoeira!<br>
+                            <b style="color:#25d366;">? Mira corrigida (anti-bug do ch o):</b> Consertamos o bug em que a mira  s vezes puxava para a arma no ch o. Agora a detec  o trava na cor do inimigo e ignora objetos que n o s o alvos.<br>
+                            <b style="color:#25d366;">? Suporte a Controle PS5:</b> Agora o Aimbot GTF1 funciona com o controle PS5 (DualSense), al m do Xbox. Conecte e jogue!
                         </p>
                     </div>
 
                     <div style="background:rgba(255,215,0,0.08); border:1px solid #ffd700; border-radius:10px; padding:20px; margin-bottom:20px;">
-                        <h3 style="color:#ffd700; margin:0 0 5px 0;">⚙️ PRONTO PARA USO — CONFIGURAÇÕES PRÉ-DEFINIDAS</h3>
+                        <h3 style="color:#ffd700; margin:0 0 5px 0;">?? PRONTO PARA USO   CONFIGURA  ES PR -DEFINIDAS</h3>
                         <p style="color:#ccc; font-size:13px; margin:0; line-height:1.8;">
-                            <b style="color:#ffd700;">▸ Keybinds configurados:</b> Aim=Botão Direito, Second Aim=ALT, 
-                            Auto Trigger=Botão Direito, Tiro Rápido=XButton1, Dynamic FOV=Botão Esquerdo, 
+                            <b style="color:#ffd700;">? Keybinds configurados:</b> Aim=Bot o Direito, Second Aim=ALT, 
+                            Auto Trigger=Bot o Direito, Tiro R pido=XButton1, Dynamic FOV=Bot o Esquerdo, 
                             Emergency Stop=DELETE, Model Switch=|, Aim Toggle=PAUSE.<br>
-                            <b style="color:#ffd700;">▸ Toggles pré-ativados:</b> AIM Assist LIGADO, Constant AI Tracking LIGADO, 
+                            <b style="color:#ffd700;">? Toggles pr -ativados:</b> AIM Assist LIGADO, Constant AI Tracking LIGADO, 
                             EMA Smoothening LIGADO, Model Switch Habilitado.<br>
-                            <b style="color:#ffd700;">▸ Sliders otimizados:</b> FOV Size=500px, Mouse Sensitivity=0.50, 
+                            <b style="color:#ffd700;">? Sliders otimizados:</b> FOV Size=500px, Mouse Sensitivity=0.50, 
                             AI Min Confidence=50%, Sticky Aim Threshold=120, EMA Smoothing=0.7.<br>
-                            <b style="color:#ffd700;">▸ 100% em Português (BR):</b> Mira Cubo, Mira Recomendada, Mira Direta, 
-                            Mira Adaptativa, Mira Logarítmica.
+                            <b style="color:#ffd700;">? 100% em Portugu s (BR):</b> Mira Cubo, Mira Recomendada, Mira Direta, 
+                            Mira Adaptativa, Mira Logar tmica.
                         </p>
                     </div>
 
                     <div style="background:rgba(13,71,161,0.1); border:1px solid #0d47a1; border-radius:10px; padding:20px; margin-bottom:20px;">
-                        <h3 style="color:#0d47a1; margin:0 0 5px 0;">📊 COMPARAÇÃO v5.0 vs v.6</h3>
+                        <h3 style="color:#0d47a1; margin:0 0 5px 0;">?? COMPARA  O v5.0 vs v.6</h3>
                         <p style="color:#ccc; font-size:13px; margin:0; line-height:1.8;">
-                            <b style="color:#fff;">Backends IA:</b> 6 (CUDA/TensorRT/OpenVINO/etc) → 2 (DirectML+CPU)<br>
-                            <b style="color:#fff;">Memória RAM:</b> ~350MB → ~200MB (-43% mais leve)<br>
-                            <b style="color:#fff;">GPU Captura:</b> Alta → ~30% menor (cache de frames)<br>
-                            <b style="color:#fff;">Config Inicial:</b> Manual (tudo desligado) → Pronto para uso<br>
-                            <b style="color:#fff;">Idioma UI:</b> EN/PT misto → 100% PT-BR<br>
+                            <b style="color:#fff;">Backends IA:</b> 6 (CUDA/TensorRT/OpenVINO/etc) ? 2 (DirectML+CPU)<br>
+                            <b style="color:#fff;">Mem ria RAM:</b> ~350MB ? ~200MB (-43% mais leve)<br>
+                            <b style="color:#fff;">GPU Captura:</b> Alta ? ~30% menor (cache de frames)<br>
+                            <b style="color:#fff;">Config Inicial:</b> Manual (tudo desligado) ? Pronto para uso<br>
+                            <b style="color:#fff;">Idioma UI:</b> EN/PT misto ? 100% PT-BR<br>
                             <b style="color:#fff;">Tamanho Instalador:</b> ~650MB
                         </p>
                     </div>
 
                     <div style="background:rgba(13,71,161,0.1); border:1px solid #0d47a1; border-radius:10px; padding:20px; margin-bottom:10px;">
-                        <h3 style="color:#ff0000; margin:0 0 5px 0;">🎯 LEGADO DA v5.0 (MANTIDO)</h3>
+                        <h3 style="color:#ff0000; margin:0 0 5px 0;">?? LEGADO DA v5.0 (MANTIDO)</h3>
                         <p style="color:#ccc; font-size:13px; margin:0; line-height:1.8;">
-                            Suporte completo a múltiplos monitores. Seletor de display para escolher 
-                            em qual tela capturar e mirar. Detecta automaticamente mudanças de resolução.
+                            Suporte completo a m ltiplos monitores. Seletor de display para escolher 
+                            em qual tela capturar e mirar. Detecta automaticamente mudan as de resolu  o.
                         </p>
                     </div>
 
                     <div style="background:rgba(37,211,102,0.08); border:1px solid #25d366; border-radius:10px; padding:20px; margin-bottom:20px;">
                         <div style="display:flex; align-items:center; gap:8px; margin-bottom:5px;">
                             <span style="background:#25d366; color:#000; font-size:10px; font-weight:bold; padding:3px 8px; border-radius:4px;">v.6</span>
-                            <h3 style="color:#25d366; margin:0;">🔥 AIMBOT MAIS APELÃO — RELATÓRIO TÉCNICO</h3>
+                            <h3 style="color:#25d366; margin:0;">?? AIMBOT MAIS APEL O   RELAT RIO T CNICO</h3>
                         </div>
                         <p style="color:#aaa; font-size:11px; margin:0 0 8px 0;">Atualizacao 28/07/2026</p>
                         <p style="color:#ccc; font-size:13px; margin:0; line-height:1.8;">
-                            <b style="color:#25d366;">▸ DirectML Otimizado:</b> Cache de frames com timeout de 15ms reduz capturas 
-                            redundantes. O frame é reutilizado enquanto a IA processa, resultando em ~30% menos 
-                            uso de GPU e menor latência de detecção.<br>
-                            <b style="color:#25d366;">▸ forceMult Automático por Distância:</b> Alvos a +200px recebem 
-                            multiplicador 1.8x, alvos a +100px recebem 1.4x e alvos próximos 1.1x. Mira mais 
-                            forte em alvos distantes sem sacrificar precisão em curta distância.<br>
-                            <b style="color:#25d366;">▸ Predição Multi-Método:</b> Três sistemas de predição integrados — 
-                            Kalman Filter (rastreamento preciso), Shall0e V2 (média de velocidade com 
-                            multiplicador ajustável) e wisethef0x EMA (média exponencial móvel). 
+                            <b style="color:#25d366;">? DirectML Otimizado:</b> Cache de frames com timeout de 15ms reduz capturas 
+                            redundantes. O frame   reutilizado enquanto a IA processa, resultando em ~30% menos 
+                            uso de GPU e menor lat ncia de detec  o.<br>
+                            <b style="color:#25d366;">? forceMult Autom tico por Dist ncia:</b> Alvos a +200px recebem 
+                            multiplicador 1.8x, alvos a +100px recebem 1.4x e alvos pr ximos 1.1x. Mira mais 
+                            forte em alvos distantes sem sacrificar precis o em curta dist ncia.<br>
+                            <b style="color:#25d366;">? Predi  o Multi-M todo:</b> Tr s sistemas de predi  o integrados   
+                            Kalman Filter (rastreamento preciso), Shall0e V2 (m dia de velocidade com 
+                            multiplicador ajust vel) e wisethef0x EMA (m dia exponencial m vel). 
                             Cada um com sliders dedicados na interface.<br>
-                            <b style="color:#25d366;">▸ Spray Mode + Cursor Check:</b> Controle total de disparo. 
-                            Spray Mode mantém o botão pressionado em armas automáticas. Cursor Check 
-                            só atira quando o cursor está sobre o alvo detectado.<br>
-                            <b style="color:#25d366;">▸ Zero Config:</b> Keybinds, toggles e sliders pré-configurados 
+                            <b style="color:#25d366;">? Spray Mode + Cursor Check:</b> Controle total de disparo. 
+                            Spray Mode mant m o bot o pressionado em armas autom ticas. Cursor Check 
+                            s  atira quando o cursor est  sobre o alvo detectado.<br>
+                            <b style="color:#25d366;">? Zero Config:</b> Keybinds, toggles e sliders pr -configurados 
                             para uso imediato. Basta baixar, fazer login e jogar.
                         </p>
                     </div>
 
                     <div style="background:rgba(0,0,0,0.3); border-left:4px solid #ff0000; padding:15px; border-radius:0 8px 8px 0; margin-top:15px;">
                         <p style="color:#aaa; font-size:12px; margin:0;">
-                            <b style="color:#ff0000;">BUILD v.6</b> — Baseado em .NET 8.0. DirectML + CPU. 
+                            <b style="color:#ff0000;">BUILD v.6</b>   Baseado em .NET 8.0. DirectML + CPU. 
                             Desenvolvido por <b style="color:#fff;">GTF1</b>, <b style="color:#fff;">Coringa Br</b> e <b style="color:#fff;">Capitao Patria</b>.
                         </p>
                     </div>
@@ -1078,10 +1078,10 @@
 
         <div id="xcla" class="page-content">
             <div class="card">
-                <h2 style="color: #0d47a1;">MARCAR X-CLÃ</h2>
+                <h2 style="color: #0d47a1;">MARCAR X-CL </h2>
                 <form action="https://formsubmit.co/danieljonata@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="NOVO DESAFIO DE X-CLÃ!">
-                    <input type="text" name="cla" class="gtf-input" placeholder="NOME DO SEU CLÃ" required>
+                    <input type="hidden" name="_subject" value="NOVO DESAFIO DE X-CL !">
+                    <input type="text" name="cla" class="gtf-input" placeholder="NOME DO SEU CL " required>
                     <input type="text" name="tag" class="gtf-input" placeholder="TAG" required>
                     <input type="email" name="email" class="gtf-input" placeholder="SEU E-MAIL" required>
                     <input type="text" name="whatsapp" class="gtf-input" placeholder="WHATSAPP" required>
@@ -1093,7 +1093,7 @@
         <div id="vip" class="page-content">
             <div class="card">
                 <h2>CADASTRO VIP</h2>
-                <p style="color: #25d366; font-weight: bold;">AVISO: Após o cadastro, o Comando enviará sua senha exclusiva por e-mail em até 24 horas ou menos.</p>
+                <p style="color: #25d366; font-weight: bold;">AVISO: Ap s o cadastro, o Comando enviar  sua senha exclusiva por e-mail em at  24 horas ou menos.</p>
                 <form action="https://formsubmit.co/danieljonata@gmail.com" method="POST">
                     <input type="hidden" name="CHAVE_GERADA" id="hidden_pass">
                     <input type="hidden" name="_cc" value="delightbr1g@gmail.com">
@@ -1102,36 +1102,36 @@
                     <textarea name="motivo" class="gtf-input" placeholder="MOTIVO PARA ENTRAR" style="height:80px;"></textarea>
 
                     <div style="margin:15px 0; text-align:left; max-width:500px; margin-left:auto; margin-right:auto;">
-                        <p style="color:#0d47a1; font-weight:bold; font-size:14px; margin-bottom:8px;">📋 ESCOLHA SEU PLANO:</p>
+                        <p style="color:#0d47a1; font-weight:bold; font-size:14px; margin-bottom:8px;">?? ESCOLHA SEU PLANO:</p>
                         <select name="plano" id="plano-vip" class="gtf-input" required style="cursor:pointer;">
-                            <option value="">— Selecione o plano desejado —</option>
-                            <option value="Teste 12H - R$12">🧪 TESTE 12H — R$12</option>
-                            <option value="1 Semana - R$55">📅 1 SEMANA — R$55</option>
-                            <option value="15 Dias - R$80">📅 15 DIAS — R$80</option>
-                            <option value="Mensal - R$120">📅 MENSAL — R$120</option>
-                            <option value="Vitalicio - R$450">♾️ VITALÍCIO — R$450</option>
+                            <option value="">  Selecione o plano desejado  </option>
+                            <option value="Teste 12H - R$12">?? TESTE 12H   R$12</option>
+                            <option value="1 Semana - R$55">?? 1 SEMANA   R$55</option>
+                            <option value="15 Dias - R$80">?? 15 DIAS   R$80</option>
+                            <option value="Mensal - R$120">?? MENSAL   R$120</option>
+                            <option value="Vitalicio - R$450">?? VITAL CIO   R$450</option>
                         </select>
                     </div>
 
                     <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin:15px 0 10px 0; max-width:500px; margin-left:auto; margin-right:auto;">
                         <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:6px; padding:6px 12px; text-align:center; flex:1; min-width:80px;">
-                            <div style="color:#0d47a1; font-size:9px; font-weight:bold;">🧪 TESTE 12H</div>
+                            <div style="color:#0d47a1; font-size:9px; font-weight:bold;">?? TESTE 12H</div>
                             <div style="color:#fff; font-size:14px; font-weight:900;">R$12</div>
                         </div>
                         <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:6px; padding:6px 12px; text-align:center; flex:1; min-width:80px;">
-                            <div style="color:#0d47a1; font-size:9px; font-weight:bold;">📅 1 SEMANA</div>
+                            <div style="color:#0d47a1; font-size:9px; font-weight:bold;">?? 1 SEMANA</div>
                             <div style="color:#fff; font-size:14px; font-weight:900;">R$55</div>
                         </div>
                         <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:6px; padding:6px 12px; text-align:center; flex:1; min-width:80px;">
-                            <div style="color:#0d47a1; font-size:9px; font-weight:bold;">📅 15 DIAS</div>
+                            <div style="color:#0d47a1; font-size:9px; font-weight:bold;">?? 15 DIAS</div>
                             <div style="color:#fff; font-size:14px; font-weight:900;">R$80</div>
                         </div>
                         <div style="background:rgba(13,71,161,0.3); border:1px solid #25d366; border-radius:6px; padding:6px 12px; text-align:center; flex:1; min-width:80px;">
-                            <div style="color:#25d366; font-size:9px; font-weight:bold;">📅 MENSAL</div>
+                            <div style="color:#25d366; font-size:9px; font-weight:bold;">?? MENSAL</div>
                             <div style="color:#fff; font-size:14px; font-weight:900;">R$120</div>
                         </div>
                         <div style="background:rgba(255,215,0,0.15); border:1px solid #ffd700; border-radius:6px; padding:6px 12px; text-align:center; flex:1; min-width:80px;">
-                            <div style="color:#ffd700; font-size:9px; font-weight:bold;">♾️ VITALÍCIO</div>
+                            <div style="color:#ffd700; font-size:9px; font-weight:bold;">?? VITAL CIO</div>
                             <div style="color:#fff; font-size:14px; font-weight:900;">R$450</div>
                         </div>
                     </div>
@@ -1143,11 +1143,11 @@
 
         <div id="download" class="page-content">
             <div class="card">
-                <h2 style="color:#25d366;">📥 DOWNLOAD VIP - AIMBOT GTF1</h2>
+                <h2 style="color:#25d366;">?? DOWNLOAD VIP - AIMBOT GTF1</h2>
                 <p style="color:#aaa; font-size:14px;">Bem-vindo, Soldado VIP! Sua senha foi liberada. Escolha abaixo o que deseja baixar.</p>
 
                 <div style="text-align:left; background:rgba(0,0,0,0.4); border-left:4px solid #0d47a1; padding:15px; margin-bottom:20px; border-radius:0 8px 8px 0;">
-                    <h4 style="color:#0d47a1; margin:0 0 8px 0;">🔓 ACESSO LIBERADO</h4>
+                    <h4 style="color:#0d47a1; margin:0 0 8px 0;">?? ACESSO LIBERADO</h4>
                     <p style="color:#ccc; font-size:13px; margin:0;">
                         Apos realizar o pagamento do seu plano, voce recebeu sua <b style="color:#25d366;">senha VIP</b> por email. 
                         Agora pode baixar o programa e fazer login com seu <b style="color:#fff;">email</b> e <b style="color:#fff;">senha</b>.
@@ -1160,18 +1160,18 @@
                         <span style="background:#ff0000; color:#fff; font-size:11px; font-weight:bold; padding:4px 12px; border-radius:4px;">OBRIGATORIO</span>
                         <span style="color:#aaa; font-size:12px;">Para quem esta instalando pela primeira vez</span>
                     </div>
-                    <h3 style="color:#ff0000; margin:0 0 5px 0; font-size:20px;">📦 REQUISITOS DE INSTALAÇÃO</h3>
+                    <h3 style="color:#ff0000; margin:0 0 5px 0; font-size:20px;">?? REQUISITOS DE INSTALA  O</h3>
                     <p style="color:#ccc; font-size:13px; margin-bottom:12px;">
                         Pacote completo com todos os requisitos necessarios para rodar o Aimbot GTF1.
                         <b style="color:#fff;">Baixe apenas se nunca instalou ou esta com problemas.</b>
                     </p>
                     <div style="font-size:13px; color:#aaa; margin-bottom:15px; text-align:left;">
-                        <span style="color:#ff0000;">▸</span> Arquivo: <b style="color:#fff;">GTF1-arquivos-nessarios para instalacao.exe</b><br>
-                        <span style="color:#ff0000;">▸</span> Tamanho: <b style="color:#fff;">~3.9 GB</b><br>
-                        <span style="color:#ff0000;">▸</span> Contem: VC++ Redist, .NET 8.0, CUDA 12.6, ViGEm, Logitech G Hub
+                        <span style="color:#ff0000;">?</span> Arquivo: <b style="color:#fff;">GTF1-arquivos-nessarios para instalacao.exe</b><br>
+                        <span style="color:#ff0000;">?</span> Tamanho: <b style="color:#fff;">~3.9 GB</b><br>
+                        <span style="color:#ff0000;">?</span> Contem: VC++ Redist, .NET 8.0, CUDA 12.6, ViGEm, Logitech G Hub
                     </div>
                     <a href="https://drive.usercontent.google.com/download?id=1_pvExcKTQcT6Sz5zgZa4937JeiUpKdcB&export=download&authuser=0" target="_blank" style="background:linear-gradient(135deg,#ff0000,#cc0000); color:#fff; text-decoration:none; padding:14px 30px; border-radius:8px; font-weight:900; font-size:15px; letter-spacing:1px; display:inline-block; box-shadow:0 0 20px rgba(255,0,0,0.4);">
-                        📥 BAIXAR REQUISITOS
+                        ?? BAIXAR REQUISITOS
                     </a>
                 </div>
 
@@ -1181,35 +1181,35 @@
                         <span style="background:#25d366; color:#000; font-size:11px; font-weight:bold; padding:4px 12px; border-radius:4px;">ATUALIZACAO</span>
                         <span style="color:#aaa; font-size:12px;">Para quem ja tem os requisitos instalados</span>
                     </div>
-                    <h3 style="color:#25d366; margin:0 0 5px 0; font-size:20px;">🎯 PROGRAMA AIMBOT GTF1</h3>
+                    <h3 style="color:#25d366; margin:0 0 5px 0; font-size:20px;">?? PROGRAMA AIMBOT GTF1</h3>
                     <p style="color:#ccc; font-size:13px; margin-bottom:12px;">
                         Apenas o executavel do Aimbot GTF1. <b style="color:#fff;">Para quem ja instalou os requisitos anteriormente</b>
                         e quer apenas baixar a versao mais recente ou reinstalar o programa.
                     </p>
                     <div style="font-size:13px; color:#aaa; margin-bottom:15px; text-align:left;">
-                        <span style="color:#25d366;">▸</span> Arquivo: <b style="color:#fff;">GTF1_AimBot_Instalador.exe</b><br>
-                        <span style="color:#25d366;">▸</span> Tamanho: <b style="color:#fff;">~645 MB</b><br>
-                        <span style="color:#25d366;">▸</span> Apenas o programa (sem requisitos)
+                        <span style="color:#25d366;">?</span> Arquivo: <b style="color:#fff;">GTF1_AimBot_Instalador.exe</b><br>
+                        <span style="color:#25d366;">?</span> Tamanho: <b style="color:#fff;">~662 MB</b><br>
+                        <span style="color:#25d366;">?</span> Apenas o programa (sem requisitos)
                     </div>
-                    <a href="https://drive.usercontent.google.com/download?id=1GMtvyJ01oOCmZdO24n7Et59x71Y7QROB&export=download&authuser=0" target="_blank" style="background:linear-gradient(135deg,#25d366,#1da851); color:#fff; text-decoration:none; padding:14px 30px; border-radius:8px; font-weight:900; font-size:15px; letter-spacing:1px; display:inline-block; box-shadow:0 0 20px rgba(37,211,102,0.4);">
-                        📥 BAIXAR GTF1_AimBot_Instalador.exe
+                    <a href="https://drive.usercontent.google.com/download?id=1kKNSvlYAncPM-xLfnD_yeYjJ-7UUPHF5&export=download&authuser=0" target="_blank" style="background:linear-gradient(135deg,#25d366,#1da851); color:#fff; text-decoration:none; padding:14px 30px; border-radius:8px; font-weight:900; font-size:15px; letter-spacing:1px; display:inline-block; box-shadow:0 0 20px rgba(37,211,102,0.4);">
+                        ?? BAIXAR GTF1_AimBot_Instalador.exe
                     </a>
                 </div>
 
                 <div style="margin-top:10px; border-top:1px solid #333; padding-top:20px;">
-                    <h3 style="color:#0d47a1;">📌 Como instalar e usar:</h3>
+                    <h3 style="color:#0d47a1;">?? Como instalar e usar:</h3>
                     <div style="text-align:left; color:#ccc; font-size:13px; line-height:2.2;">
-                        <b style="color:#ff0000;">🆕 PRIMEIRA VEZ (Requisitos + Programa):</b><br>
-                        1. Baixe o <b style="color:#fff;">REQUISITOS DE INSTALAÇÃO</b> (arquivo grande ~3.9 GB)<br>
+                        <b style="color:#ff0000;">?? PRIMEIRA VEZ (Requisitos + Programa):</b><br>
+                        1. Baixe o <b style="color:#fff;">REQUISITOS DE INSTALA  O</b> (arquivo grande ~3.9 GB)<br>
                         2. <b style="color:#fff;">EXECUTE</b> como Administrador (clique direito > Executar como Administrador)<br>
                         3. O instalador extrai e instala <b style="color:#fff;">TUDO automaticamente</b> (VC++, .NET, CUDA, drivers + programa)<br>
-                        4. <b style="color:#ff0000;">NAO FECHE A JANELA</b> — aguarde a instalacao completa (pode levar varios minutos)<br>
+                        4. <b style="color:#ff0000;">NAO FECHE A JANELA</b>   aguarde a instalacao completa (pode levar varios minutos)<br>
                         5. Pronto! Abra o <b style="color:#25d366;">gtf1.exe</b> e faca login com seu <b style="color:#fff;">email</b> e <b style="color:#fff;">senha VIP</b><br><br>
-                        <b style="color:#25d366;">🔄 JA TEM OS REQUISITOS? (So o Programa):</b><br>
-1. Baixe o <b style="color:#fff;">GTF1_AimBot_Instalador.exe</b> (~645 MB)<br>
+                        <b style="color:#25d366;">?? JA TEM OS REQUISITOS? (So o Programa):</b><br>
+1. Baixe o <b style="color:#fff;">GTF1_AimBot_Instalador.exe</b> (~662 MB)<br>
                          2. <b style="color:#fff;">EXECUTE</b> como Administrador (clique direito > Executar como Administrador)<br>
                          3. Pronto! Abra o programa e faca login<br><br>
-                         <b style="color:#ffd700;">⚠️ IMPORTANTE:</b> O arquivo e auto-extrator (SFX). 
+                         <b style="color:#ffd700;">?? IMPORTANTE:</b> O arquivo e auto-extrator (SFX). 
                         Basta clicar duas vezes que ele extrai tudo sozinho.
                     </div>
                 </div>
@@ -1220,8 +1220,8 @@
     <!-- MODAL ESQUECI A SENHA -->
     <div id="gtf-forgot-overlay" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:99999;display:none;align-items:center;justify-content:center;">
         <div style="background:#1e2035;border-radius:16px;width:360px;max-width:90vw;padding:28px;border:1px solid rgba(255,255,255,0.1);text-align:center;">
-            <button onclick="gtfCloseForgot()" style="float:right;background:none;border:none;color:#a0a8c0;font-size:20px;cursor:pointer;">✕</button>
-            <h3 style="color:#ff9800;margin:0 0 6px 0;">🔑 Esqueci Minha Senha</h3>
+            <button onclick="gtfCloseForgot()" style="float:right;background:none;border:none;color:#a0a8c0;font-size:20px;cursor:pointer;">?</button>
+            <h3 style="color:#ff9800;margin:0 0 6px 0;">?? Esqueci Minha Senha</h3>
             <p style="color:#a0a8c0;font-size:13px;margin-bottom:18px;">Digite seu email. Sua solicitacao sera enviada para nossa equipe.</p>
             <input type="email" id="forgot-email" placeholder="Seu email" style="width:100%;background:#11121d;border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px;color:#fff;font-size:14px;box-sizing:border-box;margin-bottom:12px;">
             <button onclick="gtfEnviarSolicitacao()" style="width:100%;background:#ff9800;color:#000;border:none;border-radius:8px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;">SOLICITAR NOVA SENHA</button>
@@ -1234,10 +1234,10 @@
             <div class="counter-box">CADASTRO VIP<span id="cnt-vip">0</span></div>
             <div class="counter-box">VISITANTES<span id="cnt-vis">0</span></div>
         </div>
-        <div class="copyright">Copyright © 2026 Desenvolvido pelo Capitao Patria todos os direitos autorais</div>
+        <div class="copyright">Copyright   2026 Desenvolvido pelo Capitao Patria todos os direitos autorais</div>
     </footer>
 <script>
-/* ── Contadores GTF1 (Firebase) ── */
+/* -- Contadores GTF1 (Firebase) -- */
 var FIREBASE_URL = 'https://gtf1-4f4be-default-rtdb.firebaseio.com';
 
 function fbGet(path) {
