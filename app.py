@@ -25,6 +25,17 @@ def firebase_patch(path, data):
     except (URLError, json.JSONDecodeError):
         return None
 
+def get_modelo_url():
+    """Retorna a URL do modelo do Google Drive salva no Firebase"""
+    dados = firebase_get('configuracao/modelo_url')
+    if dados and 'url' in dados:
+        return dados['url']
+    return None
+
+def set_modelo_url(url):
+    """Salva a URL do modelo no Firebase"""
+    firebase_patch('configuracao/modelo_url', {'url': url})
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -61,6 +72,21 @@ def cadastro_vip():
     d["vip"] = d.get("vip", 0) + 1
     firebase_patch('contadores', {"vip": d["vip"]})
     return jsonify({"vip": d["vip"]})
+
+# --- Rotas para URL do Modelo GTF1 ---
+
+@app.route('/modelo-url', methods=['GET'])
+def modelo_url():
+    url = get_modelo_url()
+    return jsonify({"url": url or ""})
+
+@app.route('/modelo-url', methods=['POST'])
+def modelo_url_update():
+    data = request.get_json()
+    if data and 'url' in data:
+        set_modelo_url(data['url'])
+        return jsonify({"status": "ok", "msg": "URL atualizada no Firebase"})
+    return jsonify({"status": "erro", "msg": "URL inválida"})
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
