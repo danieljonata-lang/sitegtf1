@@ -44,10 +44,6 @@ def set_modelo_url(url):
     Usa quote_plus para preservar: ( ) / = todos os caracteres especiais"""
     firebase_patch('configuracao/modelo_url', {'url': quote_plus(url)})
 
-# ==========================================================
-
-# --- ROTAS ORIGINAIS ---
-
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -99,8 +95,6 @@ def modelo_url_update():
         set_modelo_url(data['url'])
         return jsonify({"status": "ok", "msg": "URL atualizada no Firebase"})
     return jsonify({"status": "erro", "msg": "URL inválida"})
-
-# ==========================================================
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
