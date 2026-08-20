@@ -2,6 +2,12 @@ from flask import Flask, render_template, jsonify, request
 import json
 from urllib.request import Request, urlopen
 from urllib.error import URLError
+from urllib.parse import quote_plus, unquote_plus
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from datetime import datetime
+import random
 
 app = Flask(__name__)
 
@@ -29,12 +35,18 @@ def get_modelo_url():
     """Retorna a URL do modelo do Google Drive salva no Firebase"""
     dados = firebase_get('configuracao/modelo_url')
     if dados and 'url' in dados:
-        return dados['url']
+        # Decodifica ao carregar para garantir compatibilidade
+        return unquote_plus(dados['url'])
     return None
 
 def set_modelo_url(url):
-    """Salva a URL do modelo no Firebase"""
-    firebase_patch('configuracao/modelo_url', {'url': url})
+    """Salva a URL do modelo no Firebase (codificado para compatibilidade)
+    Usa quote_plus para preservar: ( ) / = todos os caracteres especiais"""
+    firebase_patch('configuracao/modelo_url', {'url': quote_plus(url)})
+
+# ==========================================================
+
+# --- ROTAS ORIGINAIS ---
 
 @app.route('/')
 def home():
@@ -87,6 +99,8 @@ def modelo_url_update():
         set_modelo_url(data['url'])
         return jsonify({"status": "ok", "msg": "URL atualizada no Firebase"})
     return jsonify({"status": "erro", "msg": "URL inválida"})
+
+# ==========================================================
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
