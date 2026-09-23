@@ -171,7 +171,7 @@
     document.getElementById('gtf-form').style.display = 'none';
     document.getElementById('gtf-success').style.display = 'block';
     setTimeout(function() {
-      window.open('https://wa.me/' + WHATSAPP_NUMBER + '.text=' + texto, '_blank');
+      window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + texto, '_blank');
       gtfCloseModal();
     }, 1200);
   };
