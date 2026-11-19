@@ -1,0 +1,216 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1235" width="2000" height="1235" role="img" aria-label="Guia de conexão do controle no PC via placa Makcu">
+  <defs>
+    <pattern id="carbon" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="16" height="16" fill="#080b11"/>
+      <path d="M0 0H16M0 8H16" stroke="#10151d" stroke-width="2"/>
+    </pattern>
+    <radialGradient id="glowBg" cx="50%" cy="42%" r="70%">
+      <stop offset="0%" stop-color="#12203a" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#04060a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="case" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#232833"/>
+      <stop offset="55%" stop-color="#151922"/>
+      <stop offset="100%" stop-color="#0c0f15"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1524" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#05070c" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="pcb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1c7a45"/>
+      <stop offset="55%" stop-color="#146034"/>
+      <stop offset="100%" stop-color="#0d4524"/>
+    </linearGradient>
+    <linearGradient id="whiteBand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e9edf3"/>
+    </linearGradient>
+    <filter id="glowBlue" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowOrange" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000" flood-opacity="0.55"/>
+    </filter>
+    <filter id="cableShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- fundo -->
+  <rect width="2000" height="1235" fill="url(#carbon)"/>
+  <rect width="2000" height="1235" fill="url(#glowBg)"/>
+
+  <!-- circuitos decorativos -->
+  <g fill="none" stroke-linecap="round" opacity="0.9">
+    <g stroke="#ff8a1f" filter="url(#glowOrange)" opacity="0.55">
+      <path d="M-20 250 H120 L180 190 H360" stroke-width="4"/>
+      <path d="M-20 470 H80 L150 400 H250" stroke-width="3"/>
+      <path d="M1700 60 H1830 L1890 120 H2020" stroke-width="4"/>
+      <path d="M1820 300 H1920 L1980 240" stroke-width="3"/>
+      <path d="M-20 700 H90 L150 760" stroke-width="3"/>
+    </g>
+    <g stroke="#35a7ff" filter="url(#glowBlue)" opacity="0.5">
+      <path d="M-20 120 H90 L160 190 H260" stroke-width="3"/>
+      <path d="M1750 160 H1900 L1960 220 H2020" stroke-width="4"/>
+      <path d="M1800 420 H1920 L1970 370" stroke-width="3"/>
+      <path d="M-20 980 H70 L130 920" stroke-width="3"/>
+      <path d="M1740 960 H1860 L1930 890 H2020" stroke-width="3"/>
+    </g>
+    <g fill="#ff8a1f">
+      <circle cx="360" cy="190" r="7"/><circle cx="250" cy="400" r="6"/><circle cx="150" cy="760" r="6"/>
+    </g>
+    <g fill="#35a7ff">
+      <circle cx="260" cy="190" r="6"/><circle cx="1970" cy="370" r="6"/><circle cx="130" cy="920" r="6"/>
+    </g>
+  </g>
+
+  <!-- ================= PC ================= -->
+  <g filter="url(#softShadow)">
+    <rect x="850" y="55" width="300" height="470" rx="16" fill="url(#case)" stroke="#333a47" stroke-width="4"/>
+    <rect x="884" y="82" width="232" height="416" rx="10" fill="url(#glass)" stroke="#1e2531" stroke-width="2"/>
+    <!-- fans -->
+    <g>
+      <circle cx="1000" cy="160" r="52" fill="none" stroke="#2f6fff" stroke-width="9" opacity="0.95" filter="url(#glowBlue)"/>
+      <circle cx="1000" cy="160" r="34" fill="none" stroke="#6aa4ff" stroke-width="3" opacity="0.8"/>
+      <circle cx="1000" cy="160" r="12" fill="#2f6fff" opacity="0.9"/>
+      <circle cx="1000" cy="290" r="52" fill="none" stroke="#8b5cf6" stroke-width="9" opacity="0.95" filter="url(#glowBlue)"/>
+      <circle cx="1000" cy="290" r="34" fill="none" stroke="#b794ff" stroke-width="3" opacity="0.8"/>
+      <circle cx="1000" cy="290" r="12" fill="#8b5cf6" opacity="0.9"/>
+      <circle cx="1000" cy="420" r="52" fill="none" stroke="#22d3ee" stroke-width="9" opacity="0.95" filter="url(#glowBlue)"/>
+      <circle cx="1000" cy="420" r="34" fill="none" stroke="#8ef0ff" stroke-width="3" opacity="0.8"/>
+      <circle cx="1000" cy="420" r="12" fill="#22d3ee" opacity="0.9"/>
+    </g>
+    <rect x="870" y="92" width="6" height="396" rx="3" fill="#35a7ff" opacity="0.55" filter="url(#glowBlue)"/>
+  </g>
+  <text x="1178" y="118" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="800">PC</text>
+
+  <!-- ================= CONTROLE ================= -->
+  <g filter="url(#softShadow)">
+    <path d="M188 268
+             C188 210 232 186 300 184
+             C368 186 412 210 412 268
+             C412 322 404 372 388 410
+             C376 440 352 452 328 446
+             C306 440 298 420 292 398
+             L286 376
+             H314
+             L308 398
+             C302 420 294 440 272 446
+             C248 452 224 440 212 410
+             C196 372 188 322 188 268 Z"
+          fill="#eef1f6" stroke="#c3cad6" stroke-width="4"/>
+    <rect x="248" y="228" width="104" height="52" rx="10" fill="#cfd6e2"/>
+    <circle cx="238" cy="330" r="24" fill="#aab3c2" stroke="#8e97a6" stroke-width="3"/>
+    <circle cx="238" cy="330" r="10" fill="#e8ecf3"/>
+    <circle cx="360" cy="318" r="19" fill="#aab3c2" stroke="#8e97a6" stroke-width="3"/>
+    <circle cx="360" cy="318" r="8" fill="#e8ecf3"/>
+    <path d="M282 316 h40 M302 296 v40" stroke="#8e97a6" stroke-width="7" stroke-linecap="round"/>
+    <g fill="#c3cad6">
+      <circle cx="368" cy="262" r="8"/><circle cx="386" cy="280" r="8"/>
+      <circle cx="350" cy="280" r="8"/><circle cx="368" cy="298" r="8"/>
+    </g>
+  </g>
+  <text x="430" y="500" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="800">Controle</text>
+
+  <!-- ================= PLACA ================= -->
+  <g filter="url(#softShadow)">
+    <rect x="760" y="650" width="480" height="330" rx="18" fill="url(#pcb)" stroke="#0a2e18" stroke-width="5"/>
+    <!-- trilhas -->
+    <g stroke="#3ec27a" stroke-width="2" opacity="0.55" fill="none">
+      <path d="M800 700 H900 L940 740 H1080"/>
+      <path d="M820 760 H950 L990 800 H1130"/>
+      <path d="M790 830 H880 L920 870 H1050"/>
+      <path d="M1150 700 H1200 L1224 724"/>
+      <path d="M800 900 H900"/>
+      <path d="M1090 880 H1180 L1210 850"/>
+    </g>
+    <!-- chips -->
+    <rect x="880" y="720" width="96" height="52" rx="6" fill="#0d1b14" stroke="#2a2f35" stroke-width="2"/>
+    <rect x="1040" y="700" width="70" height="70" rx="6" fill="#0d1b14" stroke="#2a2f35" stroke-width="2"/>
+    <rect x="940" y="810" width="120" height="56" rx="6" fill="#0d1b14" stroke="#2a2f35" stroke-width="2"/>
+    <rect x="860" y="880" width="46" height="30" rx="4" fill="#0d1b14"/>
+    <rect x="1120" y="820" width="52" height="34" rx="4" fill="#0d1b14"/>
+    <!-- parafusos -->
+    <g fill="#7d8896">
+      <circle cx="790" cy="680" r="7"/><circle cx="1210" cy="680" r="7"/>
+      <circle cx="790" cy="950" r="7"/><circle cx="1210" cy="950" r="7"/>
+    </g>
+    <!-- conectores coloridos -->
+    <rect x="736" y="762" width="30" height="76" rx="6" fill="#ff8a1f" stroke="#a34f06" stroke-width="2"/>
+    <rect x="962" y="632" width="76" height="30" rx="6" fill="#ff3b3b" stroke="#991b1b" stroke-width="2"/>
+    <rect x="1234" y="762" width="30" height="76" rx="6" fill="#35a7ff" stroke="#0b5f9e" stroke-width="2"/>
+    <!-- portas USB-A -->
+    <g>
+      <rect x="812" y="912" width="96" height="46" rx="5" fill="#aeb6c2" stroke="#6f7885" stroke-width="2"/>
+      <rect x="822" y="922" width="76" height="26" rx="3" fill="#14181f"/>
+      <rect x="952" y="912" width="96" height="46" rx="5" fill="#aeb6c2" stroke="#6f7885" stroke-width="2"/>
+      <rect x="962" y="922" width="76" height="26" rx="3" fill="#14181f"/>
+      <rect x="1092" y="912" width="96" height="46" rx="5" fill="#aeb6c2" stroke="#6f7885" stroke-width="2"/>
+      <rect x="1102" y="922" width="76" height="26" rx="3" fill="#14181f"/>
+    </g>
+  </g>
+  <text x="1000" y="1024" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="800">Placa de Conexão</text>
+
+  <!-- ================= CABOS ================= -->
+  <!-- vermelho: porta central -> PC -->
+  <path d="M1000 632 V525" fill="none" stroke="#ff3b3b" stroke-width="14" stroke-linecap="round" filter="url(#cableShadow)"/>
+  <circle cx="1000" cy="632" r="9" fill="#ff3b3b"/>
+  <circle cx="1000" cy="527" r="9" fill="#ff3b3b"/>
+
+  <!-- azul: controle -> porta direita -->
+  <path d="M255 448 V820 H225 V1056 H1350 V800 H1264" fill="none" stroke="#35a7ff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" filter="url(#cableShadow)"/>
+  <circle cx="255" cy="448" r="9" fill="#35a7ff"/>
+  <circle cx="1264" cy="800" r="9" fill="#35a7ff"/>
+
+  <!-- laranja: porta esquerda -> console / 2º PC -->
+  <path d="M736 800 H640 L560 880 V925 H410" fill="none" stroke="#ff8a1f" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" filter="url(#cableShadow)"/>
+  <circle cx="736" cy="800" r="8" fill="#ff8a1f"/>
+
+  <!-- console opcional (esquerda) -->
+  <g filter="url(#softShadow)" opacity="0.95">
+    <rect x="250" y="858" width="160" height="130" rx="12" fill="#161a22" stroke="#333a47" stroke-width="4"/>
+    <rect x="272" y="882" width="116" height="58" rx="6" fill="#0b0f16"/>
+    <circle cx="330" cy="911" r="16" fill="none" stroke="#35a7ff" stroke-width="4" filter="url(#glowBlue)"/>
+    <circle cx="424" cy="925" r="7" fill="#ff8a1f"/>
+  </g>
+  <text x="330" y="1020" text-anchor="middle" fill="#c9d2df" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Console / 2º PC (opcional)</text>
+
+  <!-- rótulos das portas -->
+  <text x="700" y="736" text-anchor="end" fill="#ff8a1f" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800">PORTA ESQUERDA</text>
+
+  <text x="1058" y="584" fill="#ff5a5a" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800">PORTA CENTRAL</text>
+  <text x="1058" y="614" fill="#ff9a9a" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600">para PC (USB)</text>
+
+  <text x="1382" y="848" fill="#5bc0ff" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800">PORTA DIREITA</text>
+  <text x="1382" y="876" fill="#9fd3ff" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600">Controle</text>
+
+  <!-- setas -->
+  <g fill="#ffffff" opacity="0.9">
+    <path d="M992 570 l8 0 l0 -11 l15 16 l-15 16 l0 -11 l-8 0 z"/>
+    <path d="M1296 792 l0 8 l10 0 l-15 14 l-15 -14 l10 0 l0 -8 z"/>
+  </g>
+
+  <!-- ================= FAIXA INFERIOR ================= -->
+  <rect x="0" y="1080" width="2000" height="155" fill="url(#whiteBand)"/>
+  <text x="1000" y="1133" text-anchor="middle" fill="#0f1320" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="800">Guia de Conexão — Controle no PC</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-weight="800">
+    <circle cx="86" cy="1191" r="28" fill="#35a7ff"/>
+    <text x="86" y="1201" text-anchor="middle" fill="#ffffff" font-size="32">1</text>
+    <text x="130" y="1201" fill="#0f1320" font-size="27">Controle na Porta Direita</text>
+
+    <circle cx="668" cy="1191" r="28" fill="#ff3b3b"/>
+    <text x="668" y="1201" text-anchor="middle" fill="#ffffff" font-size="32">2</text>
+    <text x="712" y="1201" fill="#0f1320" font-size="27">Porta Central no PC (USB)</text>
+
+    <circle cx="1254" cy="1191" r="28" fill="#ff8a1f"/>
+    <text x="1254" y="1201" text-anchor="middle" fill="#ffffff" font-size="32">3</text>
+    <text x="1298" y="1201" fill="#0f1320" font-size="27">Porta Esquerda no console / 2º PC</text>
+  </g>
+</svg>
