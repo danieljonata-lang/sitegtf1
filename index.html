@@ -467,9 +467,10 @@
         var ctx = c.getContext('2d');
         var ctxf = cf && cf.getContext ? cf.getContext('2d') : null;
         var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var SPEED_MUL = reduce ? 0.6 : 1;
         var WORDS = ['GTF1', 'INTELIGÊNCIA ARTIFICIAL', 'AIMBOT GTF1', 'IA', 'NEURAL', 'YOLO', 'TRACKING', 'CV ALVO', 'CONSOLE', 'GTF1 IA'];
         var POOL = 'GTF1INTELIGÊNCIAARTIFICIALAIMBOTNEURALTRACKING0123456789'.split('');
-        var FONT = 16, CELL = 18, FPS_MS = 48;
+        var FONT = 16, CELL = 18, FPS_MS = 42;
         var dpr = Math.min(window.devicePixelRatio || 1, 1.75);
         var W = 0, H = 0, cols = [], raf = 0, lastT = 0;
 
@@ -477,11 +478,14 @@
             var useWord = Math.random() < 0.34;
             var phrase = useWord ? WORDS[(Math.random() * WORDS.length) | 0] : '';
             var chars = phrase ? phrase.split('') : null;
+            var tail = chars ? Math.min(chars.length + 4, 26) : 12 + ((Math.random() * 10) | 0);
+            var dir = Math.random() < 0.24 ? -1 : 1; /* -1 = sobe | 1 = desce */
             return {
                 x: x,
-                y: Math.random() * (H / CELL) - 24,
-                speed: 0.30 + Math.random() * 0.70,
-                tail: chars ? Math.min(chars.length + 4, 26) : 12 + ((Math.random() * 10) | 0),
+                y: dir > 0 ? (Math.random() * (H / CELL) - 24) : ((H / CELL) + tail + Math.random() * 20),
+                speed: (0.34 + Math.random() * 0.78) * SPEED_MUL,
+                dir: dir,
+                tail: tail,
                 chars: chars,
                 seed: Math.random() * 1000
             };
@@ -525,11 +529,20 @@
             ctx.font = '600 ' + FONT + 'px Consolas, "Courier New", monospace';
             for (var i = 0; i < cols.length; i++) {
                 var col = cols[i];
-                if (!once) col.y += col.speed;
+                if (!once) col.y += col.speed * col.dir;
                 var head = Math.floor(col.y);
-                if (!once && head - col.tail > H / CELL) {
-                    col.y = -22 - Math.random() * 24;
-                    col.speed = 0.30 + Math.random() * 0.70;
+                if (!once) {
+                    if (col.dir > 0) {
+                        if (head - col.tail > H / CELL) {
+                            col.y = -22 - Math.random() * 24;
+                            col.speed = (0.34 + Math.random() * 0.78) * SPEED_MUL;
+                        }
+                    } else {
+                        if (head + col.tail < 0) {
+                            col.y = (H / CELL) + col.tail + 10 + Math.random() * 24;
+                            col.speed = (0.34 + Math.random() * 0.78) * SPEED_MUL;
+                        }
+                    }
                 }
                 for (var k = col.tail; k >= 0; k--) {
                     var row = head - k;
@@ -567,11 +580,7 @@
         }
 
         resize();
-        if (reduce) {
-            draw(0, true);
-        } else {
-            start();
-        }
+        if (!document.hidden) start();
 
         var rt = 0;
         window.addEventListener('resize', function () {
@@ -579,13 +588,12 @@
             rt = setTimeout(function () {
                 stop();
                 resize();
-                if (reduce) draw(0, true);
-                else start();
+                start();
             }, 180);
         });
         document.addEventListener('visibilitychange', function () {
             if (document.hidden) stop();
-            else if (!reduce) start();
+            else start();
         });
     })();
     </script>
@@ -626,6 +634,47 @@
 
     <div class="content-area">
         <div id="home" class="page-content active-page">
+
+                <!-- ===== BOAS-VINDAS ===== -->
+                <style>
+                    .welcome-hero { position:relative; max-width:1000px; box-sizing:border-box; margin:6px auto 34px auto; padding:clamp(26px,4vw,48px) clamp(18px,4vw,44px); text-align:center; border-radius:22px; overflow:hidden;
+                        background:radial-gradient(120% 150% at 50% 0%, rgba(21,101,192,0.28) 0%, rgba(8,18,38,0.92) 55%, rgba(4,10,24,0.96) 100%);
+                        border:1px solid rgba(37,211,102,0.35);
+                        box-shadow:0 0 60px rgba(13,71,161,0.40), inset 0 0 70px rgba(13,71,161,0.18); }
+                    .welcome-hero::before { content:''; position:absolute; inset:0; pointer-events:none;
+                        background:linear-gradient(105deg, transparent 35%, rgba(37,211,102,0.10) 50%, transparent 65%);
+                        transform:translateX(-100%); animation:welcomeSweep 8s ease-in-out infinite; }
+                    @keyframes welcomeSweep { 0% { transform:translateX(-100%); } 60%,100% { transform:translateX(100%); } }
+                    .welcome-hero > * { position:relative; z-index:1; }
+                    .welcome-badge { display:inline-block; background:rgba(37,211,102,0.14); border:1px solid rgba(37,211,102,0.55); color:#7ef0b4; font-size:10px; font-weight:900; letter-spacing:3px; text-transform:uppercase; padding:6px 16px; border-radius:20px; }
+                    .welcome-title { font-family:'Arial Black', Impact, sans-serif; text-transform:uppercase; font-size:clamp(26px,4.6vw,52px); line-height:1.05; letter-spacing:1px; margin:16px 0 12px 0;
+                        background:linear-gradient(95deg,#4fc3f7 0%,#7cf0c0 45%,#25d366 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:#7cf0c0;
+                        filter:drop-shadow(0 0 22px rgba(37,211,102,0.35)); }
+                    .welcome-sub { color:#fff; font-size:clamp(17px,2.2vw,24px); font-weight:900; letter-spacing:1px; margin-bottom:12px; }
+                    .welcome-logo { display:inline-block; height:1.34em; width:auto; vertical-align:-0.30em; margin-left:8px; filter:drop-shadow(0 0 16px rgba(37,211,102,0.45)); }
+                    .welcome-end { white-space:nowrap; }                    .welcome-sub b { color:#25d366; }
+                    .welcome-text { color:#c6d6ea; font-size:clamp(13px,1.5vw,16px); line-height:1.65; max-width:760px; margin:0 auto 22px auto; }
+                    .welcome-text b { color:#fff; }
+                    .welcome-chips { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+                    .welcome-chips span { background:rgba(13,71,161,0.30); border:1px solid rgba(79,195,247,0.35); color:#d8ecff; font-size:11px; font-weight:bold; letter-spacing:1px; padding:7px 15px; border-radius:20px; }
+                    @media (prefers-reduced-motion: reduce) { .welcome-hero::before { animation:none; display:none; } }
+                </style>
+
+                <section class="welcome-hero" aria-label="Boas-vindas ao clã GTF1">
+                    <div class="welcome-badge">Clã GTF1 · desde 2017</div>
+                    <h1 class="welcome-title">Olá, seja bem-vindo ao <span class="welcome-end">clã <img class="welcome-logo" src="static/logo.png" alt="GTF1"></span></h1>
+                    <div class="welcome-sub">Chegou no lugar certo.</div>
+                    <p class="welcome-text">
+                        Está a fim de adquirir o <b>melhor do Brasil</b> feito com <b>Inteligência Artificial</b> e
+                        <b>Computer Vision</b>? Então você chegou onde precisava.
+                    </p>
+                    <div class="welcome-chips">
+                        <span>IA + COMPUTER VISION</span>
+                        <span>PC · PS5 · XBOX</span>
+                        <span>FEITO NO BRASIL</span>
+                    </div>
+                </section>
+
                 <!-- BANNER AIMBOT GTF1 -->
                 <div style="margin-top:0; padding-top:0;">
                     <h3 style="color:#0d47a1; text-transform:uppercase; margin-bottom:20px; letter-spacing:3px;">🎯 NOSSO SOFTWARE EXCLUSIVO</h3>
@@ -881,10 +930,11 @@
                     }
                 </style>
 
-                <div style="margin-top:40px; border-top:1px solid #333; padding-top:30px; text-align:left;">
-                    <div style="border-left:5px solid #25d366; padding-left:20px; margin-bottom:25px;">
-                        <h2 style="color:#0d47a1; font-size:42px; margin:0; font-family:'Arial Black'; text-transform:uppercase; letter-spacing:2px;">Desenvolvedores</h2>
-                        <p style="color:#aac4e0; font-size:16px; margin:8px 0 0 0; font-weight:bold;">Quem constrói o AIMBOT GTF1 — Capitão Pátria e Coringa BR.</p>
+                <div style="margin-top:40px; border-top:1px solid #333; padding-top:30px; text-align:center;">
+                    <div style="text-align:center; margin-bottom:28px;">
+                        <h2 style="color:#0d47a1; font-size:clamp(30px,4vw,42px); margin:0; font-family:'Arial Black'; text-transform:uppercase; letter-spacing:2px;">Desenvolvedores</h2>
+                        <div style="width:90px; height:3px; margin:14px auto 12px auto; border-radius:2px; background:linear-gradient(90deg, transparent, #25d366, transparent);"></div>
+                        <p style="color:#aac4e0; font-size:16px; margin:0; font-weight:bold;">Quem constrói o AIMBOT GTF1 — Capitão Pátria e Coringa BR.</p>
                     </div>
 
                     <div class="gtfai-hero dev-hero">
@@ -925,9 +975,9 @@
                     </div>
                 </div>
 
-                <div style="margin-top:40px; border-top:1px solid #333; padding-top:30px; text-align:left;">
+                <div class="card" style="max-width:1000px; box-sizing:border-box; margin:40px auto 0 auto; padding:clamp(20px,3vw,40px); text-align:left; background:linear-gradient(180deg, rgba(8,20,42,0.94) 0%, rgba(4,10,24,0.95) 100%); border:1px solid #0d47a1; box-shadow:0 0 40px rgba(13,71,161,0.35);">
                     <div style="border-left:5px solid #0d47a1; padding-left:20px; margin-bottom:25px;">
-                        <h2 style="color:#0d47a1; font-size:42px; margin:0; font-family:'Arial Black'; text-transform:uppercase; letter-spacing:2px;">A História do GTF1</h2>
+                        <h2 style="color:#0d47a1; font-size:clamp(28px,4vw,42px); margin:0; font-family:'Arial Black'; text-transform:uppercase; letter-spacing:2px;">A História do GTF1</h2>
                         <p style="color:#aac4e0; font-size:16px; margin:8px 0 0 0; font-weight:bold;">Onde tudo começou! Clã desde 2017. Entenda a história!</p>
                     </div>
                     <div class="history-text">
