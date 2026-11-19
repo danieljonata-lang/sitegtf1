@@ -1,7 +1,7 @@
 <!-- ============================
      WIDGET DE CHAT GTF1
      Cole ANTES de </body> no index.html
-     Troque o n mero do WhatsApp em sendTicket()
+     Troque o número do WhatsApp em sendTicket()
      ============================ -->
 
 <style>
@@ -92,7 +92,7 @@
   </button>
 </div>
 
-<!-- Bot o flutuante -->
+<!-- Botão flutuante -->
 <button id="gtf-toggle" onclick="gtfToggle()" title="Suporte">
   <svg viewBox="0 0 24 24">
     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
@@ -104,12 +104,12 @@
   <div id="gtf-modal-box">
     <button class="gtf-close" onclick="gtfCloseModal()">✕</button>
     <h3>📋 Abrir Ticket</h3>
-    <p>Descreva sua d vida ou problema:</p>
+    <p>Descreva sua dúvida ou problema:</p>
     <div id="gtf-form">
       <select id="gtf-cat">
         <option value="">Selecione a categoria...</option>
         <option>Compra de Software / Aimbot</option>
-        <option>Suporte T cnico</option>
+        <option>Suporte Técnico</option>
         <option>Dúvidas sobre o Clã GTF1</option>
         <option>VIP / Cadastro</option>
         <option>Outro</option>
@@ -131,10 +131,16 @@
   var bubble = document.getElementById('gtf-chat-bubble');
   var visible = false;
 
-  // Mostra bolha automaticamente ap s 2 segundos
+  // Mostra bolha automaticamente após 2 segundos e recolhe sozinha (não cobre o conteúdo)
   setTimeout(function() {
     bubble.classList.add('visible');
     visible = true;
+    setTimeout(function() {
+      if (visible) {
+        bubble.classList.remove('visible');
+        visible = false;
+      }
+    }, 12000);
   }, 2000);
 
   window.gtfToggle = function() {
@@ -187,43 +193,43 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1200">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GTF1 - GATON FORCE COMMAND</title>
     <style>
         body { 
             background: radial-gradient(circle, #0a192f 0%, #000 100%); 
             color: white; font-family: 'Segoe UI', Tahoma, sans-serif; 
             margin: 0; padding: 0; text-align: center; line-height: 1.6;
-            min-width: 1200px;
+
         }
         .fixed-header { 
-            position: fixed; top: 0; width: 100%; z-index: 10000; 
+            position: relative; top: 0; width: 100%; z-index: 10000; 
             background: linear-gradient(180deg, #0d47a1 0%, rgba(0,0,0,0.9) 100%); 
             border-bottom: 4px solid #0d47a1; padding: 25px 0;
             box-shadow: 0 5px 25px rgba(0,0,0,0.9);
-            min-width: 1200px;
+
         }
         .auth-bar { position: absolute; top: 20px; right: 25px; display: flex; gap: 10px; }
         .auth-bar input { background: #111; border: 1px solid #0d47a1; color: #fff; padding: 7px; border-radius: 5px; width: 130px; font-size: 12px; }
         .btn-auth { background: #0d47a1; color: #fff; border: none; padding: 7px 18px; border-radius: 5px; cursor: pointer; font-weight: bold; text-transform: uppercase; }
         
-        .row-logo { display: flex; align-items: center; justify-content: center; gap: 30px; margin-bottom: 10px; }
-        .text-header { font-size: 65px; font-family: 'Arial Black'; font-weight: 900; text-transform: uppercase; text-shadow: 0 0 30px #0d47a1; letter-spacing: -2px; }
+        .row-logo { display: flex; align-items: center; justify-content: center; gap: clamp(12px, 2vw, 30px); flex-wrap: wrap; margin-bottom: 10px; }
+        .text-header { font-size: clamp(30px, 5.6vw, 65px); font-family: 'Arial Black'; font-weight: 900; text-transform: uppercase; text-shadow: 0 0 30px #0d47a1; letter-spacing: -2px; }
         .logo-main { width: 160px; filter: drop-shadow(0 0 20px #0d47a1); }
         
-        nav { margin-top: 20px; }
-        nav a { color: #fff; text-decoration: none; margin: 0 15px; font-size: 18px; font-weight: 800; cursor: pointer; text-transform: uppercase; transition: 0.3s; padding: 8px 15px; border-radius: 8px; }
+        nav { margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+        nav a { color: #fff; text-decoration: none; margin: 0 6px; font-size: clamp(14px, 1.4vw, 18px); font-weight: 800; cursor: pointer; text-transform: uppercase; transition: 0.3s; padding: 8px 15px; border-radius: 8px; }
         nav a:hover { background: rgba(13, 71, 161, 0.5); color: #ff0000; border: 1px solid #ff0000; }
         
         .btn-music { background: #0d47a1; color: white; border: 2px solid #fff; padding: 12px 35px; border-radius: 35px; cursor: pointer; font-weight: bold; font-size: 14px; text-transform: uppercase; margin-top: 20px; }
 
-        .content-area { margin-top: 450px; padding: 20px; padding-bottom: 50px; }
+        .content-area { margin-top: 0; padding: 20px; padding-bottom: 50px; }
         .page-content { display: none; } 
         .active-page { display: block; animation: fadeIn 0.6s; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes tkPulse { 0% { box-shadow: 0 0 15px rgba(255,0,80,0.3); } 50% { box-shadow: 0 0 30px rgba(255,0,80,0.7); } 100% { box-shadow: 0 0 15px rgba(255,0,80,0.3); } }
 
-        .card { background: rgba(13, 71, 161, 0.15); border: 1px solid #0d47a1; padding: 40px; border-radius: 20px; max-width: 1000px; margin: auto; backdrop-filter: blur(10px); box-shadow: 0 0 30px rgba(0,0,0,0.5); }
+        .card { background: rgba(13, 71, 161, 0.15); border: 1px solid #0d47a1; padding: clamp(16px, 3vw, 40px); border-radius: 20px; max-width: 1000px; margin: auto; backdrop-filter: blur(10px); box-shadow: 0 0 30px rgba(0,0,0,0.5); }
         .history-text { text-align: justify; font-size: 17px; color: #e0e0e0; line-height: 1.8; }
         .highlight { color: #fff; font-weight: bold; text-shadow: 0 0 8px #0d47a1; }
         
@@ -248,7 +254,7 @@
 
         .price-tag { font-size: 35px; color: #25d366; font-weight: 900; margin: 20px 0; text-shadow: 0 0 10px #25d366; }
 
-        footer { margin-top: 50px; padding: 30px; background: rgba(0,0,0,0.8); border-top: 2px solid #0d47a1; display: flex; flex-direction: column; align-items: center; gap: 20px; min-width: 1200px; }
+        footer { margin-top: 50px; padding: 30px; background: rgba(0,0,0,0.8); border-top: 2px solid #0d47a1; display: flex; flex-direction: column; align-items: center; gap: 20px; min-width: 0; }
         .footer-stats { display: flex; justify-content: space-around; width: 100%; align-items: center; flex-wrap: wrap; }
         .counter-box { font-size: 14px; font-weight: bold; border: 1px solid #0d47a1; padding: 10px 20px; border-radius: 10px; background: rgba(13, 71, 161, 0.1); }
         .copyright { font-size: 13px; color: #666; margin-top: 10px; border-top: 1px solid #222; width: 100%; padding-top: 15px; font-weight: bold; }
@@ -268,7 +274,7 @@
         .feat-item { background: rgba(0,0,0,0.6); padding: 15px; border-left: 4px solid #ff0000; border-radius: 5px; font-size: 15px; }
         .feat-item b { color: #ff0000; text-transform: uppercase; }
 
-        /* GALERIA CAPIT O P TRIA */
+        /* GALERIA CAPITÃO PÁTRIA */
         .cap-gallery { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin:30px 0; }
         .cap-gallery img { width:180px; height:180px; object-fit:cover; border-radius:10px; border:2px solid #0d47a1; box-shadow:0 0 15px rgba(13,71,161,0.7); transition:0.3s; }
         .cap-gallery img:hover { transform:scale(1.08); box-shadow:0 0 25px rgba(255,0,0,0.6); border-color:#ff0000; }
@@ -283,6 +289,18 @@
         .side-img-right img { border-radius:10px 0 0 10px; }
         @media(max-width:1300px){ .side-img-left,.side-img-right{ display:none; } }
 
+
+        /* --- Responsivo (evita corte de texto em telas menores) --- */
+        @media (max-width: 900px) {
+            body { min-width: 0; }
+            .fixed-header { padding: 15px 0; }
+            .auth-bar { position: static; justify-content: center; margin: 12px auto 0 auto; }
+            .content-area { padding: 12px; }
+            .rules-grid { grid-template-columns: 1fr; }
+            #vip div[style*="grid-template-columns:repeat(5"] { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+            .history-text { font-size: 15px; }
+            footer { padding: 20px 12px; }
+        }
     </style>
     
     <script>
@@ -314,7 +332,7 @@
                 isLogged = true;
                 isMaster = true;
                 document.getElementById('auth-section').innerHTML = '<b style="color:#ff0000;">MASTER ADM</b>';
-                alert('Bem-vindo, Capit o P tria!');
+                alert('Bem-vindo, Capitão Pátria!');
                 showTab('forum');
                 loadMessages();
                 return;
@@ -328,7 +346,7 @@
                 showTab('forum');
                 loadMessages();
             } else { 
-                alert('Senha Inv lida!'); 
+                alert('Senha Inválida!'); 
             }
         }
 
@@ -350,7 +368,7 @@
             var email = document.getElementById('forgot-email').value.trim();
             var status = document.getElementById('forgot-status');
             if (!email) { status.innerHTML = '<span style="color:#ff4444;">Digite seu email!</span>'; return; }
-            status.innerHTML = '<span style="color:#ff9800;">Enviando solicitacao...</span>';
+            status.innerHTML = '<span style="color:#ff9800;">Enviando solicitação...</span>';
             var data = new Date();
             var id = data.getFullYear() + ('0'+(data.getMonth()+1)).slice(-2) + ('0'+data.getDate()).slice(-2) +
                       ('0'+data.getHours()).slice(-2) + ('0'+data.getMinutes()).slice(-2) + ('0'+data.getSeconds()).slice(-2) +
@@ -362,7 +380,7 @@
                 status: 'pendente'
             };
             fbPatch('solicitacoes-senha', registro).then(function(){
-                status.innerHTML = '<span style="color:#4ade80;">Solicitacao enviada! Nossa equipe entrara em contato em breve.</span>';
+                status.innerHTML = '<span style="color:#4ade80;">Solicitação enviada! Nossa equipe entrará em contato em breve.</span>';
                 document.getElementById('forgot-email').value = '';
             })["catch"](function(){
                 status.innerHTML = '<span style="color:#ff4444;">Erro ao enviar. Tente novamente.</span>';
@@ -383,7 +401,7 @@
         }
 
         function apagarMural() {
-            if(confirm("Capit o, deseja apagar TODAS as mensagens do mural.")){
+            if(confirm("Capitão, deseja apagar TODAS as mensagens do mural.")){
                 localStorage.removeItem('gtf1_msgs');
                 loadMessages();
             }
@@ -428,9 +446,149 @@
         .gtfai-dot { display:inline-block; width:7px; height:7px; border-radius:50%; background:#ff3b3b; margin-right:6px; box-shadow:0 0 8px #ff3b3b; animation:gtfaiBlink 1.1s steps(1,end) infinite; }
         @keyframes gtfaiBlink { 0%,49% { opacity:1; } 50%,100% { opacity:0.15; } }
         @media (max-width: 760px) { .gtfai-hero { margin:15px 12px 0 12px; aspect-ratio:16/9; } .gtfai-hud { font-size:8px; } }
+
+        /* --- Fundo Matrix / IA (atrás do conteúdo, sem atrapalhar) --- */
+        #gtf1-matrix { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.95; }
+        #gtf1-matrix-front { position: fixed; inset: 0; z-index: 9985; pointer-events: none; opacity: 0.26; mix-blend-mode: screen; }
+        .content-area, footer { position: relative; z-index: 1; }
+        .side-img-left, .side-img-right { z-index: 9990; }
+        @media (max-width: 900px) { #gtf1-matrix { opacity: 0.62; } #gtf1-matrix-front { opacity: 0.12; } }
+        @media (prefers-reduced-motion: reduce) { #gtf1-matrix { opacity: 0.62; } #gtf1-matrix-front { opacity: 0.14; } }
     </style>
 </head>
 <body>
+    <canvas id="gtf1-matrix" aria-hidden="true"></canvas>
+    <canvas id="gtf1-matrix-front" aria-hidden="true"></canvas>
+    <script>
+    (function () {
+        var c = document.getElementById('gtf1-matrix');
+        var cf = document.getElementById('gtf1-matrix-front');
+        if (!c || !c.getContext) return;
+        var ctx = c.getContext('2d');
+        var ctxf = cf && cf.getContext ? cf.getContext('2d') : null;
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var WORDS = ['GTF1', 'INTELIGÊNCIA ARTIFICIAL', 'AIMBOT GTF1', 'IA', 'NEURAL', 'YOLO', 'TRACKING', 'CV ALVO', 'CONSOLE', 'GTF1 IA'];
+        var POOL = 'GTF1INTELIGÊNCIAARTIFICIALAIMBOTNEURALTRACKING0123456789'.split('');
+        var FONT = 16, CELL = 18, FPS_MS = 48;
+        var dpr = Math.min(window.devicePixelRatio || 1, 1.75);
+        var W = 0, H = 0, cols = [], raf = 0, lastT = 0;
+
+        function mkCol(x) {
+            var useWord = Math.random() < 0.34;
+            var phrase = useWord ? WORDS[(Math.random() * WORDS.length) | 0] : '';
+            var chars = phrase ? phrase.split('') : null;
+            return {
+                x: x,
+                y: Math.random() * (H / CELL) - 24,
+                speed: 0.30 + Math.random() * 0.70,
+                tail: chars ? Math.min(chars.length + 4, 26) : 12 + ((Math.random() * 10) | 0),
+                chars: chars,
+                seed: Math.random() * 1000
+            };
+        }
+
+        function resize() {
+            W = window.innerWidth;
+            H = window.innerHeight;
+            c.width = Math.round(W * dpr);
+            c.height = Math.round(H * dpr);
+            c.style.width = W + 'px';
+            c.style.height = H + 'px';
+            if (cf) {
+                cf.width = c.width;
+                cf.height = c.height;
+                cf.style.width = W + 'px';
+                cf.style.height = H + 'px';
+            }
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            var gap = W < 700 ? 28 : 22;
+            var n = Math.ceil(W / gap) + 1;
+            cols = [];
+            for (var i = 0; i < n; i++) cols.push(mkCol(i * gap + gap / 2));
+        }
+
+        function glyph(col, row) {
+            if (col.chars) {
+                var L = col.chars.length;
+                return col.chars[((row % L) + L) % L];
+            }
+            var v = Math.sin((row * 12.9898 + col.seed) * 0.7) * 43758.5453;
+            return POOL[Math.abs(Math.floor(v)) % POOL.length];
+        }
+
+        function draw(ts, once) {
+            if (!once) raf = requestAnimationFrame(draw);
+            if (!once && ts - lastT < FPS_MS) return;
+            lastT = ts;
+            ctx.clearRect(0, 0, W, H);
+            ctx.textAlign = 'center';
+            ctx.font = '600 ' + FONT + 'px Consolas, "Courier New", monospace';
+            for (var i = 0; i < cols.length; i++) {
+                var col = cols[i];
+                if (!once) col.y += col.speed;
+                var head = Math.floor(col.y);
+                if (!once && head - col.tail > H / CELL) {
+                    col.y = -22 - Math.random() * 24;
+                    col.speed = 0.30 + Math.random() * 0.70;
+                }
+                for (var k = col.tail; k >= 0; k--) {
+                    var row = head - k;
+                    var y = row * CELL;
+                    if (y < -CELL || y > H + CELL) continue;
+                    var a;
+                    if (k === 0) {
+                        a = col.chars ? 1 : 0.85;
+                        ctx.fillStyle = 'rgba(215,248,255,' + a + ')';
+                    } else if (k < 3) {
+                        a = 0.55 * (1 - k / 4);
+                        ctx.fillStyle = 'rgba(120,215,255,' + a + ')';
+                    } else {
+                        var f = 1 - k / (col.tail + 1);
+                        a = 0.55 * f * f + 0.03;
+                        ctx.fillStyle = 'rgba(48,150,255,' + a + ')';
+                    }
+                    ctx.fillText(glyph(col, row), col.x, y);
+                }
+            }
+            if (ctxf) {
+                ctxf.clearRect(0, 0, c.width, c.height);
+                ctxf.drawImage(c, 0, 0);
+            }
+        }
+
+        function start() {
+            if (raf) return;
+            lastT = 0;
+            raf = requestAnimationFrame(draw);
+        }
+        function stop() {
+            if (raf) cancelAnimationFrame(raf);
+            raf = 0;
+        }
+
+        resize();
+        if (reduce) {
+            draw(0, true);
+        } else {
+            start();
+        }
+
+        var rt = 0;
+        window.addEventListener('resize', function () {
+            clearTimeout(rt);
+            rt = setTimeout(function () {
+                stop();
+                resize();
+                if (reduce) draw(0, true);
+                else start();
+            }, 180);
+        });
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) stop();
+            else if (!reduce) start();
+        });
+    })();
+    </script>
     <audio id="audio_cla" loop><source src="static/hino.mp3" type="audio/mpeg"></audio>
 
     
@@ -468,7 +626,6 @@
 
     <div class="content-area">
         <div id="home" class="page-content active-page">
-            <div class="card">
                 <!-- BANNER AIMBOT GTF1 -->
                 <div style="margin-top:0; padding-top:0;">
                     <h3 style="color:#0d47a1; text-transform:uppercase; margin-bottom:20px; letter-spacing:3px;">🎯 NOSSO SOFTWARE EXCLUSIVO</h3>
@@ -483,10 +640,10 @@
                             <div class="gtfai-tint"></div>
                             <div class="gtfai-grid"></div>
                             <div class="gtfai-scan"></div>
-                            <div class="gtfai-box gtfai-b1"><span>VOVOZAO MAROMBA 98%</span></div>
-                            <div class="gtfai-box gtfai-b2"><span>CAPITAO PATRIA 99%</span></div>
+                            <div class="gtfai-box gtfai-b1"><span>VOVOZÃO MAROMBA 98%</span></div>
+                            <div class="gtfai-box gtfai-b2"><span>CAPITÃO PÁTRIA 99%</span></div>
                             <div class="gtfai-box gtfai-b3"><span>CORINGA BR 96%</span></div>
-                            <div class="gtfai-box gtfai-b4"><span>A MAQUINA 97%</span></div>
+                            <div class="gtfai-box gtfai-b4"><span>A MÁQUINA 97%</span></div>
                             <div class="gtfai-cross"></div>
                             <div class="gtfai-hud gtfai-hud-top"><span class="gtfai-dot"></span>IA ATIVA · YOLO V11</div>
                             <div class="gtfai-hud gtfai-hud-tr">240 FPS · TRACKING</div>
@@ -505,22 +662,51 @@
 
                                 <!-- Descrição -->
                                 <p style="color:#ccc; font-size:13px; line-height:1.7; margin-bottom:15px;">
-                                    O <strong style="color:#fff;">AIMBOT GTF1</strong> é o software de assistência de mira desenvolvido exclusivamente pelo Clã GATON FORCE. 
-                                    Com tecnologia de <strong style="color:#0d47a1;">Intelig ncia Artificial</strong>, detecta inimigos em tempo real, 
-                                    ajusta a mira com precisão milimétrica e simula movimento humano com curva <strong style="color:#fff;">Cubic Bezier</strong>   
-                                    praticamente indetect vel.
+                                    O <strong style="color:#fff;">AIMBOT GTF1</strong> é o assistente de mira com <strong style="color:#4fc3f7;">Inteligência Artificial</strong> do Clã GATON FORCE.
+                                    A IA enxerga o inimigo na tela em tempo real, puxa a mira com suavidade e previsão de movimento — e, com o
+                                    <strong style="color:#25d366;">Gatilho Automático</strong>, atira sozinho no instante em que o alvo é detectado.
+                                    Funciona no <strong style="color:#fff;">PC</strong> e também com <strong style="color:#fff;">controle</strong> no PC, PS5 e Xbox.
                                 </p>
 
-                                <div style="display:grid; gap:6px; margin-bottom:18px;">
-                                    <div style="color:#ccc; font-size:13px;">Assistência de Mira com IA em tempo real</div>
-                                    <div style="color:#ccc; font-size:13px;">Anti-Recoil automático para qualquerarma</div>
-                                    <div style="color:#ccc; font-size:13px;">Rastreamento constante de alvos</div>
-                                    <div style="color:#ccc; font-size:13px;">Mira Fixada (Bone Lock) na cabeça</div>
-                                    <div style="color:#ccc; font-size:13px;">Movimento natural: Cubic Bezier</div>
-                                    <div style="color:#ccc; font-size:13px;">Detecção: Closest to Center Screen</div>
-<div style="color:#ccc; font-size:13px;">Ajuste Pixel a Pixel do ponto de mira (X/Y)</div>
-                                    <div style="color:#ccc; font-size:13px;">Interface completa: AIM | MODEL | CONFIG</div>
-                                    <div style="color:#ccc; font-size:13px;">Suporte técnico direto com o Clã </div>
+                                <div style="color:#0d47a1; font-size:11px; font-weight:bold; letter-spacing:4px; margin-bottom:8px; text-align:left;">O QUE O GTF1 FAZ</div>
+
+                                <div style="display:grid; gap:10px; margin-bottom:16px;">
+
+                                    <div style="background:rgba(37,211,102,0.10); border-left:3px solid #25d366; border-radius:0 8px 8px 0; padding:10px 12px; text-align:left;">
+                                        <div style="color:#25d366; font-size:12px; font-weight:900; letter-spacing:1px; margin-bottom:3px;">🔫 GATILHO AUTOMÁTICO</div>
+                                        <div style="color:#ccc; font-size:12px; line-height:1.55;">Segure a tecla de mirar e o GTF1 <b style="color:#fff;">atira sozinho</b> assim que detectar o inimigo — não precisa clicar. Tem também o modo <b style="color:#fff;">Atirar ao Detectar</b>, que dispara sem segurar nada.</div>
+                                    </div>
+
+                                    <div style="background:rgba(13,71,161,0.18); border-left:3px solid #1565c0; border-radius:0 8px 8px 0; padding:10px 12px; text-align:left;">
+                                        <div style="color:#4fc3f7; font-size:12px; font-weight:900; letter-spacing:1px; margin-bottom:3px;">🎯 MIRA COM IA</div>
+                                        <div style="color:#ccc; font-size:12px; line-height:1.55;">Detecção de inimigos em tempo real, puxada suave, <b style="color:#fff;">mira fixada</b> (segura o alvo até ele sair de alcance) e rastreamento constante. Força, suavidade e offset X/Y pixel a pixel.</div>
+                                    </div>
+
+                                    <div style="background:rgba(255,215,0,0.10); border-left:3px solid #ffd700; border-radius:0 8px 8px 0; padding:10px 12px; text-align:left;">
+                                        <div style="color:#ffd700; font-size:12px; font-weight:900; letter-spacing:1px; margin-bottom:3px;">🎮 FUNCIONA NO CONTROLE</div>
+                                        <div style="color:#ccc; font-size:12px; line-height:1.55;">Mira e gatilho também no <b style="color:#fff;">controle</b>: PC com Makcu, PS5 com P5 Mate Pro + Makcu e Xbox com Makcu. O mouse ainda pode controlar o analógico direito.</div>
+                                    </div>
+
+                                    <div style="background:rgba(255,138,31,0.10); border-left:3px solid #ff8a1f; border-radius:0 8px 8px 0; padding:10px 12px; text-align:left;">
+                                        <div style="color:#ff8a1f; font-size:12px; font-weight:900; letter-spacing:1px; margin-bottom:3px;">⚡ TIRO RÁPIDO / TURBO</div>
+                                        <div style="color:#ccc; font-size:12px; line-height:1.55;">Cliques muito mais rápidos que o normal, com <b style="color:#fff;">tecla configurável</b>. O <b style="color:#fff;">Auto Semi</b> identifica arma semi-automática e liga o turbo sozinho.</div>
+                                    </div>
+
+                                    <div style="background:rgba(114,137,218,0.12); border-left:3px solid #7289da; border-radius:0 8px 8px 0; padding:10px 12px; text-align:left;">
+                                        <div style="color:#9fb0ff; font-size:12px; font-weight:900; letter-spacing:1px; margin-bottom:3px;">📡 AUTO PING</div>
+                                        <div style="color:#ccc; font-size:12px; line-height:1.55;">Ping automático para avisar a equipe sem largar o mouse — e agora você <b style="color:#fff;">escolhe a tecla</b> do Auto Ping.</div>
+                                    </div>
+                                </div>
+
+                                <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px 14px; margin-bottom:16px;">
+                                    <div style="color:#ccc; font-size:12px;">🧠 Predição de movimento</div>
+                                    <div style="color:#ccc; font-size:12px;">👁️ ESP: caixa e rastreadores</div>
+                                    <div style="color:#ccc; font-size:12px;">🎛️ FOV dinâmico + confiança</div>
+                                    <div style="color:#ccc; font-size:12px;">⚙️ Macros: pulo, dropshot, ADS</div>
+                                    <div style="color:#ccc; font-size:12px;">🛡️ StreamGuard</div>
+                                    <div style="color:#ccc; font-size:12px;">⌨️ Teclas configuráveis</div>
+                                    <div style="color:#ccc; font-size:12px;">🚨 Parada de emergência</div>
+                                    <div style="color:#ccc; font-size:12px;">💾 Perfis de config. salvos</div>
                                 </div>
 
                                 <!-- Compatibilidade -->
@@ -589,7 +775,7 @@
                                 <!-- YouTube -->
                                 <div style="background:#0a0a1a; border:2px solid #ff0000; border-radius:12px; padding:20px; max-width:340px;">
                                     <div style="font-size:13px; color:#aaa; margin-bottom:15px;">▶ YouTube   GTF1 Oficial</div>
-                                    <a href="https://www.youtube.com/watch=v=gH4sT_4b3Mw" target="_blank"
+                                    <a href="https://www.youtube.com/watch?v=gH4sT_4b3Mw" target="_blank"
                                         style="display:block; background:linear-gradient(135deg,#1a0000,#2d0000); border:2px solid #ff0000; border-radius:10px; padding:30px 20px; text-decoration:none; transition:0.3s;">
                                         <div style="font-size:48px; margin-bottom:10px;">▶</div>
                                         <div style="color:#fff; font-weight:bold; font-size:15px; margin-bottom:5px;">AIMBOT GTF1 — Gameplay</div>
@@ -620,183 +806,14 @@
                     </div>
                 </div>
 
-<div style="margin-top:40px; border-top:1px solid #333; padding-top:30px;">
-                    <h3 style="color:#0d47a1; text-transform:uppercase; margin-bottom:20px; letter-spacing:3px;">NOSSO SOFTWARE EXCLUSIVO</h3>
-                    <div style="background:linear-gradient(135deg,#0a0a1a 0%,#0d1b3e 50%,#0a0a1a 100%); border:2px solid #0d47a1; border-radius:15px; overflow:hidden; box-shadow:0 0 40px rgba(13,71,161,0.6); max-width:900px; margin:auto;">
-                        <div style="background:linear-gradient(90deg,#ff0000,#cc0000); padding:8px; text-align:center;">
-                            <span style="color:#fff; font-weight:bold; font-size:22px; letter-spacing:4px;">AIMBOT GTF1 — SOFTWARE OFICIAL DO CLÃ</span>
-                        </div>
-                        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:20px; padding:25px;">
-                            <div style="flex:1; min-width:260px;">
-                                <img src="static/aimbotgtf1novo.jpg" style="width:100%; max-width:360px; border-radius:12px; border:2px solid #0d47a1; box-shadow:0 0 30px rgba(13,71,161,0.6);" alt="AIMBOT GTF1">
-                            </div>
-                            <div style="flex:1; min-width:220px; text-align:left;">
-                                <div style="color:#0d47a1; font-size:11px; font-weight:bold; letter-spacing:4px; margin-bottom:6px;">SOFTWARE PROFISSIONAL</div>
-                                <h2 style="color:#fff; font-family:'Arial Black'; font-size:28px; margin:0 0 4px 0;">AIMBOT GTF1</h2>
-                                <div style="color:#aaa; font-size:12px; margin-bottom:15px;">by GATON FORCE &nbsp;|&nbsp; v7.4 &nbsp;|&nbsp; gtf1.com.br</div>
-                                <div style="display:grid; gap:6px; margin-bottom:18px;">
-<div style="color:#ccc; font-size:13px;">Assistência de Mira com IA</div>
-                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Anti-Recoil Automático</div>
-                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Rastreamento Constante</div>
-                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Curva Cubic Bezier</div>
-                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Detecção: Closest to Center Screen</div>
-                                    <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Ajuste Pixel a Pixel do ponto de mira</div>
-                                </div>
-                                <div style="background:rgba(255,0,0,0.08); border-left:3px solid #ff0000; padding:8px 12px; border-radius:0 6px 6px 0; margin-bottom:12px; font-size:11px; color:#aaa;">
-                                    <strong style="color:#ff0000;">🔧 REQUISITOS MÍNIMOS:</strong><br>
-                                    <span style="color:#ccc;">▸ Ryzen 5 5600 + RTX 3060 Ti ou NVIDIA superior</span><br>
-                                    <span style="color:#ccc;">▸ i5 12400F + RTX 3060 Ti ou NVIDIA superior</span>
-                                </div>
-                                <div style="text-align:center; background:rgba(0,0,0,0.4); border-radius:10px; padding:15px; border:1px solid rgba(13,71,161,0.4);">
-                                    <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-bottom:14px;">
-                                        <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:8px 14px;">
-<div style="color:#0d47a1; font-size:10px; font-weight:bold;">🧪 TESTE 12H</div>
-                                            <div style="color:#fff; font-size:16px; font-weight:900;">R$12</div>
-                                        </div>
-                                        <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:8px 14px;">
-<div style="color:#0d47a1; font-size:10px; font-weight:bold;">1 SEMANA</div>
-                                            <div style="color:#fff; font-size:16px; font-weight:900;">R$55</div>
-                                        </div>
-                                        <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:8px 14px;">
-<div style="color:#0d47a1; font-size:10px; font-weight:bold;">15 DIAS</div>
-                                            <div style="color:#fff; font-size:16px; font-weight:900;">R$80</div>
-                                        </div>
-                                        <div style="background:rgba(13,71,161,0.3); border:1px solid #25d366; border-radius:8px; padding:8px 14px;">
-                                            <div style="color:#25d366; font-size:10px; font-weight:bold;">📅 MENSAL</div>
-                                            <div style="color:#fff; font-size:16px; font-weight:900;">R$120</div>
-                                        </div>
-                                        <div style="background:rgba(255,215,0,0.15); border:1px solid #ffd700; border-radius:8px; padding:8px 14px;">
-<div style="color:#ffd700; font-size:10px; font-weight:bold;">♾️ VITALÍCIO</div>
-                                            <div style="color:#fff; font-size:16px; font-weight:900;">R$450</div>
-                                        </div>
-                                    </div>
-                                    <div style="color:#25d366; font-size:16px; font-weight:bold; margin-bottom:12px;">💬 Nos procure no WhatsApp ou Discord</div>
-                                    <a href="https://chat.whatsapp.com/0s5QrMWAJIB6lTzoDt8ilv" target="_blank"
-                                        style="display:block; background:linear-gradient(135deg,#25d366,#1da851); color:#fff; text-decoration:none; padding:12px 20px; border-radius:8px; font-weight:900; font-size:14px; letter-spacing:2px; box-shadow:0 0 20px rgba(37,211,102,0.4);">
-                                        📲 COMPRAR VIA WHATSAPP
-                                    </a>
-                                    <div style="color:#555; font-size:10px; margin-top:8px;">🔒 Pagamento seguro &nbsp;|&nbsp; Suporte 24h</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="margin-top:40px; border-top:1px solid #333; padding-top:30px;">
-                    <h2 style="color: #25d366; text-align: center; font-size: 32px; text-transform: uppercase; letter-spacing: 3px;">COMO FUNCIONA O DOWNLOAD VIP</h2>
-                    <p style="color:#aaa; font-size:14px; text-align:center; margin-bottom:25px;">Veja como e facil ter acesso ao Aimbot GTF1</p>
-
-                    <div class="card" style="text-align:left;">
-                        <h3 style="color:#0d47a1; text-transform:uppercase; margin-bottom:15px;">1. ESCOLHA SEU PLANO</h3>
-                        <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin:15px 0;">
-                            <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:12px 18px; text-align:center; min-width:120px;">
-                                <div style="color:#0d47a1; font-size:10px; font-weight:bold;">🧪 TESTE 12H</div>
-                                <div style="color:#fff; font-size:18px; font-weight:900;">R$12</div>
-                            </div>
-                            <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:12px 18px; text-align:center; min-width:120px;">
-                                <div style="color:#0d47a1; font-size:10px; font-weight:bold;">📅 1 SEMANA</div>
-                                <div style="color:#fff; font-size:18px; font-weight:900;">R$55</div>
-                            </div>
-                            <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:8px; padding:12px 18px; text-align:center; min-width:120px;">
-                                <div style="color:#0d47a1; font-size:10px; font-weight:bold;">📅 15 DIAS</div>
-                                <div style="color:#fff; font-size:18px; font-weight:900;">R$80</div>
-                            </div>
-                            <div style="background:rgba(13,71,161,0.3); border:1px solid #25d366; border-radius:8px; padding:12px 18px; text-align:center; min-width:120px;">
-                                <div style="color:#25d366; font-size:10px; font-weight:bold;">📅 MENSAL</div>
-                                <div style="color:#fff; font-size:18px; font-weight:900;">R$120</div>
-                            </div>
-                            <div style="background:rgba(255,215,0,0.15); border:1px solid #ffd700; border-radius:8px; padding:12px 18px; text-align:center; min-width:120px;">
-                                <div style="color:#ffd700; font-size:10px; font-weight:bold;">♾️ VITALÍCIO</div>
-                                <div style="color:#fff; font-size:18px; font-weight:900;">R$450</div>
-                            </div>
-                        </div>
-
-                        <h3 style="color:#0d47a1; text-transform:uppercase; margin-top:25px;">2. FACA SEU CADASTRO</h3>
-                        <p style="color:#ccc; font-size:13px;">Preencha seus dados na aba <b style="color:#25d366;">Cadastro VIP</b> ou entre em contato conosco pelo WhatsApp ou Discord.</p>
-                        <div style="display:flex; gap:12px; flex-wrap:wrap; margin:10px 0;">
-                            <a href="https://wa.me/5527998845090" target="_blank" style="background:#25d366; color:#fff; padding:12px 25px; border-radius:8px; text-decoration:none; font-weight:bold; display:inline-flex; align-items:center; gap:8px;">▶ FALAR NO WHATSAPP</a>
-                            <a href="https://discord.gg/h85n2Fy2FK" target="_blank" style="background:#7289da; color:#fff; padding:12px 25px; border-radius:8px; text-decoration:none; font-weight:bold; display:inline-flex; align-items:center; gap:8px;">▶ DISCORD</a>
-                        </div>
-
-                        <h3 style="color:#0d47a1; text-transform:uppercase; margin-top:25px;">3. PAGAMENTO E LIBERACAO</h3>
-                        <div style="background:rgba(0,0,0,0.4); border-left:4px solid #25d366; padding:15px; margin:10px 0; border-radius:0 8px 8px 0;">
-                            <p style="color:#ccc; font-size:13px; margin:0;">
-                                <b style="color:#ffd700;">VITALÍCIO:</b> Após o pagamento, você recebe um email de nossa equipe com sua senha de acesso liberada <b style="color:#25d366;">IMEDIATAMENTE</b>.
-                            </p>
-                        </div>
-                        <div style="background:rgba(0,0,0,0.4); border-left:4px solid #0d47a1; padding:15px; margin:10px 0; border-radius:0 8px 8px 0;">
-                            <p style="color:#ccc; font-size:13px; margin:0;">
-                                <b style="color:#0d47a1;">DEMAIS PLANOS:</b> Após o cadastro, enviaremos um email e entraremos em contato com você. É só realizar o pagamento e sua senha será liberada para acesso ao download.
-                            </p>
-                        </div>
-
-                        <h3 style="color:#0d47a1; text-transform:uppercase; margin-top:25px;">4. BAIXE E INSTALE</h3>
-                        <p style="color:#ccc; font-size:13px;">Após liberado, vá até a aba <b style="color:#25d366;">Download VIP</b> e escolha a opção ideal para você:</p>
-
-                        <!-- OPCAO 1: PRIMEIRA VEZ -->
-                        <div style="background:rgba(255,0,0,0.08); border:1px solid #ff0000; border-radius:10px; padding:18px; margin-bottom:15px;">
-                            <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
-                                <span style="background:#ff0000; color:#fff; font-size:10px; font-weight:bold; padding:3px 10px; border-radius:4px;">OBRIGATORIO</span>
-                                <span style="color:#aaa; font-size:12px;">Para quem esta instalando pela primeira vez</span>
-                            </div>
-                            <h4 style="color:#ff0000; margin:0 0 5px 0;">⚠️ REQUISITOS DE INSTALAÇÃO (~4 GB)</h4>
-                            <p style="color:#ccc; font-size:13px; margin:0;">
-                                Baixe o pacote completo com <b style="color:#fff;">VC++ Redist, .NET 8.0, CUDA 12.6, ViGEm e Logitech G Hub</b>.
-                                Execute como Administrador e <b style="color:#ff0000;">nao feche a janela</b>   ele instala tudo
-                                automaticamente (requisitos + programa). So precisa baixar uma vez.
-                            </p>
-                        </div>
-
-                        <!-- OPCAO 2: JA TEM REQUISITOS -->
-                        <div style="background:rgba(37,211,102,0.08); border:1px solid #25d366; border-radius:10px; padding:18px;">
-                            <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
-                                <span style="background:#25d366; color:#000; font-size:10px; font-weight:bold; padding:3px 10px; border-radius:4px;">ATUALIZACAO</span>
-                                <span style="color:#aaa; font-size:12px;">Para quem ja tem os requisitos instalados</span>
-                            </div>
-                            <h4 style="color:#25d366; margin:0 0 5px 0;">🎯 PROGRAMA AIMBOT GTF1 (~806 MB)</h4>
-                            <p style="color:#ccc; font-size:13px; margin:0;">
-                                Apenas o executável do Aimbot GTF1. Para quem já instalou os requisitos anteriormente e quer apenas baixar a versão mais recente ou reinstalar o programa.
-                            </p>
-                                <div style="margin-top:10px; background:rgba(0,0,0,0.3); border-radius:8px; padding:12px;">
-                                    <div style="color:#aaa; font-size:12px; margin-bottom:6px;">▸ Arquivo: GTF1_AimBot_Instalador.exe</div>
-                                    <div style="color:#aaa; font-size:12px; margin-bottom:6px;">▸ Tamanho: ~806 MB</div>
-                                    <div style="color:#aaa; font-size:12px; margin-bottom:12px;">▸ Apenas o programa (sem requisitos)</div>
-                                    <div style="background:rgba(255,215,0,0.1); border:1px dashed #ffd700; border-radius:8px; padding:10px 15px; text-align:center; color:#ffd700; font-weight:bold; font-size:13px;">
-                                        🔑 ACESSO EXCLUSIVO: Va ate a aba <b style="color:#fff;">Download VIP</b> para baixar
-                                    </div>
-                                </div>
-                        </div>
-
-                        <div style="margin-top:15px; background:rgba(255,215,0,0.08); border-left:4px solid #ffd700; padding:12px 15px; border-radius:0 8px 8px 0; font-size:12px; color:#aaa;">
-                            <b style="color:#ffd700;">⚠️ LEMBRETE:</b> Ambos os arquivos sao auto-extratores (SFX)   
-                            basta clicar duas vezes que eles fazem tudo sozinhos. Nao precisa de conhecimentos tecnicos.
-                        </div>
-                    </div>
-                </div>
-
-                <div style="margin-top:40px; border-top:1px solid #333; padding-top:30px;">
-                                        <div style="border-left:5px solid #0d47a1; padding-left:20px; margin-bottom:25px;">
-                        <h2 style="color:#0d47a1; font-size:42px; margin:0; font-family:'Arial Black'; text-transform:uppercase; letter-spacing:2px;">A História do Clã GTF1</h2>
-                        <p style="color:#aac4e0; font-size:16px; margin:8px 0 0 0; font-weight:bold;">Onde tudo começou! Clã desde 2017! Entenda a história!</p>
-                    </div>
-                <div class="history-text">
-                    O clã <span class="highlight">GATON FORCE [GTF1]</span> não é apenas um grupo de jogadores, é uma irmandade forjada no aço desde 2017. Tudo começou no campo de batalha de Battlefield 1, fundado pela visão estratégica de <span class="highlight">MATA RATOS</span> e pela liderança inquestionável de <span class="highlight">Rodrigo Marinho</span>. 
-                    <br><br>
-                    Em pouco tempo, o clã alcançou o feito histórico de ser o <span class="highlight">Número #1 na Liga Beta do BF1</span> mundialmente. Nossa tradição carrega o peso dos soldados das grandes guerras que usavam o símbolo do esquadrão de gatos em suas fardas como prova de agilidade e precisão letal. 
-                    <br><br>
-                    Desde 2019, o GTF1 expandiu seu domínio para o Call of Duty, sob o comando rígido e profissional do <span class="highlight">CAPITÃO PÁTRIA</span>. Aqui, a lealdade é o nosso maior calibre. Somos amados por poucos, odiados por muitos, mas respeitados por todos.
-                </div>
-                </div>
-
-                <img src="static/esquadrao.png" class="squad-img">
-
                 <!-- BANNER NOVIDADE v7.4 — SUPORTE CONSOLE -->
                 <div class="card" style="background:linear-gradient(135deg,#0a0a1a 0%,#0d1b3e 55%,#062b1a 100%); border:2px solid #25d366; box-shadow:0 0 40px rgba(37,211,102,0.35); margin:35px auto 15px auto; text-align:center; padding:35px 30px;">
                     <span style="display:inline-block; background:#25d366; color:#000; font-size:11px; font-weight:900; letter-spacing:2px; padding:4px 14px; border-radius:20px;">NOVIDADE v7.4</span>
                     <h2 style="color:#fff; font-family:'Arial Black'; font-size:30px; margin:14px 0 6px 0; letter-spacing:1px;">🕹️ AIMBOT GTF1 AGORA SUPORTA CONSOLE</h2>
                     <p style="color:#ccc; font-size:14px; margin:0 auto 22px auto; max-width:760px; line-height:1.7;">
                         Agora o GTF1 funciona com <b style="color:#fff;">controle no PC</b> e também nos <b style="color:#fff;">consoles PS5 e Xbox</b>.
-                        Para jogar com controle — no PC ou no console — é obrigatório usar as <b style="color:#25d366;">plaquinhas compatíveis</b>.
+                        Para jogar com controle — no PC ou no console — é obrigatório usar as <b style="color:#25d366;">plaquinhas compatíveis</b>.<br>
+                        <b style="color:#25d366;">Mira com IA, Gatilho Automático, Tiro Rápido e Auto Ping funcionam no controle também.</b>
                     </p>
                     <div style="display:flex; flex-wrap:wrap; gap:15px; justify-content:center; margin-bottom:22px;">
                         <div style="flex:1; min-width:220px; max-width:280px; background:rgba(13,71,161,0.15); border:1px solid #0d47a1; border-radius:12px; padding:18px;">
@@ -818,6 +835,10 @@
 
                     <h3 style="color:#fff; font-size:18px; letter-spacing:2px; text-transform:uppercase; margin:0 0 14px 0;">🔌 GUIA DE CONEXÃO</h3>
                     <div style="display:flex; flex-wrap:wrap; gap:18px; justify-content:center; margin-bottom:22px;">
+                        <a href="static/guia_pc_controle.svg" target="_blank" style="flex:1; min-width:280px; max-width:420px; text-decoration:none;">
+                            <img src="static/guia_pc_controle.svg" alt="Guia de conexão Controle no PC — controle na porta direita, porta central no PC e porta esquerda no console" style="width:100%; border-radius:10px; border:2px solid #ff8a1f; display:block; background:#080b11;">
+                            <div style="color:#ff8a1f; font-size:12px; font-weight:bold; margin-top:8px;">PC — Controle via Makcu</div>
+                        </a>
                         <a href="static/ps5.jpg" target="_blank" style="flex:1; min-width:280px; max-width:420px; text-decoration:none;">
                             <img src="static/ps5.jpg" alt="Guia de conexão PS5 — P5 Mate Pro + Makcu" style="width:100%; border-radius:10px; border:2px solid #0d47a1; display:block;">
                             <div style="color:#0d47a1; font-size:12px; font-weight:bold; margin-top:8px;">PS5 — P5 Mate Pro + Makcu</div>
@@ -834,6 +855,91 @@
                     </div>
                     <a href="https://wa.me/5527998845090" target="_blank" style="display:inline-block; background:linear-gradient(135deg,#25d366,#1da851); color:#fff; text-decoration:none; padding:12px 28px; border-radius:8px; font-weight:900; font-size:14px; letter-spacing:1px; box-shadow:0 0 20px rgba(37,211,102,0.4);">📲 FALAR NO WHATSAPP</a>
                 </div>
+
+                <!-- ===== DESENVOLVEDORES ===== -->
+                <style>
+                    .dev-hero { margin:0 auto 22px auto; max-width:900px; aspect-ratio:1920/1067; }
+                    .dev-bg { object-position:50% 50%; filter:saturate(0.92) contrast(1.06) brightness(0.86); }
+                    .dev-b1 { left:45.1%; width:13.6%; top:21%; bottom:8%; animation-delay:0s; }
+                    .dev-b2 { left:60.9%; width:10.4%; top:33.8%; bottom:8%; animation-delay:0.9s; }
+                    .dev-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:16px; max-width:900px; margin:0 auto; }
+                    .dev-card { display:flex; gap:14px; align-items:center; text-align:left; background:rgba(13,71,161,0.18); border:1px solid #0d47a1; border-left:4px solid #25d366; border-radius:0 12px 12px 0; padding:14px 16px; }
+                    .dev-avatar { width:74px; height:74px; flex:0 0 74px; border-radius:50%; object-fit:cover; border:2px solid #25d366; box-shadow:0 0 14px rgba(37,211,102,0.45); }
+                    .dev-name { color:#fff; font-weight:900; font-size:15px; letter-spacing:1px; }
+                    .dev-role { color:#25d366; font-size:10px; font-weight:900; letter-spacing:2px; margin:2px 0 6px 0; }
+                    .dev-desc { color:#bbb; font-size:12px; line-height:1.55; margin:0; }
+                    .dev-together { display:flex; align-items:center; justify-content:center; gap:14px; max-width:900px; margin:22px auto 0 auto; }
+                    .dev-together-line { height:1px; flex:1 1 auto; max-width:150px; background:linear-gradient(90deg, transparent, rgba(37,211,102,0.65)); }
+                    .dev-together-line:last-child { background:linear-gradient(90deg, rgba(37,211,102,0.65), transparent); }
+                    .dev-together-txt { color:#25d366; font-size:13px; font-weight:900; letter-spacing:4px; text-shadow:0 0 14px rgba(37,211,102,0.55); white-space:nowrap; }
+                    @media (max-width: 760px) {
+                        .dev-hero { aspect-ratio:16/9; }
+                        .dev-avatar { width:58px; height:58px; flex-basis:58px; }
+                        .dev-name { font-size:14px; }
+                        .dev-desc { font-size:11px; }
+                        .dev-together-txt { font-size:11px; letter-spacing:2px; }
+                    }
+                </style>
+
+                <div style="margin-top:40px; border-top:1px solid #333; padding-top:30px; text-align:left;">
+                    <div style="border-left:5px solid #25d366; padding-left:20px; margin-bottom:25px;">
+                        <h2 style="color:#0d47a1; font-size:42px; margin:0; font-family:'Arial Black'; text-transform:uppercase; letter-spacing:2px;">Desenvolvedores</h2>
+                        <p style="color:#aac4e0; font-size:16px; margin:8px 0 0 0; font-weight:bold;">Quem constrói o AIMBOT GTF1 — Capitão Pátria e Coringa BR.</p>
+                    </div>
+
+                    <div class="gtfai-hero dev-hero">
+                        <img class="gtfai-bg dev-bg" src="static/esquadrao.png" alt="Visão de IA identificando os desenvolvedores do GTF1 — Capitão Pátria e Coringa BR">
+                        <div class="gtfai-tint"></div>
+                        <div class="gtfai-grid"></div>
+                        <div class="gtfai-scan"></div>
+                        <div class="gtfai-box dev-b1"><span>CAPITÃO PÁTRIA · DEV</span></div>
+                        <div class="gtfai-box dev-b2"><span>CORINGA BR · DEV</span></div>
+                        <div class="gtfai-hud gtfai-hud-top"><span class="gtfai-dot"></span>IA · RECONHECENDO PERFIS</div>
+                        <div class="gtfai-hud gtfai-hud-tr">GTF1 DEV TEAM</div>
+                        <div class="gtfai-hud gtfai-hud-bot">2 PERFIS IDENTIFICADOS · CONFIANÇA 99%</div>
+                    </div>
+
+                    <div class="dev-grid">
+                        <div class="dev-card">
+                            <img class="dev-avatar" src="static/cap.png 1.jpg" alt="Capitão Pátria — fundador e desenvolvedor do GTF1">
+                            <div>
+                                <div class="dev-name">CAPITÃO PÁTRIA</div>
+                                <div class="dev-role">FUNDADOR &amp; DESENVOLVEDOR</div>
+                                <p class="dev-desc">Fundador do GTF1 e desenvolvedor do AIMBOT GTF1: a IA de detecção, a lógica de mira e cada atualização que chega até você.</p>
+                            </div>
+                        </div>
+                        <div class="dev-card">
+                            <img class="dev-avatar" src="static/joker-mask-pictures-gh1lj4zv9xihtptt.png" alt="Coringa BR — desenvolvedor e sócio principal do GTF1">
+                            <div>
+                                <div class="dev-name">CORINGA BR</div>
+                                <div class="dev-role">DESENVOLVEDOR &amp; SÓCIO PRINCIPAL</div>
+                                <p class="dev-desc">Sócio principal do Capitão Pátria. Cuida dos testes em campo, dos ajustes finos de mira e do suporte direto com a comunidade do clã.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dev-together">
+                        <span class="dev-together-line"></span>
+                        <span class="dev-together-txt">JUNTOS, SÃO IMPARÁVEIS</span>
+                        <span class="dev-together-line"></span>
+                    </div>
+                </div>
+
+                <div style="margin-top:40px; border-top:1px solid #333; padding-top:30px; text-align:left;">
+                    <div style="border-left:5px solid #0d47a1; padding-left:20px; margin-bottom:25px;">
+                        <h2 style="color:#0d47a1; font-size:42px; margin:0; font-family:'Arial Black'; text-transform:uppercase; letter-spacing:2px;">A História do GTF1</h2>
+                        <p style="color:#aac4e0; font-size:16px; margin:8px 0 0 0; font-weight:bold;">Onde tudo começou! Clã desde 2017. Entenda a história!</p>
+                    </div>
+                    <div class="history-text">
+                    O clã <span class="highlight">GATON FORCE [GTF1]</span> não é apenas um grupo de jogadores, é uma irmandade forjada no aço desde 2017. Tudo começou no campo de batalha de Battlefield 1, fundado pela visão estratégica de <span class="highlight">MATA RATOS</span> e pela liderança inquestionável de <span class="highlight">Rodrigo Marinho</span>. 
+                    <br><br>
+                    Em pouco tempo, o clã alcançou o feito histórico de ser o <span class="highlight">Número #1 na Liga Beta do BF1</span> mundialmente. Nossa tradição carrega o peso dos soldados das grandes guerras que usavam o símbolo do esquadrão de gatos em suas fardas como prova de agilidade e precisão letal. 
+                    <br><br>
+                    Desde 2019, o GTF1 expandiu seu domínio para o Call of Duty, sob o comando rígido e profissional do <span class="highlight">CAPITÃO PÁTRIA</span>. Aqui, a lealdade é o nosso maior calibre. Somos amados por poucos, odiados por muitos, mas respeitados por todos.
+                    </div>
+                </div>
+
+                <img src="static/esquadrao.png" class="squad-img">
 
                 <!-- DESTAQUE TIKTOK - REDE SOCIAL PRINCIPAL -->
                 <div style="background:linear-gradient(135deg,#010101 0%,#1a1a2e 100%); border:2px solid #ff0050; border-radius:16px; padding:20px 30px; margin:30px auto 10px auto; max-width:700px; text-align:center; box-shadow:0 0 30px rgba(255,0,80,0.3);">
@@ -865,7 +971,6 @@
             </div>
         </div>
             </div>
-        </div>
 
 
         <div id="regras" class="page-content">
@@ -901,12 +1006,13 @@
                             <div style="color:#aaa; font-size:13px; margin-bottom:15px;">by <b style="color:#0d47a1;">GATON FORCE</b> &nbsp;|&nbsp; v7.4 &nbsp;|&nbsp; gtf1.com.br</div>
                             <div style="display:grid; gap:6px; margin-bottom:15px;">
 <div style="color:#ccc; font-size:13px;">Assistência de Mira com IA</div>
-                                <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Anti-Recoil Automático</div>
+                                <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Gatilho Automático (atira ao detectar)</div>
+                                <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Funciona no PC e no controle (PS5 / Xbox)</div>
                                 <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Rastreamento Constante de Alvos</div>
                                 <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Mira Fixada (Bone Lock)</div>
                                 <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Movimento: Mouse Event + Cubic Bezier</div>
+                                <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Auto Ping e Tiro Rápido (teclas configuráveis)</div>
                                 <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Detecção: Closest to Center Screen</div>
-                                <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> Ajuste Pixel a Pixel do ponto de mira (X/Y)</div>
                                 <div style="color:#ccc; font-size:13px;"><span style="color:#25d366;">▸</span> COD | BF | CS2 | Valorant | PUBG | Apex | Fortnite e muito mais</div>
                             </div>
                                                         <div style="display:flex; gap:8px; justify-content:flex-start; flex-wrap:wrap; margin:15px 0;">
@@ -951,7 +1057,7 @@
                                 <p style="color:#ccc; font-size:13px; margin:0;">
                                     Selecione o plano ideal para você: <b style="color:#25d366;">Teste 12H (R$12)</b>, 
                                     <b style="color:#25d366;">1 Semana (R$55)</b>, <b style="color:#25d366;">15 Dias (R$80)</b>, 
-                                    <b style="color:#25d366;">Mensal (R$120)</b> ou <b style="color:#ffd700;">Vitalicio (R$450)</b>.
+                                    <b style="color:#25d366;">Mensal (R$120)</b> ou <b style="color:#ffd700;">Vitalício (R$450)</b>.
                                 </p>
                             </div>
                         </div>
@@ -974,10 +1080,10 @@
                         <div style="background:rgba(13,71,161,0.1); border:1px solid #0d47a1; border-radius:10px; padding:18px 22px; text-align:left; display:flex; align-items:flex-start; gap:15px;">
                             <div style="background:#0d47a1; color:#fff; min-width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:16px;">3</div>
                             <div>
-                                <h4 style="color:#fff; margin:0 0 4px 0; font-size:15px;">Pagamento e liberacao</h4>
+                                <h4 style="color:#fff; margin:0 0 4px 0; font-size:15px;">Pagamento e liberação</h4>
                                 <p style="color:#ccc; font-size:13px; margin:0;">
                                     Após a confirmação do pagamento, você recebe sua <b style="color:#25d366;">senha VIP</b> por email.
-                                    <b style="color:#ffd700;">Vitalicio</b> e liberado na hora. Demais planos em ate 24h.
+                                    <b style="color:#ffd700;">Vitalício</b> é liberado na hora. Demais planos em até 24h.
                                 </p>
                             </div>
                         </div>
@@ -988,7 +1094,7 @@
                                 <h4 style="color:#fff; margin:0 0 4px 0; font-size:15px;">Baixe e instale</h4>
                                 <p style="color:#ccc; font-size:13px; margin:0;">
                                     Com sua senha em mãos, vá até a aba <b style="color:#25d366;">Download VIP</b>, 
-                                    baixe o instalador e execute como Administrador. Pronto! So abrir o <b style="color:#25d366;">gtf1.exe</b> 
+                                    baixe o instalador e execute como Administrador. Pronto! Só abrir o <b style="color:#25d366;">gtf1.exe</b> 
                                     e fazer login.
                                 </p>
                             </div>
@@ -1073,9 +1179,9 @@
                     </div>
 
                     <div style="background:rgba(13,71,161,0.1); border:1px solid #0d47a1; border-radius:10px; padding:20px; margin-bottom:20px;">
-                        <h3 style="color:#25d366; margin:0 0 5px 0;">📌 ATUALIZACAO v6.4 — MUDANÇAS PRINCIPAIS</h3>
+                        <h3 style="color:#25d366; margin:0 0 5px 0;">📌 ATUALIZAÇÃO v6.4 — MUDANÇAS PRINCIPAIS</h3>
                         <p style="color:#ccc; font-size:13px; margin:0;">
-                            A versao v6.4 representa uma reformulação estratégica do Aimbot GTF1. 
+                            A versão v6.4 representa uma reformulação estratégica do Aimbot GTF1. 
                             FOCO EM PERFORMANCE, SIMPLICIDADE E AGRESSIVIDADE. 
                             Removemos recursos que atrapalhavam o uso e adicionamos otimizações que tornam 
                             o aimbot <b style="color:#ff0000;">mais apelão</b> e mais fácil de configurar.
@@ -1241,11 +1347,11 @@
                             <option value="1 Semana - R$55">📅 1 SEMANA   R$55</option>
                             <option value="15 Dias - R$80">📅 15 DIAS   R$80</option>
                             <option value="Mensal - R$120">📅 MENSAL   R$120</option>
-                            <option value="Vitalicio - R$450">♾️ VITALÍCIO   R$450</option>
+                            <option value="Vitalício - R$450">♾️ VITALÍCIO   R$450</option>
                         </select>
                     </div>
 
-                    <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin:15px 0 10px 0; max-width:500px; margin-left:auto; margin-right:auto;">
+                    <div style="display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:8px; margin:15px 0 10px 0; max-width:500px; margin-left:auto; margin-right:auto;">
                         <div style="background:rgba(13,71,161,0.3); border:1px solid #0d47a1; border-radius:6px; padding:6px 12px; text-align:center; flex:1; min-width:80px;">
                             <div style="color:#0d47a1; font-size:9px; font-weight:bold;">🧪 TESTE 12H</div>
                             <div style="color:#fff; font-size:14px; font-weight:900;">R$12</div>
@@ -1270,8 +1376,35 @@
 
                     <button type="submit" class="btn-join">SOLICITAR ACESSO</button>
                 </form>
+                    <!-- COMO FUNCIONA O DOWNLOAD VIP (movido para a aba Cadastro VIP) -->
+                    <div style="margin-top:35px; border-top:1px solid rgba(13,71,161,0.5); padding-top:25px; text-align:left;">
+                        <h2 style="color:#25d366; text-align:center; font-size:28px; text-transform:uppercase; letter-spacing:2px; margin:0 0 6px 0;">📥 Como funciona o download VIP</h2>
+                        <p style="color:#aaa; font-size:14px; text-align:center; margin-bottom:25px;">Veja como é fácil ter acesso ao Aimbot GTF1</p>
+
+                        <h3 style="color:#0d47a1; text-transform:uppercase; margin-bottom:8px;">1. Escolha seu plano</h3>
+                        <p style="color:#ccc; font-size:13px; margin:0 0 18px 0;">Selecione no formulário acima o plano ideal para você: <b style="color:#25d366;">Teste 12H (R$12)</b>, 1 Semana (R$55), 15 Dias (R$80), Mensal (R$120) ou <b style="color:#ffd700;">Vitalício (R$450)</b>.</p>
+
+                        <h3 style="color:#0d47a1; text-transform:uppercase; margin-bottom:8px;">2. Faça seu cadastro</h3>
+                        <p style="color:#ccc; font-size:13px; margin:0 0 10px 0;">Preencha seus dados no formulário acima ou fale direto com a equipe pelo WhatsApp ou Discord.</p>
+                        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:18px;">
+                            <a href="https://wa.me/5527998845090" target="_blank" style="background:#25d366; color:#fff; padding:10px 22px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:13px;">📲 Falar no WhatsApp</a>
+                            <a href="https://discord.gg/h85n2Fy2FK" target="_blank" style="background:#7289da; color:#fff; padding:10px 22px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:13px;">💬 Entrar no Discord</a>
+                        </div>
+
+                        <h3 style="color:#0d47a1; text-transform:uppercase; margin-bottom:8px;">3. Pagamento e liberação</h3>
+                        <div style="background:rgba(255,215,0,0.08); border-left:4px solid #ffd700; padding:12px 15px; border-radius:0 8px 8px 0; margin-bottom:10px;">
+                            <p style="color:#ccc; font-size:13px; margin:0;"><b style="color:#ffd700;">Vitalício:</b> após o pagamento, você recebe um e-mail da nossa equipe com a senha de acesso liberada <b style="color:#25d366;">imediatamente</b>.</p>
+                        </div>
+                        <div style="background:rgba(13,71,161,0.15); border-left:4px solid #0d47a1; padding:12px 15px; border-radius:0 8px 8px 0; margin-bottom:18px;">
+                            <p style="color:#ccc; font-size:13px; margin:0;"><b style="color:#0d47a1;">Demais planos:</b> após o cadastro, enviaremos um e-mail e entraremos em contato com você. É só realizar o pagamento e sua senha será liberada para acesso ao download.</p>
+                        </div>
+
+                        <h3 style="color:#0d47a1; text-transform:uppercase; margin-bottom:8px;">4. Baixe e instale</h3>
+                        <p style="color:#ccc; font-size:13px; margin:0;">Após a liberação, vá até a aba <b style="color:#25d366;">Download VIP</b> e escolha o arquivo ideal para você: os requisitos (primeira instalação) ou apenas o programa (atualização).</p>
+                    </div>
             </div>
         </div>
+
 
         <div id="download" class="page-content">
             <div class="card">
@@ -1289,13 +1422,13 @@
                 <!-- DOWNLOAD 1: REQUISITOS -->
                 <div style="background:rgba(0,0,0,0.5); padding:25px; border-radius:10px; border:1px solid #ff0000; margin-bottom:25px;">
                     <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
-                        <span style="background:#ff0000; color:#fff; font-size:11px; font-weight:bold; padding:4px 12px; border-radius:4px;">OBRIGATORIO</span>
-                        <span style="color:#aaa; font-size:12px;">Para quem esta instalando pela primeira vez</span>
+                        <span style="background:#ff0000; color:#fff; font-size:11px; font-weight:bold; padding:4px 12px; border-radius:4px;">OBRIGATÓRIO</span>
+                        <span style="color:#aaa; font-size:12px;">Para quem está instalando pela primeira vez</span>
                     </div>
                     <h3 style="color:#ff0000; margin:0 0 5px 0; font-size:20px;">⚠️ REQUISITOS DE INSTALAÇÃO</h3>
                     <p style="color:#ccc; font-size:13px; margin-bottom:12px;">
-                        Pacote completo com todos os requisitos necessarios para rodar o Aimbot GTF1.
-                        <b style="color:#fff;">Baixe apenas se nunca instalou ou esta com problemas.</b>
+                        Pacote completo com todos os requisitos necessários para rodar o Aimbot GTF1.
+                        <b style="color:#fff;">Baixe apenas se nunca instalou ou está com problemas.</b>
                     </p>
                     <div style="font-size:13px; color:#aaa; margin-bottom:15px; text-align:left;">
                         <span style="color:#ff0000;">▸</span> Arquivo: <b style="color:#fff;">Requisitos.zip</b><br>
@@ -1310,8 +1443,8 @@
                 <!-- DOWNLOAD 2: PROGRAMA -->
                 <div style="background:rgba(0,0,0,0.5); padding:25px; border-radius:10px; border:1px solid #25d366; margin-bottom:25px;">
                     <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
-                        <span style="background:#25d366; color:#000; font-size:11px; font-weight:bold; padding:4px 12px; border-radius:4px;">ATUALIZACAO</span>
-                        <span style="color:#aaa; font-size:12px;">Para quem ja tem os requisitos instalados</span>
+                        <span style="background:#25d366; color:#000; font-size:11px; font-weight:bold; padding:4px 12px; border-radius:4px;">ATUALIZAÇÃO</span>
+                        <span style="color:#aaa; font-size:12px;">Para quem já tem os requisitos instalados</span>
                     </div>
                     <h3 style="color:#25d366; margin:0 0 5px 0; font-size:20px;">🎯 PROGRAMA AIMBOT GTF1</h3>
                     <p style="color:#ccc; font-size:13px; margin-bottom:12px;">
@@ -1329,9 +1462,9 @@
                 </div>
 
                 <div style="margin-top:15px; background:rgba(255,215,0,0.08); border-left:4px solid #ffd700; padding:15px 18px; border-radius:0 10px 10px 0; font-size:13px; color:#fff; line-height:1.9; text-align:left;">
-                    <b style="color:#ffd700;">⚠️ ULTIMA ATUALIZACAO MANUAL (v7.4)!</b><br>
-                    A partir desta versao, o <b style="color:#25d366;">GTF1 vai se atualizar SOZINHO</b>, automaticamente — incluindo os <b style="color:#fff;">pesos/modelos da IA</b>.<br>
-                    Baixe e instale esta versao agora, senao o programa vai ficar <b style="color:#ff4444;">desatualizado para os futuros pesos</b> e melhorias do programa.
+                    <b style="color:#ffd700;">⚠️ ULTIMA ATUALIZAÇÃO MANUAL (v7.4)!</b><br>
+                    A partir desta versão, o <b style="color:#25d366;">GTF1 vai se atualizar SOZINHO</b>, automaticamente — incluindo os <b style="color:#fff;">pesos/modelos da IA</b>.<br>
+                    Baixe e instale esta versão agora, senão o programa vai ficar <b style="color:#ff4444;">desatualizado para os futuros pesos</b> e melhorias do programa.
                 </div>
 
                 <div style="margin-top:10px; border-top:1px solid #333; padding-top:20px;">
@@ -1342,12 +1475,12 @@
                         2. <b style="color:#fff;">EXTRAIA</b> o arquivo <b style="color:#fff;">Requisitos.zip</b> e <b style="color:#fff;">EXECUTE</b> o instalador como Administrador (clique direito > Executar como Administrador)<br>
                         3. O instalador extrai e instala <b style="color:#fff;">TUDO automaticamente</b> (VC++, .NET, CUDA, drivers + programa)<br>
                         4. <b style="color:#ff0000;">NÃO FECHE A JANELA</b> — aguarde a instalação completa (pode levar vários minutos)<br>
-                        5. Pronto! Abra o <b style="color:#25d366;">gtf1.exe</b> e faca login com seu <b style="color:#fff;">email</b> e <b style="color:#fff;">senha VIP</b><br><br>
+                        5. Pronto! Abra o <b style="color:#25d366;">gtf1.exe</b> e faça login com seu <b style="color:#fff;">email</b> e <b style="color:#fff;">senha VIP</b><br><br>
                         <b style="color:#25d366;">✅ JÁ TEM OS REQUISITOS? (Só o Programa):</b><br>
 1. Baixe o <b style="color:#fff;">GTF1_AimBot_Instalador.exe</b> (~806 MB)<br>
                          2. <b style="color:#fff;">EXECUTE</b> como Administrador (clique direito > Executar como Administrador)<br>
-                         3. Pronto! Abra o programa e faca login<br><br>
-                         <b style="color:#ffd700;">ℹ️ IMPORTANTE:</b> O programa e auto-extrator (SFX) — basta clicar duas vezes que ele extrai tudo sozinho.
+                         3. Pronto! Abra o programa e faça login<br><br>
+                         <b style="color:#ffd700;">ℹ️ IMPORTANTE:</b> O programa é autoextrator (SFX) — basta clicar duas vezes que ele extrai tudo sozinho.
                         Os requisitos vem em <b style="color:#fff;">.zip</b>: extraia o arquivo antes de executar o instalador.
                     </div>
                 </div>
@@ -1360,7 +1493,7 @@
         <div style="background:#1e2035;border-radius:16px;width:360px;max-width:90vw;padding:28px;border:1px solid rgba(255,255,255,0.1);text-align:center;">
             <button onclick="gtfCloseForgot()" style="float:right;background:none;border:none;color:#a0a8c0;font-size:20px;cursor:pointer;">✕</button>
             <h3 style="color:#ff9800;margin:0 0 6px 0;">🔑 Esqueci Minha Senha</h3>
-            <p style="color:#a0a8c0;font-size:13px;margin-bottom:18px;">Digite seu email. Sua solicitacao sera enviada para nossa equipe.</p>
+            <p style="color:#a0a8c0;font-size:13px;margin-bottom:18px;">Digite seu email. Sua solicitação será enviada para nossa equipe.</p>
             <input type="email" id="forgot-email" placeholder="Seu email" style="width:100%;background:#11121d;border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px;color:#fff;font-size:14px;box-sizing:border-box;margin-bottom:12px;">
             <button onclick="gtfEnviarSolicitacao()" style="width:100%;background:#ff9800;color:#000;border:none;border-radius:8px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;">SOLICITAR NOVA SENHA</button>
             <div id="forgot-status" style="margin-top:12px;font-size:13px;font-weight:bold;"></div>
@@ -1372,7 +1505,7 @@
             <div class="counter-box">CADASTRO VIP<span id="cnt-vip">0</span></div>
             <div class="counter-box">VISITANTES<span id="cnt-vis">0</span></div>
         </div>
-        <div class="copyright">Copyright © 2026 Desenvolvido pelo Capitão Pátria todos os direitos autorais</div>
+        <div class="copyright">Copyright © 2026 Desenvolvido pelo Capitão Pátria Todos os direitos reservados</div>
     </footer>
 <script>
 /* -- Contadores GTF1 (Firebase) -- */
